@@ -1,0 +1,39 @@
+# --- Bases de datos locales ---
+*.db
+*.sqlite3
+
+# --- Entornos virtuales y dependencias de Python ---
+backend/venv/
+backend/.venv/
+venv/
+.venv/
+ENV/
+
+# --- Caché de Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# --- Dependencias y compilación de Frontend ---
+frontend/node_modules/
+node_modules/
+frontend/dist/
+dist/
+
+# --- Variables de entorno locales ---
+.env
+.env.local
+
+# --- Sistema operativo y editores ---
+.DS_Store
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
