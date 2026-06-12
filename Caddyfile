@@ -1,10 +1,9 @@
 porrauztargi.korpoweb.com {
     # Bloqueo de todos los rastreadores y bots
-    respond /robots.txt "User-agent: *
-Disallow: /" 200 {
-        headers {
-            Content-Type "text/plain; charset=utf-8"
-        }
+    handle /robots.txt {
+        header Content-Type "text/plain; charset=utf-8"
+        respond "User-agent: *
+Disallow: /" 200
     }
 
     # 1. Enrutar peticiones de la API (Conserva el prefijo /api)
