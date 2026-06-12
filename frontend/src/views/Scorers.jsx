@@ -1,6 +1,9 @@
+/* eslint-disable react-hooks/set-state-in-effect, react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Scorers({ API_BASE }) {
+  const { t } = useLanguage();
   const [scorers, setScorers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -31,7 +34,7 @@ export default function Scorers({ API_BASE }) {
     return (
       <div className="flex flex-col items-center justify-center py-32">
         <div className="w-8 h-8 border-4 border-emerald-100 border-t-emerald-600 rounded-full animate-spin mb-4" />
-        <p className="text-sm text-gray-500 font-medium">Cargando goleadores...</p>
+        <p className="text-sm text-gray-500 font-medium">{t('scorers.loading')}</p>
       </div>
     );
   }
@@ -39,13 +42,13 @@ export default function Scorers({ API_BASE }) {
   if (error) {
     return (
       <div className="mx-6 my-8 p-6 bg-red-50 rounded-2xl flex flex-col items-center text-center">
-        <p className="text-base font-semibold text-red-800 mb-2">Error</p>
+        <p className="text-base font-semibold text-red-800 mb-2">{t('scorers.retry')}</p>
         <p className="text-sm text-red-600 mb-5">{error}</p>
         <button 
           onClick={fetchScorers}
-          className="px-5 py-2.5 bg-red-600 text-white text-sm font-medium rounded-xl hover:bg-red-700 transition-colors shadow-sm"
+          className="px-5 py-2.5 bg-red-600 text-white text-sm font-medium rounded-xl hover:bg-red-700 transition-colors shadow-sm cursor-pointer"
         >
-          Reintentar
+          {t('scorers.retry')}
         </button>
       </div>
     );
@@ -58,9 +61,9 @@ export default function Scorers({ API_BASE }) {
       <div className="flex items-center justify-between px-4 mb-6">
         <div>
           <h2 className="text-xl font-bold text-gray-900 tracking-tight">
-            Goleadores
+            {t('scorers.title')}
           </h2>
-          <p className="text-sm text-gray-500 font-medium mt-0.5">Mundial 2026</p>
+          <p className="text-sm text-gray-500 font-medium mt-0.5">{t('scorers.subtitle')}</p>
         </div>
       </div>
 
@@ -71,7 +74,7 @@ export default function Scorers({ API_BASE }) {
             <div className="relative z-10 flex items-center justify-between">
               <div>
                 <p className="text-[10px] font-bold text-amber-900/70 uppercase tracking-wider mb-1">
-                  Pichichi Actual
+                  {t('scorers.pichichi')}
                 </p>
                 <h3 className="text-xl font-black text-white">{scorers[0].name}</h3>
                 <p className="text-sm font-semibold text-amber-100">{scorers[0].team}</p>
@@ -79,7 +82,7 @@ export default function Scorers({ API_BASE }) {
               <div className="text-right">
                 <span className="text-4xl font-black text-white">{scorers[0].goals}</span>
                 <p className="text-[10px] font-bold text-amber-900/70 uppercase tracking-wider mt-1">
-                  Goles
+                  {t('scorers.goals')}
                 </p>
               </div>
             </div>

@@ -1,7 +1,10 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { useState, useEffect, useRef } from 'react';
 import { Search, ChevronDown, CheckCircle2, XCircle } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Profile({ selectedId, setSelectedId, API_BASE }) {
+  const { t } = useLanguage();
   const [participants, setParticipants] = useState([]);
   const [currentParticipant, setCurrentParticipant] = useState(null);
   const [realResults, setRealResults] = useState(null);
@@ -90,9 +93,9 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
     <div className="animate-fadeIn px-2">
       <div className="px-4 mb-6 pt-2">
         <h2 className="text-xl font-bold text-gray-900 tracking-tight">
-          Participante
+          {t('profile.title')}
         </h2>
-        <p className="text-sm text-gray-500 font-medium mt-0.5">Busca para ver pronósticos</p>
+        <p className="text-sm text-gray-500 font-medium mt-0.5">{t('profile.subtitle')}</p>
       </div>
 
       <div ref={dropdownRef} className="relative mb-8 px-4 z-30">
@@ -100,7 +103,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
           <input
             type="text"
-            placeholder="Buscar por nombre..."
+            placeholder={t('profile.searchPlaceholder')}
             value={searchTerm}
             onChange={(e) => {
               setSearchTerm(e.target.value);
@@ -115,7 +118,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
         {showDropdown && (
           <div className="absolute left-4 right-4 mt-2 bg-white border border-gray-100 rounded-2xl shadow-xl max-h-60 overflow-y-auto animate-fadeIn">
             {loadingList ? (
-              <div className="p-5 text-center text-sm text-gray-400 font-medium">Cargando...</div>
+              <div className="p-5 text-center text-sm text-gray-400 font-medium">{t('profile.loading')}</div>
             ) : filteredParticipants.length > 0 ? (
               filteredParticipants.map(p => (
                 <div
@@ -128,7 +131,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                 </div>
               ))
             ) : (
-              <div className="p-5 text-center text-sm text-gray-400 font-medium">Sin resultados</div>
+              <div className="p-5 text-center text-sm text-gray-400 font-medium">{t('profile.noResults')}</div>
             )}
           </div>
         )}
@@ -147,32 +150,32 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                 {currentParticipant.name}
               </h3>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white rounded-full border border-gray-200 shadow-sm">
-                <span className="text-xs text-gray-500 font-medium">Posición actual:</span>
+                <span className="text-xs text-gray-500 font-medium">{t('profile.currentRank')}</span>
                 <span className="text-sm font-bold text-emerald-700">#{currentParticipant.rank || "-"}</span>
               </div>
             </div>
             
             <div className="mt-4 mb-6 text-center">
-              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Puntos Totales</p>
+              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">{t('profile.pointsTotal')}</p>
               <p className="text-4xl font-black text-emerald-700">{currentParticipant.points_total}</p>
             </div>
 
             <div className="space-y-2.5">
-              <h4 className="text-[11px] font-bold text-gray-400 uppercase tracking-wider px-1 mb-1 text-center">Resumen de Puntos</h4>
+              <h4 className="text-[11px] font-bold text-gray-400 uppercase tracking-wider px-1 mb-1 text-center">{t('profile.pointsSummary')}</h4>
               
               <div className="flex items-center justify-between bg-emerald-50/80 p-3.5 rounded-xl border border-emerald-100 shadow-sm">
-                <span className="text-sm font-bold text-emerald-900">Fase de Grupos</span>
+                <span className="text-sm font-bold text-emerald-900">{t('profile.groupPhase')}</span>
                 <span className="text-lg font-black text-emerald-700">{currentParticipant.points_groups} <span className="text-[10px] font-bold text-emerald-600/70">pts</span></span>
               </div>
               
               <div className="flex items-center justify-between bg-amber-50/80 p-3.5 rounded-xl border border-amber-100 shadow-sm">
-                <span className="text-sm font-bold text-amber-900">Puntos por Goleadores</span>
-                <span className="text-lg font-black text-amber-700">{currentParticipant.points_scorers} <span className="text-[10px] font-bold text-amber-600/70">pts</span></span>
+                <span className="text-sm font-bold text-amber-900">{t('profile.pointsScorers')}</span>
+                <span className="text-lg font-black text-amber-700">{currentParticipant.points_scorers} <span className="text-[10px] font-bold text-emerald-600/70">pts</span></span>
               </div>
               
               <div className="flex items-center justify-between bg-sky-50/80 p-3.5 rounded-xl border border-sky-100 shadow-sm">
-                <span className="text-sm font-bold text-sky-900">Puntos por Top 4</span>
-                <span className="text-lg font-black text-sky-700">{currentParticipant.points_top4} <span className="text-[10px] font-bold text-sky-600/70">pts</span></span>
+                <span className="text-sm font-bold text-sky-900">{t('profile.pointsTop4')}</span>
+                <span className="text-lg font-black text-sky-700">{currentParticipant.points_top4} <span className="text-[10px] font-bold text-emerald-600/70">pts</span></span>
               </div>
             </div>
           </div>
@@ -183,7 +186,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
               <div>
                 <h4 className="text-sm font-bold text-gray-900 mb-3 px-1 flex items-center gap-2">
                   <span className="w-1.5 h-4 bg-emerald-500 rounded-full"></span>
-                  Fase de Grupos
+                  {t('profile.groupTitle')}
                 </h4>
                 <div className="grid grid-cols-2 gap-3">
                   {Object.entries(currentParticipant.prediction.group_predictions).map(([group, preds]) => {
@@ -221,7 +224,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
               <div>
                 <h4 className="text-sm font-bold text-gray-900 mb-3 px-1 flex items-center gap-2">
                   <span className="w-1.5 h-4 bg-amber-400 rounded-full"></span>
-                  Goleadores
+                  {t('profile.scorersTitle')}
                 </h4>
                 <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
                   <div className="space-y-3">
@@ -237,7 +240,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                               <CheckCircle2 className="h-3 w-3" /> {goals} goles × 2 = +{pts} pts
                             </span>
                           ) : (
-                            <span className="text-[11px] font-medium text-gray-300">Pendiente</span>
+                            <span className="text-[11px] font-medium text-gray-300">{t('profile.pending')}</span>
                           )}
                         </div>
                       );
@@ -249,7 +252,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
               <div>
                 <h4 className="text-sm font-bold text-gray-900 mb-3 px-1 flex items-center gap-2">
                   <span className="w-1.5 h-4 bg-gray-900 rounded-full"></span>
-                  Top 4 Final
+                  {t('profile.top4Title')}
                 </h4>
                 <div className="grid grid-cols-2 gap-3">
                   {Object.entries(currentParticipant.prediction.top4_predictions).map(([pos, team]) => {
@@ -269,7 +272,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                         <p className={`text-[10px] font-bold uppercase tracking-wider mb-1.5 ${
                           pos === "1" ? "text-amber-500" : pos === "2" ? "text-gray-400" : "text-orange-500"
                         }`}>
-                          {pos === "1" ? "Campeón" : pos === "2" ? "Subcampeón" : pos === "3" ? "3º Puesto" : "4º Puesto"}
+                          {pos === "1" ? t('profile.champion') : pos === "2" ? t('profile.subchampion') : pos === "3" ? t('profile.pos3') : t('profile.pos4')}
                         </p>
                         <p className="text-sm font-bold text-gray-800 mb-2">{team}</p>
                         {isExact || inRealTop4 ? (
@@ -278,7 +281,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                           </span>
                         ) : (
                           <span className="inline-block text-gray-300 text-[10px] font-medium px-2 py-0.5">
-                            Pendiente
+                            {t('profile.pending')}
                           </span>
                         )}
                       </div>
@@ -296,8 +299,8 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
           <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-4">
             <Search className="h-6 w-6 text-gray-300" />
           </div>
-          <p className="text-base font-bold text-gray-700 mb-1">Busca tu nombre</p>
-          <p className="text-sm text-gray-400 font-medium">Usa el buscador superior para ver tus pronósticos y desglose de puntos.</p>
+          <p className="text-base font-bold text-gray-700 mb-1">{t('profile.searchTitle')}</p>
+          <p className="text-sm text-gray-400 font-medium">{t('profile.searchDesc')}</p>
         </div>
       )}
     </div>
