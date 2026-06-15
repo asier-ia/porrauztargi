@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
-export default function Ranking({ onSelectParticipant, API_BASE }) {
+export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BASE }) {
   const { t } = useLanguage();
   const [ranking, setRanking] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -96,6 +96,28 @@ export default function Ranking({ onSelectParticipant, API_BASE }) {
           <div className="mt-3 flex items-center justify-center gap-1.5 text-[10px] font-bold text-emerald-200">
             <span>🎗️</span>
             <span>{t('ranking.afagiDonation', { amount: "278€" })}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* 🍺 Funny Donation Banner */}
+      <div 
+        onClick={onNavigateToInfo}
+        className="mx-4 mb-6 bg-gradient-to-br from-amber-500 to-orange-600 text-white rounded-2xl p-4 shadow-md relative overflow-hidden cursor-pointer hover:brightness-105 active:scale-[0.98] transition-all duration-200"
+      >
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 opacity-20 text-6xl select-none animate-bounce" style={{ animationDuration: '3s' }}>
+          🍺
+        </div>
+        <div className="relative z-10 pr-12 text-left">
+          <h3 className="text-xs font-black uppercase tracking-wide flex items-center gap-1.5 text-amber-100">
+            <span>🍻</span> {t('ranking.donationBannerTitle')}
+          </h3>
+          <p className="text-[11.5px] font-bold mt-1 text-white/95 leading-relaxed">
+            {t('ranking.donationBannerDesc')}
+          </p>
+          <div className="mt-2.5 inline-flex items-center gap-1 text-[9px] font-extrabold bg-white text-orange-600 px-2.5 py-1 rounded-lg uppercase tracking-wider shadow-sm">
+            <span>{t('ranking.donationBannerBtn')}</span>
+            <span>➔</span>
           </div>
         </div>
       </div>

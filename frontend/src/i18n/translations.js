@@ -27,6 +27,9 @@ export const translations = {
       loading: "Cargando clasificación...",
       connectionError: "Error de conexión",
       retry: "Reintentar",
+      donationBannerTitle: "¿Disfrutando de la porra del Uztargi?",
+      donationBannerDesc: "Mantener la web viva tiene costes de servidor. ¡Ayúdanos con el equivalente a una caña!",
+      donationBannerBtn: "¡Colaborar con una caña!",
     },
     scorers: {
       title: "Goleadores",
@@ -122,6 +125,9 @@ export const translations = {
       loading: "Sailkapena kargatzen...",
       connectionError: "Konexio-errorea",
       retry: "Saiatu berriro",
+      donationBannerTitle: "Uztargiko porraz gozatzen?",
+      donationBannerDesc: "Webgunea martxan mantentzeak zerbitzari-gastuak ditu. Lagun gaitzazu kaña baten baliokidearekin!",
+      donationBannerBtn: "Kaña batekin lagundu!",
     },
     scorers: {
       title: "Goleatzaileak",
