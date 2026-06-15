@@ -3,6 +3,58 @@ import { useState, useEffect, useRef } from 'react';
 import { Search, ChevronDown, CheckCircle2, XCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
+const normalizeString = (s) => {
+  if (!s) return "";
+  return s
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+};
+
+const normalizePlayer = (s) => {
+  let norm = normalizeString(s);
+  norm = norm.replace(/\./g, "");
+  norm = norm.replace(/\s+jr\b/g, " junior");
+  norm = norm.replace(/-/g, " ");
+  return norm.trim().replace(/\s+/g, " ");
+};
+
+const matchScorer = (predictedName, realName) => {
+  const pNorm = normalizePlayer(predictedName);
+  const rNorm = normalizePlayer(realName);
+  
+  if (!pNorm || !rNorm) return false;
+  if (pNorm === rNorm) return true;
+  
+  // Check substring match
+  if (pNorm.includes(rNorm) || rNorm.includes(pNorm)) return true;
+  
+  // Check for initials matching (e.g. "B. Díaz" with "Brahim Díaz")
+  const pWords = pNorm.split(" ");
+  const rWords = rNorm.split(" ");
+  
+  if (pWords.length >= 2 && pWords[0].length === 1) {
+    if (rWords[0].startsWith(pWords[0])) {
+      const remainingP = pWords.slice(1);
+      if (remainingP.every(word => rWords.includes(word))) {
+        return true;
+      }
+    }
+  }
+  
+  if (rWords.length >= 2 && rWords[0].length === 1) {
+    if (pWords[0].startsWith(rWords[0])) {
+      const remainingR = rWords.slice(1);
+      if (remainingR.every(word => pWords.includes(word))) {
+        return true;
+      }
+    }
+  }
+  
+  return false;
+};
+
 export default function Profile({ selectedId, setSelectedId, API_BASE }) {
   const { t } = useLanguage();
   const [participants, setParticipants] = useState([]);
@@ -229,7 +281,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                 <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
                   <div className="space-y-3">
                     {currentParticipant.prediction.scorers_predictions.map((scorer, idx) => {
-                      const scorerData = realResults?.scorers?.find(s => s.name.toLowerCase() === scorer.toLowerCase());
+                      const scorerData = realResults?.scorers?.find(s => matchScorer(scorer, s.name));
                       const goals = scorerData ? scorerData.goals : 0;
                       const pts = goals * 2;
                       return (
