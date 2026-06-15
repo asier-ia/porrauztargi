@@ -191,6 +191,7 @@ function App() {
                   setInfoGlow(false);
                 }
               }}
+              data-umami-event={`Ver Tab ${id}`}
               className={`flex flex-col items-center gap-1 flex-1 py-1 px-2 rounded-xl transition-all duration-300 cursor-pointer ${
                 activeTab === id
                   ? id === 'info'
@@ -258,6 +259,7 @@ function App() {
                 href="https://buy.stripe.com/28EfZh3G58fs3vNe5V7wA04"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-umami-event="Clic Sobornar Arbitro"
                 className="w-full py-3.5 bg-black hover:bg-neutral-900 text-[#FFCC00] font-black text-[11px] uppercase tracking-widest rounded-xl transition-all duration-200 active:scale-[0.97] text-center block cursor-pointer border-2 border-black"
               >
                 {t('popup.donateBtn')}

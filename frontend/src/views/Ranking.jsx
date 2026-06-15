@@ -103,6 +103,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
       {/* 🍺 Funny Donation Banner */}
       <div 
         onClick={onNavigateToInfo}
+        data-umami-event="Clic Banner Donacion"
         className="mx-4 mb-6 bg-gradient-to-br from-amber-500 to-orange-600 text-white rounded-2xl p-4 shadow-md relative overflow-hidden cursor-pointer hover:brightness-105 active:scale-[0.98] transition-all duration-200"
       >
         <div className="absolute right-4 top-1/2 -translate-y-1/2 opacity-20 text-6xl select-none animate-bounce" style={{ animationDuration: '3s' }}>
