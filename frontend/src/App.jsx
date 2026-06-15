@@ -5,6 +5,7 @@ import Ranking from './views/Ranking';
 import Profile from './views/Profile';
 import Scorers from './views/Scorers';
 import Info from './views/Info';
+import DailyCuriosity from './components/DailyCuriosity';
 
 const API_BASE = import.meta.env.VITE_API_BASE ||
   (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
@@ -174,6 +175,8 @@ function App() {
             </div>
           </div>
         </header>
+
+        <DailyCuriosity />
 
         {/* Scrollable Content Area */}
         <main className="flex-1 overflow-y-auto pb-[80px] md:pb-[88px] bg-white">
