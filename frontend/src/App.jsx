@@ -6,6 +6,7 @@ import Profile from './views/Profile';
 import Scorers from './views/Scorers';
 import Info from './views/Info';
 
+<<<<<<< HEAD
 const API_BASE = import.meta.env.VITE_API_BASE || (
   (import.meta.env.DEV && 
    (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && 
@@ -13,6 +14,12 @@ const API_BASE = import.meta.env.VITE_API_BASE || (
     ? "http://localhost:8000/api"
     : "/api"
 );
+=======
+const API_BASE = import.meta.env.VITE_API_BASE || 
+  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+    ? "http://localhost:8000/api" 
+    : "/api");
+>>>>>>> 9c996c0 (local fixed)
 
 function App() {
   const { language, setLanguage, t } = useLanguage();
