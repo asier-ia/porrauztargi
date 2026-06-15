@@ -29,12 +29,24 @@ export default function Info({ highlightDonations, setHighlightDonations }) {
 
   useEffect(() => {
     if (highlightDonations) {
+      // Smooth scroll to donations section with a tiny timeout to ensure rendering
+      const scrollTimer = setTimeout(() => {
+        const element = document.getElementById('donations-section');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 100);
+
       const timer = setTimeout(() => {
         if (setHighlightDonations) {
           setHighlightDonations(false);
         }
       }, 3500);
-      return () => clearTimeout(timer);
+
+      return () => {
+        clearTimeout(scrollTimer);
+        clearTimeout(timer);
+      };
     }
   }, [highlightDonations, setHighlightDonations]);
 
@@ -110,7 +122,7 @@ export default function Info({ highlightDonations, setHighlightDonations }) {
         </div>
 
         {/* Sección de Aportaciones */}
-        <div className="space-y-4">
+        <div id="donations-section" className="space-y-4">
           <div className="px-1 text-center">
             <h4 className="text-sm font-extrabold text-gray-800">{t('info.donateTitle')}</h4>
             <p className="text-xs text-gray-500 font-medium mt-0.5">{t('info.donateDesc')}</p>
