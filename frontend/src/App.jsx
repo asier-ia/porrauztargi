@@ -89,14 +89,14 @@ function App() {
     switch (activeTab) {
       case 'ranking':
         return (
-          <Ranking 
-            onSelectParticipant={handleSelectParticipant} 
+          <Ranking
+            onSelectParticipant={handleSelectParticipant}
             onNavigateToInfo={() => {
               setActiveTab('info');
               setInfoGlow(false);
               setHighlightDonations(true);
-            }} 
-            API_BASE={API_BASE} 
+            }}
+            API_BASE={API_BASE}
           />
         );
       case 'profile':
@@ -107,14 +107,14 @@ function App() {
         return <Info highlightDonations={highlightDonations} setHighlightDonations={setHighlightDonations} />;
       default:
         return (
-          <Ranking 
-            onSelectParticipant={handleSelectParticipant} 
+          <Ranking
+            onSelectParticipant={handleSelectParticipant}
             onNavigateToInfo={() => {
               setActiveTab('info');
               setInfoGlow(false);
               setHighlightDonations(true);
-            }} 
-            API_BASE={API_BASE} 
+            }}
+            API_BASE={API_BASE}
           />
         );
     }
@@ -197,36 +197,32 @@ function App() {
                 }
               }}
               data-umami-event={`Ver Tab ${id}`}
-              className={`flex flex-col items-center gap-1 flex-1 py-1 px-2 rounded-xl transition-all duration-300 cursor-pointer ${
-                activeTab === id
+              className={`flex flex-col items-center gap-1 flex-1 py-1 px-2 rounded-xl transition-all duration-300 cursor-pointer ${activeTab === id
                   ? id === 'info'
                     ? 'text-red-600'
                     : 'text-emerald-700'
                   : id === 'info'
                     ? 'text-red-500'
                     : 'text-gray-400 hover:text-gray-600'
-              }`}
+                }`}
             >
-              <div className={`p-1.5 rounded-lg transition-all duration-300 ${
-                activeTab === id
+              <div className={`p-1.5 rounded-lg transition-all duration-300 ${activeTab === id
                   ? id === 'info'
                     ? 'bg-red-50'
                     : 'bg-emerald-50'
                   : 'bg-transparent'
-              } ${id === 'info' && infoGlow ? 'animate-heart-glow' : ''}`}>
+                } ${id === 'info' && infoGlow ? 'animate-heart-glow' : ''}`}>
                 <Icon
-                  className={`h-5 w-5 transition-all duration-300 ${
-                    activeTab === id ? 'stroke-[2.5px]' : 'stroke-[1.5px]'
-                  } ${id === 'info' ? 'fill-red-500 text-red-500' : ''}`}
+                  className={`h-5 w-5 transition-all duration-300 ${activeTab === id ? 'stroke-[2.5px]' : 'stroke-[1.5px]'
+                    } ${id === 'info' ? 'fill-red-500 text-red-500' : ''}`}
                 />
               </div>
-              <span className={`text-[10px] font-medium tracking-wide transition-all duration-300 ${
-                activeTab === id
+              <span className={`text-[10px] font-medium tracking-wide transition-all duration-300 ${activeTab === id
                   ? id === 'info'
                     ? 'text-red-800 font-bold'
                     : 'text-emerald-800 font-bold'
                   : 'text-gray-500'
-              }`}>
+                }`}>
                 {label}
               </span>
             </button>
@@ -282,7 +278,6 @@ function App() {
             </div>
 
           </div>
-        </div>
       )}
 
       {showDonation && (
@@ -292,4 +287,4 @@ function App() {
   );
 }
 
-export default App;
+      export default App;

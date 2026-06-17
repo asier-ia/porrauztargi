@@ -206,6 +206,26 @@ def get_participant_detail(participant_id: int, db: Session = Depends(get_db)):
     detail_res = schemas.ParticipantDetailResponse.model_validate(participant)
     if matched_resp:
         detail_res.prize = matched_resp.prize
+    
+    # Calculate scorer matches using backend fuzzy matching
+    real_scorers_data = db.query(models.RealWorldData).filter(models.RealWorldData.key == "scorers").first()
+    real_scorers = real_scorers_data.value if real_scorers_data else []
+    
+    scorer_matches = []
+    if participant.prediction:
+        for p_scorer in participant.prediction.scorers_predictions:
+            match = None
+            for r_scorer in real_scorers:
+                if scoring.match_scorer(p_scorer, r_scorer["name"]):
+                    match = r_scorer
+                    break
+            scorer_matches.append({
+                "predicted_name": p_scorer,
+                "real_name": match["name"] if match else None,
+                "goals": match["goals"] if match else 0,
+                "points": match["goals"] * 2 if match else 0
+            })
+    detail_res.scorer_matches = scorer_matches
         
     return detail_res
 
