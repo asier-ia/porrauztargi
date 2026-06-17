@@ -239,12 +239,14 @@ def get_scorers(db: Session = Depends(get_db)):
 @app.get("/api/results")
 def get_results(db: Session = Depends(get_db)):
     """
-    Get real-world tournament results (group standings and top 4 final).
+    Get real-world tournament results (group standings, top 4 final, and scorers).
     """
     standings = db.query(models.RealWorldData).filter(models.RealWorldData.key == "standings").first()
     top4 = db.query(models.RealWorldData).filter(models.RealWorldData.key == "top4").first()
+    scorers = db.query(models.RealWorldData).filter(models.RealWorldData.key == "scorers").first()
     
     return {
         "standings": standings.value if standings else {},
-        "top4": top4.value if top4 else {}
+        "top4": top4.value if top4 else {},
+        "scorers": scorers.value if scorers else []
     }

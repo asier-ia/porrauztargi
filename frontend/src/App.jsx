@@ -5,8 +5,12 @@ import Ranking from './views/Ranking';
 import Profile from './views/Profile';
 import Scorers from './views/Scorers';
 import Info from './views/Info';
+import DailyCuriosity from './components/DailyCuriosity';
 
-const API_BASE = "http://localhost:8000/api";
+const API_BASE = import.meta.env.VITE_API_BASE ||
+  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? "http://localhost:8000/api"
+    : "/api");
 
 function App() {
   const { language, setLanguage, t } = useLanguage();
@@ -14,6 +18,8 @@ function App() {
   const [selectedId, setSelectedId] = useState(null);
   const [countdown, setCountdown] = useState(14400); // 4 hours default
   const [showPopup, setShowPopup] = useState(false);
+  const [infoGlow, setInfoGlow] = useState(true);
+  const [highlightDonations, setHighlightDonations] = useState(false);
 
   // Timer for the humorous donation pop-up (3 minutes)
   useEffect(() => {
@@ -80,15 +86,35 @@ function App() {
   const renderContent = () => {
     switch (activeTab) {
       case 'ranking':
-        return <Ranking onSelectParticipant={handleSelectParticipant} API_BASE={API_BASE} />;
+        return (
+          <Ranking
+            onSelectParticipant={handleSelectParticipant}
+            onNavigateToInfo={() => {
+              setActiveTab('info');
+              setInfoGlow(false);
+              setHighlightDonations(true);
+            }}
+            API_BASE={API_BASE}
+          />
+        );
       case 'profile':
         return <Profile selectedId={selectedId} setSelectedId={setSelectedId} API_BASE={API_BASE} />;
       case 'scorers':
         return <Scorers API_BASE={API_BASE} />;
       case 'info':
-        return <Info />;
+        return <Info highlightDonations={highlightDonations} setHighlightDonations={setHighlightDonations} />;
       default:
-        return <Ranking onSelectParticipant={handleSelectParticipant} API_BASE={API_BASE} />;
+        return (
+          <Ranking
+            onSelectParticipant={handleSelectParticipant}
+            onNavigateToInfo={() => {
+              setActiveTab('info');
+              setInfoGlow(false);
+              setHighlightDonations(true);
+            }}
+            API_BASE={API_BASE}
+          />
+        );
     }
   };
 
@@ -150,30 +176,50 @@ function App() {
           </div>
         </header>
 
+        <DailyCuriosity />
+
         {/* Scrollable Content Area */}
         <main className="flex-1 overflow-y-auto pb-[80px] md:pb-[88px] bg-white">
           {renderContent()}
         </main>
 
         {/* Bottom Navigation */}
-        <nav className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-gray-100 px-4 pb-4 md:pb-5 pt-3 flex justify-around z-20">
+        <nav className="fixed md:absolute bottom-0 left-0 right-0 max-w-lg mx-auto md:mx-0 bg-white/90 backdrop-blur-md border-t border-gray-100 px-4 pb-4 md:pb-5 pt-3 flex justify-around z-20">
           {tabs.map(({ id, label, icon: Icon }) => (
             <button
               key={id}
-              onClick={() => setActiveTab(id)}
+              onClick={() => {
+                setActiveTab(id);
+                if (id === 'info') {
+                  setInfoGlow(false);
+                }
+              }}
+              data-umami-event={`Ver Tab ${id}`}
               className={`flex flex-col items-center gap-1 flex-1 py-1 px-2 rounded-xl transition-all duration-300 cursor-pointer ${activeTab === id
-                ? 'text-emerald-700'
-                : 'text-gray-400 hover:text-gray-600'
+                  ? id === 'info'
+                    ? 'text-red-600'
+                    : 'text-emerald-700'
+                  : id === 'info'
+                    ? 'text-red-500'
+                    : 'text-gray-400 hover:text-gray-600'
                 }`}
             >
-              <div className={`p-1.5 rounded-lg transition-all duration-300 ${activeTab === id ? 'bg-emerald-50' : 'bg-transparent'
-                }`}>
+              <div className={`p-1.5 rounded-lg transition-all duration-300 ${activeTab === id
+                  ? id === 'info'
+                    ? 'bg-red-50'
+                    : 'bg-emerald-50'
+                  : 'bg-transparent'
+                } ${id === 'info' && infoGlow ? 'animate-heart-glow' : ''}`}>
                 <Icon
                   className={`h-5 w-5 transition-all duration-300 ${activeTab === id ? 'stroke-[2.5px]' : 'stroke-[1.5px]'
-                    }`}
+                    } ${id === 'info' ? 'fill-red-500 text-red-500' : ''}`}
                 />
               </div>
-              <span className={`text-[10px] font-medium tracking-wide transition-all duration-300 ${activeTab === id ? 'text-emerald-800 font-bold' : 'text-gray-500'
+              <span className={`text-[10px] font-medium tracking-wide transition-all duration-300 ${activeTab === id
+                  ? id === 'info'
+                    ? 'text-red-800 font-bold'
+                    : 'text-emerald-800 font-bold'
+                  : 'text-gray-500'
                 }`}>
                 {label}
               </span>
@@ -251,13 +297,30 @@ function App() {
                 </div>
 
               </div>
-            </div>
+              {/* Decorated Buttons */}
+              <div className="flex flex-col gap-3.5 mt-2">
+                <a
+                  href="https://buy.stripe.com/28EfZh3G58fs3vNe5V7wA04"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-umami-event="Clic Sobornar Arbitro"
+                  className="w-full py-3.5 bg-black hover:bg-neutral-900 text-[#FFCC00] font-black text-[11px] uppercase tracking-widest rounded-xl transition-all duration-200 active:scale-[0.97] text-center block cursor-pointer border-2 border-black"
+                >
+                  {t('popup.donateBtn')}
+                </a>
+                <button
+                  onClick={handleClosePopup}
+                  className="w-full py-2 text-black hover:text-neutral-900 font-extrabold text-[10px] uppercase tracking-wider underline underline-offset-4 decoration-2 decoration-black/40 hover:decoration-black transition-all duration-200 active:scale-[0.95] cursor-pointer"
+                >
+                  {t('popup.closeBtn')}
+                </button>
+              </div>
 
+            </div>
           </div>
-        </div>
       )}
-    </div>
-  );
+        </div>
+      );
 }
 
-export default App;
+      export default App;

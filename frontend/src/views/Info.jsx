@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Heart } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -23,8 +24,31 @@ function InstagramIcon({ className = "h-5 w-5" }) {
   );
 }
 
-export default function Info() {
+export default function Info({ highlightDonations, setHighlightDonations }) {
   const { t } = useLanguage();
+
+  useEffect(() => {
+    if (highlightDonations) {
+      // Smooth scroll to donations section with a tiny timeout to ensure rendering
+      const scrollTimer = setTimeout(() => {
+        const element = document.getElementById('donations-section');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 100);
+
+      const timer = setTimeout(() => {
+        if (setHighlightDonations) {
+          setHighlightDonations(false);
+        }
+      }, 3500);
+
+      return () => {
+        clearTimeout(scrollTimer);
+        clearTimeout(timer);
+      };
+    }
+  }, [highlightDonations, setHighlightDonations]);
 
   const donations = [
     {
@@ -98,7 +122,7 @@ export default function Info() {
         </div>
 
         {/* Sección de Aportaciones */}
-        <div className="space-y-4">
+        <div id="donations-section" className="space-y-4">
           <div className="px-1 text-center">
             <h4 className="text-sm font-extrabold text-gray-800">{t('info.donateTitle')}</h4>
             <p className="text-xs text-gray-500 font-medium mt-0.5">{t('info.donateDesc')}</p>
@@ -112,7 +136,12 @@ export default function Info() {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center text-center p-4 bg-white hover:bg-emerald-50/20 border border-gray-100 hover:border-emerald-200 rounded-2xl transition-all duration-200 active:scale-[0.98] shadow-sm hover:shadow-md cursor-pointer"
+                data-umami-event={`Clic Donar ${item.id}`}
+                className={`flex flex-col items-center justify-center text-center p-4 border rounded-2xl transition-all duration-1000 active:scale-[0.98] shadow-sm cursor-pointer ${
+                  highlightDonations
+                    ? 'bg-amber-50 border-amber-300 shadow-[0_0_15px_rgba(245,158,11,0.6)] scale-[1.03] animate-pulse-subtle'
+                    : 'bg-white hover:bg-emerald-50/20 border-gray-100 hover:border-emerald-200 hover:shadow-md'
+                }`}
               >
                 <img 
                   src={item.img} 

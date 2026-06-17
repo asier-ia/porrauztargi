@@ -8,15 +8,21 @@
 
 body {
   margin: 0;
-  background-color: #064e3b;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-color: #ffffff;
   color: #111827;
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-color: #064e3b;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
 }
 
 html, body {
@@ -36,4 +42,36 @@ html, body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+/* Red heart pulsing glow animation */
+@keyframes heartGlow {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.5));
+  }
+  50% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.95));
+  }
+}
+
+.animate-heart-glow {
+  animation: heartGlow 1.4s ease-in-out infinite;
+}
+
+/* Gold pulsing subtle glow for donations */
+@keyframes pulseSubtle {
+  0%, 100% {
+    transform: scale(1.03);
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 22px rgba(245, 158, 11, 0.75);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 1.2s ease-in-out infinite;
 }

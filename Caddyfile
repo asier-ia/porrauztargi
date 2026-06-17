@@ -1,0 +1,31 @@
+porrauztargi.korpoweb.com {
+    # Bloqueo de todos los rastreadores y bots
+    handle /robots.txt {
+        header Content-Type "text/plain; charset=utf-8"
+        respond "User-agent: *
+Disallow: /" 200
+    }
+
+    # 1. Enrutar peticiones de la API (Conserva el prefijo /api)
+    handle /api/* {
+        reverse_proxy backend:8000
+    }
+
+    # 2. Todo lo demás se lo manda al frontend (React/Vite)
+    handle {
+        reverse_proxy frontend:5173
+    }
+
+    # 3. Configuración de logs con rotación
+    log {
+        output file /config/access.log {
+            roll_size 100mb
+            roll_keep 5
+            roll_keep_for 720h
+        }
+        format json
+        level INFO
+    }
+
+    tls certs@codesyntax.com
+}

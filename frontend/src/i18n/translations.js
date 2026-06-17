@@ -27,6 +27,9 @@ export const translations = {
       loading: "Cargando clasificación...",
       connectionError: "Error de conexión",
       retry: "Reintentar",
+      donationBannerTitle: "¿Disfrutando de la web de la porra?",
+      donationBannerDesc: "He desarrollado esta web gratis en mi tiempo libre. ¡Ayúdame con los costes del servidor invitándome a una caña!",
+      donationBannerBtn: "¡Invitar al creador a una caña!",
     },
     scorers: {
       title: "Goleadores",
@@ -122,6 +125,9 @@ export const translations = {
       loading: "Sailkapena kargatzen...",
       connectionError: "Konexio-errorea",
       retry: "Saiatu berriro",
+      donationBannerTitle: "Porraren webguneaz gozatzen?",
+      donationBannerDesc: "Nire denbora librean doan garatu dut webgune hau. Lagundu nazazu zerbitzari-gastuekin kaña batera gonbidatuz!",
+      donationBannerBtn: "Gonbidatu sortzailea kaña batera!",
     },
     scorers: {
       title: "Goleatzaileak",

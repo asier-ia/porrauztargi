@@ -64,7 +64,7 @@ async def fetch_scorers_from_api() -> list:
     if not headers:
         return []
         
-    url = f"{API_BASE_URL}/competitions/{COMPETITION_CODE}/scorers?limit=200"
+    url = f"{API_BASE_URL}/competitions/{COMPETITION_CODE}/scorers?limit=500"
     logger.info(f"Sincronización API: Consultando goleadores en {url}...")
     
     async with httpx.AsyncClient() as client:

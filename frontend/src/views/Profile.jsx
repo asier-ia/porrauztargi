@@ -3,6 +3,58 @@ import { useState, useEffect, useRef } from 'react';
 import { Search, ChevronDown, CheckCircle2, XCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
+const normalizeString = (s) => {
+  if (!s) return "";
+  return s
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+};
+
+const normalizePlayer = (s) => {
+  let norm = normalizeString(s);
+  norm = norm.replace(/\./g, "");
+  norm = norm.replace(/\s+jr\b/g, " junior");
+  norm = norm.replace(/-/g, " ");
+  return norm.trim().replace(/\s+/g, " ");
+};
+
+const matchScorer = (predictedName, realName) => {
+  const pNorm = normalizePlayer(predictedName);
+  const rNorm = normalizePlayer(realName);
+
+  if (!pNorm || !rNorm) return false;
+  if (pNorm === rNorm) return true;
+
+  // Check substring match
+  if (pNorm.includes(rNorm) || rNorm.includes(pNorm)) return true;
+
+  // Check for initials matching (e.g. "B. Díaz" with "Brahim Díaz")
+  const pWords = pNorm.split(" ");
+  const rWords = rNorm.split(" ");
+
+  if (pWords.length >= 2 && pWords[0].length === 1) {
+    if (rWords[0].startsWith(pWords[0])) {
+      const remainingP = pWords.slice(1);
+      if (remainingP.every(word => rWords.includes(word))) {
+        return true;
+      }
+    }
+  }
+
+  if (rWords.length >= 2 && rWords[0].length === 1) {
+    if (pWords[0].startsWith(rWords[0])) {
+      const remainingR = rWords.slice(1);
+      if (remainingR.every(word => pWords.includes(word))) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+};
+
 export default function Profile({ selectedId, setSelectedId, API_BASE }) {
   const { t } = useLanguage();
   const [participants, setParticipants] = useState([]);
@@ -12,7 +64,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
   const [loadingList, setLoadingList] = useState(true);
   const [loadingDetail, setLoadingDetail] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-  
+
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -38,7 +90,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
         setLoadingList(false);
       }
     };
-    
+
     const fetchRealData = async () => {
       try {
         const response = await fetch(`${API_BASE}/results`);
@@ -80,7 +132,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
     fetchDetail();
   }, [selectedId, API_BASE]);
 
-  const filteredParticipants = participants.filter(p => 
+  const filteredParticipants = participants.filter(p =>
     p.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -143,7 +195,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
         </div>
       ) : currentParticipant ? (
         <div className="animate-slideUp pb-6">
-          
+
           <div className="bg-gradient-to-b from-emerald-50/30 to-white pt-6 pb-4 px-4 border-y border-gray-100 mb-6">
             <div className="text-center mb-6">
               <h3 className="text-2xl font-black text-gray-900 mb-1">
@@ -154,7 +206,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                 <span className="text-sm font-bold text-emerald-700">#{currentParticipant.rank || "-"}</span>
               </div>
             </div>
-            
+
             <div className="mt-4 mb-6 text-center">
               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">{t('profile.pointsTotal')}</p>
               <p className="text-4xl font-black text-emerald-700">{currentParticipant.points_total}</p>
@@ -162,17 +214,17 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
 
             <div className="space-y-2.5">
               <h4 className="text-[11px] font-bold text-gray-400 uppercase tracking-wider px-1 mb-1 text-center">{t('profile.pointsSummary')}</h4>
-              
+
               <div className="flex items-center justify-between bg-emerald-50/80 p-3.5 rounded-xl border border-emerald-100 shadow-sm">
                 <span className="text-sm font-bold text-emerald-900">{t('profile.groupPhase')}</span>
                 <span className="text-lg font-black text-emerald-700">{currentParticipant.points_groups} <span className="text-[10px] font-bold text-emerald-600/70">pts</span></span>
               </div>
-              
+
               <div className="flex items-center justify-between bg-amber-50/80 p-3.5 rounded-xl border border-amber-100 shadow-sm">
                 <span className="text-sm font-bold text-amber-900">{t('profile.pointsScorers')}</span>
                 <span className="text-lg font-black text-amber-700">{currentParticipant.points_scorers} <span className="text-[10px] font-bold text-emerald-600/70">pts</span></span>
               </div>
-              
+
               <div className="flex items-center justify-between bg-sky-50/80 p-3.5 rounded-xl border border-sky-100 shadow-sm">
                 <span className="text-sm font-bold text-sky-900">{t('profile.pointsTop4')}</span>
                 <span className="text-lg font-black text-sky-700">{currentParticipant.points_top4} <span className="text-[10px] font-bold text-emerald-600/70">pts</span></span>
@@ -182,7 +234,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
 
           {currentParticipant.prediction && (
             <div className="px-4 space-y-6">
-              
+
               <div>
                 <h4 className="text-sm font-bold text-gray-900 mb-3 px-1 flex items-center gap-2">
                   <span className="w-1.5 h-4 bg-emerald-500 rounded-full"></span>
@@ -198,7 +250,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                           {preds.map((team, idx) => {
                             const isCorrect = realTeams[idx] === team;
                             const hasQualified = realTeams.includes(team);
-                            
+
                             return (
                               <div key={idx} className="flex items-center justify-between">
                                 <span className="text-xs font-semibold text-gray-700 truncate mr-2">
@@ -254,7 +306,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                     const realTeamAtPos = realResults?.top4?.[pos];
                     const inRealTop4 = Object.values(realResults?.top4 || {}).includes(team);
                     const isExact = realTeamAtPos === team;
-                    
+
                     let points = 0;
                     if (isExact) {
                       points = pos === "1" ? 14 : pos === "2" ? 8 : pos === "3" ? 6 : 4;
@@ -264,9 +316,8 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
 
                     return (
                       <div key={pos} className="bg-white rounded-2xl p-3 border border-gray-100 shadow-sm text-center">
-                        <p className={`text-[10px] font-bold uppercase tracking-wider mb-1.5 ${
-                          pos === "1" ? "text-amber-500" : pos === "2" ? "text-gray-400" : "text-orange-500"
-                        }`}>
+                        <p className={`text-[10px] font-bold uppercase tracking-wider mb-1.5 ${pos === "1" ? "text-amber-500" : pos === "2" ? "text-gray-400" : "text-orange-500"
+                          }`}>
                           {pos === "1" ? t('profile.champion') : pos === "2" ? t('profile.subchampion') : pos === "3" ? t('profile.pos3') : t('profile.pos4')}
                         </p>
                         <p className="text-sm font-bold text-gray-800 mb-2">{team}</p>

@@ -26,3 +26,26 @@ services:
       - /app/node_modules
     depends_on:
       - backend
+
+  # Caddy solo necesario en producción con dominio real.
+  # En local usa los puertos directos:
+  #   Frontend → http://localhost:5173
+  #   Backend  → http://localhost:8000/api/...
+  # caddy:
+  #   image: caddy:2-alpine
+  #   container_name: uztargi_caddy
+  #   restart: always
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - ./Caddyfile:/etc/caddy/Caddyfile
+  #     - caddy_data:/data
+  #     - caddy_config:/config
+  #   depends_on:
+  #     - frontend
+  #     - backend
+
+volumes:
+  caddy_data:
+  caddy_config:
