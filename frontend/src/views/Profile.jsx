@@ -228,23 +228,18 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                 </h4>
                 <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
                   <div className="space-y-3">
-                    {currentParticipant.prediction.scorers_predictions.map((scorer, idx) => {
-                      const scorerData = realResults?.scorers?.find(s => s.name.toLowerCase() === scorer.toLowerCase());
-                      const goals = scorerData ? scorerData.goals : 0;
-                      const pts = goals * 2;
-                      return (
-                        <div key={idx} className="flex items-center justify-between pb-3 border-b border-gray-50 last:border-0 last:pb-0">
-                          <span className="text-sm font-semibold text-gray-800">{scorer}</span>
-                          {scorerData ? (
-                            <span className="bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-1 rounded-md flex items-center gap-1">
-                              <CheckCircle2 className="h-3 w-3" /> {goals} goles × 2 = +{pts} pts
-                            </span>
-                          ) : (
-                            <span className="text-[11px] font-medium text-gray-300">{t('profile.pending')}</span>
-                          )}
-                        </div>
-                      );
-                    })}
+                    {currentParticipant.scorer_matches?.map((match, idx) => (
+                      <div key={idx} className="flex items-center justify-between pb-3 border-b border-gray-50 last:border-0 last:pb-0">
+                        <span className="text-sm font-semibold text-gray-800">{match.predicted_name}</span>
+                        {match.real_name ? (
+                          <span className="bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-1 rounded-md flex items-center gap-1">
+                            <CheckCircle2 className="h-3 w-3" /> {match.goals} goles × 2 = +{match.points} pts
+                          </span>
+                        ) : (
+                          <span className="text-[11px] font-medium text-gray-300">{t('profile.pending')}</span>
+                        )}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

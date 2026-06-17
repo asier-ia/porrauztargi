@@ -183,45 +183,74 @@ function App() {
 
       </div>
 
-      {/* 🟨 ARBITRO REAL YELLOW CARD POP-UP */}
+      {/* ÁRBITRO SACANDO AMARILLA - POP-UP */}
       {showPopup && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fadeIn">
-          {/* Card simulating referee's yellow card: vertical rectangle in mobile & desktop with solid black borders and brutalist shadow */}
-          <div className="bg-[#FFCC00] text-black rounded-[20px] p-6 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] border-4 border-black max-w-[280px] w-full min-h-[420px] flex flex-col justify-between text-center animate-slideUp select-none">
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
 
-            {/* Title - Stamped effect */}
-            <div className="border-b-2 border-black/15 pb-3">
-              <h3 className="text-lg font-black tracking-wider text-black leading-none uppercase">
-                🟨 {t('popup.title')} 🟨
-              </h3>
+          {/* CONTENEDOR PRINCIPAL (Flex para alinear el árbitro y la tarjeta) */}
+          <div className="relative flex items-center w-full max-w-[520px]">
+
+            {/* EL ÁRBITRO (Lateral izquierdo, centrado verticalmente, tamaño grande) */}
+            <div className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-20 w-48 md:w-64 pointer-events-none drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)]">
+              <img
+                src="/arbi.png"
+                alt="Árbitro"
+                className="w-full h-auto object-contain scale-110 md:scale-125"
+              />
             </div>
 
-            {/* Motivo & Action */}
-            <div className="flex-1 flex flex-col justify-center my-4 space-y-3.5">
-              <p className="text-xs font-bold leading-relaxed text-black">
-                {t('popup.message')}
-              </p>
-              <p className="text-[11px] font-black leading-relaxed text-black/80">
-                {t('popup.action')}
-              </p>
-            </div>
+            {/* EL CAMPO (Tarjeta verde desplazada a la derecha para hacer hueco) */}
+            <div className="relative w-full ml-24 md:ml-36 bg-gradient-to-b from-[#118B50] to-[#0A6237] text-white rounded-[24px] p-6 md:p-8 shadow-2xl border border-white/20 overflow-hidden animate-slideUp">
 
-            {/* Decorated Buttons */}
-            <div className="flex flex-col gap-3.5 mt-2">
-              <a
-                href="https://buy.stripe.com/28EfZh3G58fs3vNe5V7wA04"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-3.5 bg-black hover:bg-neutral-900 text-[#FFCC00] font-black text-[11px] uppercase tracking-widest rounded-xl transition-all duration-200 active:scale-[0.97] text-center block cursor-pointer border-2 border-black"
-              >
-                {t('popup.donateBtn')}
-              </a>
-              <button
-                onClick={handleClosePopup}
-                className="w-full py-2 text-black hover:text-neutral-900 font-extrabold text-[10px] uppercase tracking-wider underline underline-offset-4 decoration-2 decoration-black/40 hover:decoration-black transition-all duration-200 active:scale-[0.95] cursor-pointer"
-              >
-                {t('popup.closeBtn')}
-              </button>
+              {/* MARCAS DEL CAMPO (Fondo sutil) */}
+              <div className="absolute inset-0 pointer-events-none opacity-10">
+                <div className="absolute left-1/2 top-0 w-[2px] h-full bg-white" />
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border-2 border-white rounded-full" />
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full" />
+                <div className="absolute top-0 left-0 w-8 h-8 border-r-2 border-b-2 border-white rounded-br-full" />
+                <div className="absolute top-0 right-0 w-8 h-8 border-l-2 border-b-2 border-white rounded-bl-full" />
+                <div className="absolute bottom-0 left-0 w-8 h-8 border-r-2 border-t-2 border-white rounded-tr-full" />
+                <div className="absolute bottom-0 right-0 w-8 h-8 border-l-2 border-t-2 border-white rounded-tl-full" />
+              </div>
+
+              {/* CONTENIDO (Textos limpios y Botones profesionales) */}
+              <div className="relative z-10 flex flex-col gap-5 text-left">
+
+                {/* TÍTULO */}
+                <h3 className="text-xl md:text-2xl font-black text-[#FFD700] uppercase tracking-wide">
+                  {typeof t('popup.title') === 'string' ? t('popup.title').replace(/\[|\]/g, '') : t('popup.title')}
+                </h3>
+
+                {/* CAJA DE TEXTO (Sin sombras raras, fondo semitransparente limpio) */}
+                <div className="bg-black/15 rounded-xl p-4 border border-white/10 backdrop-blur-sm">
+                  <p className="text-sm md:text-base font-medium leading-relaxed text-emerald-50">
+                    {typeof t('popup.message') === 'string' ? t('popup.message').replace(/\[|\]/g, '') : t('popup.message')}
+                  </p>
+                  <p className="text-xs md:text-sm font-bold mt-4 text-[#FFD700] uppercase tracking-wider">
+                    {typeof t('popup.action') === 'string' ? t('popup.action').replace(/\[|\]/g, '') : t('popup.action')}
+                  </p>
+                </div>
+
+                {/* BOTONES (Estilo moderno, sin corchetes) */}
+                <div className="flex flex-col gap-3 mt-2">
+                  <a
+                    href="https://buy.stripe.com/28EfZh3G58fs3vNe5V7wA04"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 bg-[#FFCC00] hover:bg-[#FFD633] text-black font-extrabold text-sm uppercase tracking-wider rounded-xl transition-all shadow-md hover:shadow-lg active:scale-[0.98] text-center cursor-pointer"
+                  >
+                    {typeof t('popup.donateBtn') === 'string' ? t('popup.donateBtn').replace(/\[|\]/g, '').trim() : t('popup.donateBtn')}
+                  </a>
+
+                  <button
+                    onClick={handleClosePopup}
+                    className="w-full py-2.5 bg-transparent hover:bg-white/10 text-white font-bold text-xs uppercase tracking-wider rounded-xl border border-white/20 transition-all active:scale-[0.98] cursor-pointer"
+                  >
+                    {typeof t('popup.closeBtn') === 'string' ? t('popup.closeBtn').replace(/\[|\]/g, '').trim() : t('popup.closeBtn')}
+                  </button>
+                </div>
+
+              </div>
             </div>
 
           </div>
