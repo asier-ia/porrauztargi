@@ -34,8 +34,15 @@ class ParticipantResponse(ParticipantBase):
 
     model_config = ConfigDict(from_attributes=True)
 
+class ScorerMatch(BaseModel):
+    predicted_name: str
+    real_name: Optional[str] = None
+    goals: int = 0
+    points: int = 0
+
 class ParticipantDetailResponse(ParticipantResponse):
     prediction: Optional[PredictionResponse] = None
+    scorer_matches: List[ScorerMatch] = []
 
     model_config = ConfigDict(from_attributes=True)
 

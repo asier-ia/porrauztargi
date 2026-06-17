@@ -5,13 +5,12 @@ services:
     build: ./backend
     container_name: uztargi_backend
     restart: always
-    # Puertos comentados por seguridad en producción para obligar el paso por Caddy.
-    # Descomenta si necesitas depuración local directa al backend.
-    # ports:
-    #   - "8000:8000"
+    ports:
+      - "8000:8000"
     environment:
       - DATABASE_URL=sqlite:///./uztargi_porra.db
       - FOOTBALL_DATA_API_KEY=${FOOTBALL_DATA_API_KEY}
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
     volumes:
       - ./backend:/app
 
@@ -19,32 +18,35 @@ services:
     build: ./frontend
     container_name: uztargi_frontend
     restart: always
-    # Puertos comentados por seguridad en producción para obligar el paso por Caddy.
-    # Descomenta si necesitas depuración local directa al frontend.
-    # ports:
-    #   - "5173:5173"
+    ports:
+      - "5173:5173"
     environment:
       - CHOKIDAR_USEPOLLING=true
+      - VITE_STRIPE_PUBLISHABLE_KEY=${STRIPE_PUBLISHABLE_KEY}
     volumes:
       - ./frontend:/app
       - /app/node_modules
     depends_on:
       - backend
 
-  caddy:
-    image: caddy:2-alpine
-    container_name: uztargi_caddy
-    restart: always
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
-      - caddy_data:/data
-      - caddy_config:/config
-    depends_on:
-      - frontend
-      - backend
+  # Caddy solo necesario en producción con dominio real.
+  # En local usa los puertos directos:
+  #   Frontend → http://localhost:5173
+  #   Backend  → http://localhost:8000/api/...
+  # caddy:
+  #   image: caddy:2-alpine
+  #   container_name: uztargi_caddy
+  #   restart: always
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - ./Caddyfile:/etc/caddy/Caddyfile
+  #     - caddy_data:/data
+  #     - caddy_config:/config
+  #   depends_on:
+  #     - frontend
+  #     - backend
 
 volumes:
   caddy_data:

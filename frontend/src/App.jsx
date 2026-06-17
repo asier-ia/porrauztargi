@@ -5,6 +5,8 @@ import Ranking from './views/Ranking';
 import Profile from './views/Profile';
 import Scorers from './views/Scorers';
 import Info from './views/Info';
+import DailyCuriosity from './components/DailyCuriosity';
+import DonationFlow from './components/DonationFlow';
 
 const API_BASE = import.meta.env.VITE_API_BASE ||
   (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
@@ -17,7 +19,8 @@ function App() {
   const [selectedId, setSelectedId] = useState(null);
   const [countdown, setCountdown] = useState(14400); // 4 hours default
   const [showPopup, setShowPopup] = useState(false);
-  const [infoGlow, setInfoGlow] = useState(true);
+  const [showDonation, setShowDonation] = useState(false);
+  const [infoGlow, setInfoGlow] = useState(false);
   const [highlightDonations, setHighlightDonations] = useState(false);
 
   // Timer for the humorous donation pop-up (3 minutes)
@@ -86,14 +89,14 @@ function App() {
     switch (activeTab) {
       case 'ranking':
         return (
-          <Ranking 
-            onSelectParticipant={handleSelectParticipant} 
+          <Ranking
+            onSelectParticipant={handleSelectParticipant}
             onNavigateToInfo={() => {
               setActiveTab('info');
               setInfoGlow(false);
               setHighlightDonations(true);
-            }} 
-            API_BASE={API_BASE} 
+            }}
+            API_BASE={API_BASE}
           />
         );
       case 'profile':
@@ -104,14 +107,14 @@ function App() {
         return <Info highlightDonations={highlightDonations} setHighlightDonations={setHighlightDonations} />;
       default:
         return (
-          <Ranking 
-            onSelectParticipant={handleSelectParticipant} 
+          <Ranking
+            onSelectParticipant={handleSelectParticipant}
             onNavigateToInfo={() => {
               setActiveTab('info');
               setInfoGlow(false);
               setHighlightDonations(true);
-            }} 
-            API_BASE={API_BASE} 
+            }}
+            API_BASE={API_BASE}
           />
         );
     }
@@ -175,6 +178,8 @@ function App() {
           </div>
         </header>
 
+        <DailyCuriosity />
+
         {/* Scrollable Content Area */}
         <main className="flex-1 overflow-y-auto pb-[80px] md:pb-[88px] bg-white">
           {renderContent()}
@@ -192,36 +197,32 @@ function App() {
                 }
               }}
               data-umami-event={`Ver Tab ${id}`}
-              className={`flex flex-col items-center gap-1 flex-1 py-1 px-2 rounded-xl transition-all duration-300 cursor-pointer ${
-                activeTab === id
+              className={`flex flex-col items-center gap-1 flex-1 py-1 px-2 rounded-xl transition-all duration-300 cursor-pointer ${activeTab === id
                   ? id === 'info'
                     ? 'text-red-600'
                     : 'text-emerald-700'
                   : id === 'info'
                     ? 'text-red-500'
                     : 'text-gray-400 hover:text-gray-600'
-              }`}
+                }`}
             >
-              <div className={`p-1.5 rounded-lg transition-all duration-300 ${
-                activeTab === id
+              <div className={`p-1.5 rounded-lg transition-all duration-300 ${activeTab === id
                   ? id === 'info'
                     ? 'bg-red-50'
                     : 'bg-emerald-50'
                   : 'bg-transparent'
-              } ${id === 'info' && infoGlow ? 'animate-heart-glow' : ''}`}>
+                } ${id === 'info' && infoGlow ? 'animate-heart-glow' : ''}`}>
                 <Icon
-                  className={`h-5 w-5 transition-all duration-300 ${
-                    activeTab === id ? 'stroke-[2.5px]' : 'stroke-[1.5px]'
-                  } ${id === 'info' ? 'fill-red-500 text-red-500' : ''}`}
+                  className={`h-5 w-5 transition-all duration-300 ${activeTab === id ? 'stroke-[2.5px]' : 'stroke-[1.5px]'
+                    } ${id === 'info' ? 'fill-red-500 text-red-500' : ''}`}
                 />
               </div>
-              <span className={`text-[10px] font-medium tracking-wide transition-all duration-300 ${
-                activeTab === id
+              <span className={`text-[10px] font-medium tracking-wide transition-all duration-300 ${activeTab === id
                   ? id === 'info'
                     ? 'text-red-800 font-bold'
                     : 'text-emerald-800 font-bold'
                   : 'text-gray-500'
-              }`}>
+                }`}>
                 {label}
               </span>
             </button>
@@ -230,53 +231,61 @@ function App() {
 
       </div>
 
-      {/* 🟨 ARBITRO REAL YELLOW CARD POP-UP */}
+      {/* ARBITRO YELLOW CARD POPUP */}
       {showPopup && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fadeIn">
-          {/* Card simulating referee's yellow card: vertical rectangle in mobile & desktop with solid black borders and brutalist shadow */}
-          <div className="bg-[#FFCC00] text-black rounded-[20px] p-6 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] border-4 border-black max-w-[280px] w-full min-h-[420px] flex flex-col justify-between text-center animate-slideUp select-none">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fadeIn">
+          <div className="w-[90vw] max-w-sm md:max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden animate-slideUp select-none">
 
-            {/* Title - Stamped effect */}
-            <div className="border-b-2 border-black/15 pb-3">
-              <h3 className="text-lg font-black tracking-wider text-black leading-none uppercase">
-                🟨 {t('popup.title')} 🟨
-              </h3>
-            </div>
-
-            {/* Motivo & Action */}
-            <div className="flex-1 flex flex-col justify-center my-4 space-y-3.5">
-              <p className="text-xs font-bold leading-relaxed text-black">
-                {t('popup.message')}
-              </p>
-              <p className="text-[11px] font-black leading-relaxed text-black/80">
-                {t('popup.action')}
-              </p>
-            </div>
-
-            {/* Decorated Buttons */}
-            <div className="flex flex-col gap-3.5 mt-2">
-              <a
-                href="https://buy.stripe.com/28EfZh3G58fs3vNe5V7wA04"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-umami-event="Clic Sobornar Arbitro"
-                className="w-full py-3.5 bg-black hover:bg-neutral-900 text-[#FFCC00] font-black text-[11px] uppercase tracking-widest rounded-xl transition-all duration-200 active:scale-[0.97] text-center block cursor-pointer border-2 border-black"
-              >
-                {t('popup.donateBtn')}
-              </a>
+            {/* Image */}
+            <div className="relative">
+              <img
+                src="/arbi.png"
+                alt="Arbitro"
+                className="w-full aspect-video object-cover object-[center_15%]"
+              />
               <button
                 onClick={handleClosePopup}
-                className="w-full py-2 text-black hover:text-neutral-900 font-extrabold text-[10px] uppercase tracking-wider underline underline-offset-4 decoration-2 decoration-black/40 hover:decoration-black transition-all duration-200 active:scale-[0.95] cursor-pointer"
+                className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full bg-white/90 shadow-sm hover:bg-white text-gray-500 hover:text-gray-800 text-lg font-bold transition-all cursor-pointer"
               >
-                {t('popup.closeBtn')}
+                ✕
               </button>
+            </div>
+
+            {/* Content */}
+            <div className="p-5 md:p-6 space-y-3 md:space-y-4">
+              <h3 className="text-lg md:text-xl font-black text-gray-900 uppercase tracking-tight leading-tight">
+                {t('popup.title')}
+              </h3>
+
+              <p className="text-sm md:text-[15px] text-gray-700 leading-relaxed font-medium">
+                {t('popup.message')}
+              </p>
+
+              <div className="pt-1 space-y-2.5">
+                <button
+                  onClick={() => setShowDonation(true)}
+                  className="w-full py-3 bg-gray-900 hover:bg-black text-white font-black text-sm md:text-base uppercase tracking-widest rounded-xl transition-all duration-200 active:scale-[0.97] cursor-pointer"
+                >
+                  {t('popup.donateBtn')}
+                </button>
+                <button
+                  onClick={handleClosePopup}
+                  className="w-full py-2 text-gray-500 hover:text-gray-700 font-bold text-xs md:text-sm uppercase tracking-wider transition-all duration-200 active:scale-[0.97] cursor-pointer"
+                >
+                  {t('popup.closeBtn')}
+                </button>
+              </div>
             </div>
 
           </div>
         </div>
       )}
+
+      {showDonation && (
+        <DonationFlow productId="popup" onClose={() => setShowDonation(false)} />
+      )}
     </div>
   );
 }
 
-export default App;
+      export default App;

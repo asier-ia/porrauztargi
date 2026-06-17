@@ -1,0 +1,10351 @@
+{
+  "participantes": [
+    {
+      "id": 1,
+      "name": "Juanan",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 2,
+      "name": "Zigor",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 3,
+      "name": "Adelino",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 4,
+      "name": "David Garcia Fernandez",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 5,
+      "name": "Jabi Muñoz",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 6,
+      "name": "Ruben",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 7,
+      "name": "Elliot Ganchegui",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 8,
+      "name": "Julia Cabaña",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 9,
+      "name": "Francisco Barona",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 10,
+      "name": "Marcus",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 11,
+      "name": "Ainara Epelde",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 12,
+      "name": "Olatz Urbieta",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 13,
+      "name": "Hodei Gallastegi",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 14,
+      "name": "Oskar Maza",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 15,
+      "name": "Mikel Rua",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 16,
+      "name": "Eduardo Aguirre",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 17,
+      "name": "Jerry",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 18,
+      "name": "Israel",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 19,
+      "name": "Naiara Eizagirre",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 20,
+      "name": "Asier Olabe",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 21,
+      "name": "Igor Galarraga",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 22,
+      "name": "Arantxa",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 23,
+      "name": "Andoni Hidalgo",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 24,
+      "name": "Hugo Nogales",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 25,
+      "name": "Sergio Nogales",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 26,
+      "name": "Isaac Mancebo",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 27,
+      "name": "Igor Ramos",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 28,
+      "name": "Florentino Gonzalez",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 29,
+      "name": "Goihuri Lazkano",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 30,
+      "name": "Willy",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 31,
+      "name": "Iraitz Ferreira",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 32,
+      "name": "Iskander",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 33,
+      "name": "Izaro",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 34,
+      "name": "Alonso Gomez",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 35,
+      "name": "Egoitz Mendikute",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 36,
+      "name": "Leire Gorrotxategi (Nago",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 37,
+      "name": "Nagore Badiola",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 38,
+      "name": "Joseba Saizar (Nagore)",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 39,
+      "name": "Alber",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 40,
+      "name": "Javier Ferreiro",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 41,
+      "name": "Asier",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 42,
+      "name": "Marta",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 43,
+      "name": "Paco Gª",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 44,
+      "name": "Roberto Leonardo",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 45,
+      "name": "Floren Ortega",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 46,
+      "name": "Paulo Larreategui",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 47,
+      "name": "Pedro Larreategui",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 48,
+      "name": "Ales Larreategui",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 49,
+      "name": "Amaia Uriarte (Oberena)",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 50,
+      "name": "Mikel Leon",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 51,
+      "name": "Zigor (2)",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 52,
+      "name": "Roke",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 53,
+      "name": "Ladis Sesma",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 54,
+      "name": "Jokin Zabala",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 55,
+      "name": "Sonia eta Aitor",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 56,
+      "name": "Mikel Mil",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 57,
+      "name": "Ladis 2",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 58,
+      "name": "Jokin Plaza",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 59,
+      "name": "Beñat Zubia",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 60,
+      "name": "Jose Luis Condal",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 61,
+      "name": "Iñaki Bastida",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 62,
+      "name": "Alex",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 63,
+      "name": "Ander Arregi Lete",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 64,
+      "name": "Iker Alzola",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 65,
+      "name": "Loteria Hido",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 66,
+      "name": "Mañas",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 67,
+      "name": "Cesar Aldea",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 68,
+      "name": "Izan Suarez",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 69,
+      "name": "Aiert Gurrutxaga",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 70,
+      "name": "Ivan Suarez",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 71,
+      "name": "Nicolas",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 72,
+      "name": "Lierni",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 73,
+      "name": "Ibai Portu Zuloaga",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 74,
+      "name": "Asier Vitoola",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 75,
+      "name": "Jose Javier Urruzola",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 76,
+      "name": "Juan Mari Landa",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 77,
+      "name": "Idoia Zulaika",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 78,
+      "name": "Oskar Rts",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 79,
+      "name": "Jimmy",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 80,
+      "name": "Aitor Larrañaga",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 81,
+      "name": "Julen Magro",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 82,
+      "name": "Carlos",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 83,
+      "name": "Patxi",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 84,
+      "name": "Ane Landa",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 85,
+      "name": "Asier Landa",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 86,
+      "name": "Edin Terzic",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 87,
+      "name": "Carmen Flores (Carmen t",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 88,
+      "name": "Maider Salegui",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 89,
+      "name": "Ion Ruiz",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 90,
+      "name": "Aritz Ruiz",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 91,
+      "name": "Iñigo Arriola",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 92,
+      "name": "Argi",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 93,
+      "name": "Ruben Gonzalez",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 94,
+      "name": "Ekain",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 95,
+      "name": "Juantxo",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 96,
+      "name": "Iñigo Zubiaurre",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 97,
+      "name": "Juanmi",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 98,
+      "name": "Imanol",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 99,
+      "name": "Domingo",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 100,
+      "name": "Oscar Andres",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 101,
+      "name": "Ruben Geraldo",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 102,
+      "name": "Kepa",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 103,
+      "name": "Alex/Oskar Ortega RTS",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 104,
+      "name": "Juan/Oskar Ortega RTS",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 105,
+      "name": "Katy Martin",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 106,
+      "name": "Alberto Zodiac",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 107,
+      "name": "Xabi Arrizabalaga",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 108,
+      "name": "Ion Lago",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 109,
+      "name": "Ibon Mazariegos",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 110,
+      "name": "Joseline Suarez",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 111,
+      "name": "Nuria Ansuategi",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 112,
+      "name": "Imanol Salegi",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 113,
+      "name": "Joseba Arrillaga",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 114,
+      "name": "Imanol Etxeberria",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 115,
+      "name": "Luis",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 116,
+      "name": "Julen Arregui",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 117,
+      "name": "Manu Ibarlucea",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 118,
+      "name": "Mikel Hidalgo",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 119,
+      "name": "Jogo ta Jogo",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 120,
+      "name": "Xepe",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 121,
+      "name": "Jon Aranbarri",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 122,
+      "name": "Marek Brindza",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 123,
+      "name": "Aida Gonzalez",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 124,
+      "name": "Asier Iglesias",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 125,
+      "name": "Xepe (2)",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 126,
+      "name": "Gusa",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 127,
+      "name": "Uztargi",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 128,
+      "name": "Lorea",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 129,
+      "name": "Xabier Egurbide",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 130,
+      "name": "Axular Mendikute",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 131,
+      "name": "Unai Ayala Cornejo",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 132,
+      "name": "Illart",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 133,
+      "name": "Iñaki Olaizola",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 134,
+      "name": "Carlos Vega",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 135,
+      "name": "Amaia Ansola",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 136,
+      "name": "Cinto",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 137,
+      "name": "Mikel Tarra",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 138,
+      "name": "Julen Bi",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    },
+    {
+      "id": 139,
+      "name": "Julen Bolumburu Balles",
+      "points_total": 0,
+      "points_groups": 0,
+      "points_scorers": 0,
+      "points_top4": 0,
+      "rank": 1
+    }
+  ],
+  "predicciones": [
+    {
+      "participant_id": 1,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Haaland",
+        "Messi"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Inglaterra",
+        "3": "España",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 2,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Suecia",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Colombia",
+          "Portugal"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Oyarzabal",
+        "Havertz",
+        "Kane"
+      ],
+      "top4_predictions": {
+        "1": "Argentina",
+        "2": "España",
+        "3": "Francia",
+        "4": "Colombia"
+      }
+    },
+    {
+      "participant_id": 3,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Bosnia y Herzegovina",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Escocia"
+        ],
+        "D": [
+          "Paraguay",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Nueva Zelanda",
+          "Belgica"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Lamine Yamal",
+        "Raphinha",
+        "Wirtz",
+        "Messi"
+      ],
+      "top4_predictions": {
+        "1": "Argentina",
+        "2": "Francia",
+        "3": "España",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 4,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Austria",
+          "Argentina"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Haaland",
+        "Wirtz",
+        "Kane",
+        "Dembélé"
+      ],
+      "top4_predictions": {
+        "1": "Inglaterra",
+        "2": "Alemania",
+        "3": "Francia",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 5,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "EEUU",
+          "Paraguay"
+        ],
+        "E": [
+          "Costa de Marfil",
+          "Alemania"
+        ],
+        "F": [
+          "Suecia",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Colombia",
+          "Portugal"
+        ],
+        "L": [
+          "Inglaterra",
+          "Ghana"
+        ]
+      },
+      "scorers_predictions": [
+        "Havertz",
+        "Raphinha",
+        "Lamine Yamal",
+        "Kane"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Brasil",
+        "3": "Portugal",
+        "4": "Croacia"
+      }
+    },
+    {
+      "participant_id": 6,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Catar",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Australia",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Ghana"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Dembélé",
+        "Julián Álvarez",
+        "Lamine Yamal"
+      ],
+      "top4_predictions": {
+        "1": "Inglaterra",
+        "2": "Brasil",
+        "3": "Francia",
+        "4": "España"
+      }
+    },
+    {
+      "participant_id": 7,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Iran"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Julián Álvarez",
+        "Lamine Yamal"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Inglaterra",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 8,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Dembélé",
+        "Messi",
+        "Cristiano Ronaldo",
+        "Havertz"
+      ],
+      "top4_predictions": {
+        "1": "Alemania",
+        "2": "Brasil",
+        "3": "Francia",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 9,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Canada",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Haiti"
+        ],
+        "D": [
+          "EEUU",
+          "Australia"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Iran"
+        ],
+        "H": [
+          "España",
+          "Arabia Saudi"
+        ],
+        "I": [
+          "Francia",
+          "Irak"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Uzbekistan"
+        ],
+        "L": [
+          "Inglaterra",
+          "Ghana"
+        ]
+      },
+      "scorers_predictions": [
+        "Pépé",
+        "André Ayew",
+        "En-Nesyri",
+        "Bacuna"
+      ],
+      "top4_predictions": {
+        "1": "Costa de Marfil",
+        "2": "Turquia",
+        "3": "Irak",
+        "4": "Panama"
+      }
+    },
+    {
+      "participant_id": 10,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "Turquia",
+          "Australia"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Egipto",
+          "Belgica"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "RD Congo"
+        ],
+        "L": [
+          "Croacia",
+          "Inglaterra"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Cristiano Ronaldo",
+        "Gakpo",
+        "Kane"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Paises Bajos",
+        "3": "Marruecos",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 11,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Sudafrica"
+        ],
+        "B": [
+          "Canada",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Tunez"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Jordania"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Havertz",
+        "Cristiano Ronaldo",
+        "Wirtz"
+      ],
+      "top4_predictions": {
+        "1": "Alemania",
+        "2": "Francia",
+        "3": "Argentina",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 12,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Haaland",
+        "Kane",
+        "Vinícius Jr."
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Brasil",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 13,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Kane",
+        "Wirtz",
+        "Messi"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Brasil",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 14,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Bosnia y Herzegovina",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Rafael Leão",
+        "Vinícius Jr.",
+        "Mbappé",
+        "Oyarzabal"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Brasil",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 15,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Sudafrica"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Paraguay",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Lamine Yamal",
+        "Oyarzabal",
+        "Kane",
+        "Raphinha"
+      ],
+      "top4_predictions": {
+        "1": "Alemania",
+        "2": "Francia",
+        "3": "Argentina",
+        "4": "España"
+      }
+    },
+    {
+      "participant_id": 16,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Mexico"
+        ],
+        "B": [
+          "Bosnia y Herzegovina",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Suecia",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Nueva Zelanda"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Noruega",
+          "Francia"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Croacia",
+          "Inglaterra"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Gyökeres",
+        "Mbappé",
+        "Vinícius Jr."
+      ],
+      "top4_predictions": {
+        "1": "Argentina",
+        "2": "Alemania",
+        "3": "Brasil",
+        "4": "Francia"
+      }
+    },
+    {
+      "participant_id": 17,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Ecuador",
+          "Alemania"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Arda Güler",
+        "Oyarzabal"
+      ],
+      "top4_predictions": {
+        "1": "Inglaterra",
+        "2": "España",
+        "3": "Francia",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 18,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Messi",
+        "Cristiano Ronaldo",
+        "Kane"
+      ],
+      "top4_predictions": {
+        "1": "Argentina",
+        "2": "Francia",
+        "3": "Portugal",
+        "4": "Alemania"
+      }
+    },
+    {
+      "participant_id": 19,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Sudafrica"
+        ],
+        "B": [
+          "Catar",
+          "Suiza"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Tunez"
+        ],
+        "G": [
+          "Belgica",
+          "Iran"
+        ],
+        "H": [
+          "España",
+          "Arabia Saudi"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Jordania"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Ghana"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Haaland",
+        "Lamine Yamal"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Francia",
+        "3": "Argentina",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 20,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Oyarzabal",
+        "Kane",
+        "Julián Álvarez"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Alemania",
+        "4": "Marruecos"
+      }
+    },
+    {
+      "participant_id": 21,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Dembélé",
+        "Julián Álvarez",
+        "Kane",
+        "Oyarzabal"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Argentina",
+        "3": "Brasil",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 22,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Escocia"
+        ],
+        "D": [
+          "Turquia",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Suecia",
+          "Paises Bajos"
+        ],
+        "G": [
+          "Belgica",
+          "Iran"
+        ],
+        "H": [
+          "Uruguay",
+          "España"
+        ],
+        "I": [
+          "Noruega",
+          "Francia"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Panama"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Vinícius Jr.",
+        "Lamine Yamal",
+        "Sørloth"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Alemania",
+        "3": "Argentina",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 23,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Catar"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Paraguay",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Vinícius Jr.",
+        "Haaland",
+        "Mbappé",
+        "Raphinha"
+      ],
+      "top4_predictions": {
+        "1": "Brasil",
+        "2": "Argentina",
+        "3": "España",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 24,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Oyarzabal",
+        "Julián Álvarez"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Portugal",
+        "3": "España",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 25,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Egipto",
+          "Belgica"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Ghana"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Dembélé",
+        "Cristiano Ronaldo",
+        "Depay"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Inglaterra",
+        "3": "España",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 26,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Ecuador",
+          "Alemania"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Noruega",
+          "Francia"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Croacia",
+          "Inglaterra"
+        ]
+      },
+      "scorers_predictions": [
+        "Raphinha",
+        "Oyarzabal",
+        "Kane",
+        "Dembélé"
+      ],
+      "top4_predictions": {
+        "1": "Portugal",
+        "2": "Inglaterra",
+        "3": "Francia",
+        "4": "España"
+      }
+    },
+    {
+      "participant_id": 27,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Sudafrica"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Mbappé",
+        "Kane",
+        "Messi"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Francia",
+        "3": "Inglaterra",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 28,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Sudafrica"
+        ],
+        "B": [
+          "Bosnia y Herzegovina",
+          "Catar"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "Australia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Suecia",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Colombia",
+          "Portugal"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Havertz",
+        "Oyarzabal",
+        "Mbappé",
+        "Raphinha"
+      ],
+      "top4_predictions": {
+        "1": "Inglaterra",
+        "2": "España",
+        "3": "Francia",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 29,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Senegal",
+          "Francia"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Raphinha",
+        "Oyarzabal"
+      ],
+      "top4_predictions": {
+        "1": "Argentina",
+        "2": "España",
+        "3": "Alemania",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 30,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Sudafrica"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Iran"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Vinícius Jr.",
+        "Mbappé",
+        "Cristiano Ronaldo"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Portugal",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 31,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Bosnia y Herzegovina",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Cristiano Ronaldo",
+        "Kane",
+        "Messi",
+        "Oyarzabal"
+      ],
+      "top4_predictions": {
+        "1": "Portugal",
+        "2": "Argentina",
+        "3": "Brasil",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 32,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Escocia"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Iran"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Kane",
+        "Cristiano Ronaldo",
+        "Mbappé"
+      ],
+      "top4_predictions": {
+        "1": "Portugal",
+        "2": "España",
+        "3": "Francia",
+        "4": "Paises Bajos"
+      }
+    },
+    {
+      "participant_id": 33,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Sudafrica"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Escocia"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Japon",
+          "Paises Bajos"
+        ],
+        "G": [
+          "Belgica",
+          "Iran"
+        ],
+        "H": [
+          "España",
+          "Arabia Saudi"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Lamine Yamal",
+        "Messi",
+        "Raphinha",
+        "Cristiano Ronaldo"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Argentina",
+        "3": "Brasil",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 34,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Kane",
+        "Mbappé",
+        "Julián Álvarez"
+      ],
+      "top4_predictions": {
+        "1": "Portugal",
+        "2": "España",
+        "3": "Francia",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 35,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Iran"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Cristiano Ronaldo",
+        "Depay",
+        "Havertz",
+        "En-Nesyri"
+      ],
+      "top4_predictions": {
+        "1": "Portugal",
+        "2": "Paises Bajos",
+        "3": "Marruecos",
+        "4": "España"
+      }
+    },
+    {
+      "participant_id": 36,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Paraguay",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Nueva Zelanda"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Oyarzabal",
+        "Haaland",
+        "Kane"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Inglaterra",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 37,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Oyarzabal",
+        "Julián Álvarez",
+        "Mbappé"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Francia",
+        "3": "Portugal",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 38,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Sudafrica"
+        ],
+        "B": [
+          "Canada",
+          "Catar"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Messi",
+        "Oyarzabal"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Argentina",
+        "3": "Portugal",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 39,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Nueva Zelanda"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Messi",
+        "Vinícius Jr."
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Inglaterra",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 40,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Paraguay",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Lamine Yamal",
+        "Vinícius Jr.",
+        "Mbappé",
+        "Kane"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Argentina",
+        "3": "Inglaterra",
+        "4": "Alemania"
+      }
+    },
+    {
+      "participant_id": 41,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Sudafrica"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "Turquia",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Suecia",
+          "Paises Bajos"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Ghana"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Dembélé",
+        "Oyarzabal",
+        "Kane"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Inglaterra",
+        "3": "Portugal",
+        "4": "Marruecos"
+      }
+    },
+    {
+      "participant_id": 42,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Julián Álvarez",
+        "Kane",
+        "Dembélé"
+      ],
+      "top4_predictions": {
+        "1": "Inglaterra",
+        "2": "España",
+        "3": "Francia",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 43,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "Turquia",
+          "Australia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Egipto",
+          "Belgica"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "RD Congo"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Cristiano Ronaldo",
+        "Havertz",
+        "Depay",
+        "Raphinha"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Marruecos",
+        "3": "Paises Bajos",
+        "4": "Alemania"
+      }
+    },
+    {
+      "participant_id": 44,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Oyarzabal",
+        "Messi"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Portugal",
+        "3": "Francia",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 45,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Nueva Zelanda"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Raphinha",
+        "Oyarzabal",
+        "Julián Álvarez"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Argentina",
+        "3": "Brasil",
+        "4": "Francia"
+      }
+    },
+    {
+      "participant_id": 46,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Haaland",
+        "Vinícius Jr."
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Argentina",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 47,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Mbappé",
+        "Haaland",
+        "En-Nesyri"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Francia",
+        "3": "Argentina",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 48,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Lamine Yamal",
+        "Julián Álvarez"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Portugal",
+        "3": "Francia",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 49,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Haaland",
+        "Dembélé",
+        "Oyarzabal"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Brasil",
+        "3": "Inglaterra",
+        "4": "Alemania"
+      }
+    },
+    {
+      "participant_id": 50,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Croacia",
+          "Inglaterra"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Oyarzabal",
+        "Kane",
+        "Julián Álvarez"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Brasil",
+        "3": "España",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 51,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Julián Álvarez",
+        "Dembélé",
+        "Oyarzabal",
+        "Haaland"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Alemania",
+        "3": "Argentina",
+        "4": "España"
+      }
+    },
+    {
+      "participant_id": 52,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Sudafrica"
+        ],
+        "B": [
+          "Bosnia y Herzegovina",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Paraguay",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Julián Álvarez",
+        "Raphinha"
+      ],
+      "top4_predictions": {
+        "1": "Brasil",
+        "2": "Francia",
+        "3": "Inglaterra",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 53,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Mbappé",
+        "Kane",
+        "Julián Álvarez"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Portugal",
+        "3": "Francia",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 54,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "Paraguay",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Japon",
+          "Paises Bajos"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Kane",
+        "Mbappé",
+        "Cristiano Ronaldo"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Portugal",
+        "3": "Inglaterra",
+        "4": "Marruecos"
+      }
+    },
+    {
+      "participant_id": 55,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Suecia",
+          "Paises Bajos"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Raphinha",
+        "Dembélé",
+        "Haaland",
+        "Oyarzabal"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Brasil",
+        "3": "Francia",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 56,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Japon",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Vinícius Jr.",
+        "Cristiano Ronaldo",
+        "Kane",
+        "Mbappé"
+      ],
+      "top4_predictions": {
+        "1": "Brasil",
+        "2": "Inglaterra",
+        "3": "Francia",
+        "4": "España"
+      }
+    },
+    {
+      "participant_id": 57,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Escocia"
+        ],
+        "D": [
+          "Turquia",
+          "Paraguay"
+        ],
+        "E": [
+          "Ecuador",
+          "Alemania"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Egipto",
+          "Belgica"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Mbappé",
+        "Messi",
+        "Vinícius Jr."
+      ],
+      "top4_predictions": {
+        "1": "Portugal",
+        "2": "España",
+        "3": "Francia",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 58,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Vinícius Jr.",
+        "Cristiano Ronaldo",
+        "Havertz",
+        "Lamine Yamal"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Alemania",
+        "3": "Brasil",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 59,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Ghana"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Havertz",
+        "Oyarzabal"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Portugal",
+        "3": "Francia",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 60,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Chequia"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Havertz",
+        "Gakpo",
+        "Vinícius Jr.",
+        "Cristiano Ronaldo"
+      ],
+      "top4_predictions": {
+        "1": "Portugal",
+        "2": "Alemania",
+        "3": "Paises Bajos",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 61,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Sudafrica"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Suecia",
+          "Paises Bajos"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Ghana"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Kane",
+        "Raphinha",
+        "Gyökeres"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Francia",
+        "3": "Brasil",
+        "4": "Belgica"
+      }
+    },
+    {
+      "participant_id": 62,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Haaland",
+        "Kane",
+        "Lamine Yamal"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Portugal",
+        "4": "Uruguay"
+      }
+    },
+    {
+      "participant_id": 63,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Oyarzabal",
+        "Mbappé",
+        "Julián Álvarez"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Portugal",
+        "3": "Francia",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 64,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Kane",
+        "Mbappé",
+        "Julián Álvarez"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Inglaterra",
+        "3": "España",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 65,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Austria",
+          "Argentina"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Kane",
+        "Julián Álvarez",
+        "Mbappé"
+      ],
+      "top4_predictions": {
+        "1": "Inglaterra",
+        "2": "Alemania",
+        "3": "España",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 66,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Havertz",
+        "Raphinha",
+        "Cristiano Ronaldo"
+      ],
+      "top4_predictions": {
+        "1": "Portugal",
+        "2": "Paises Bajos",
+        "3": "Turquia",
+        "4": "Alemania"
+      }
+    },
+    {
+      "participant_id": 67,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Iran"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Haaland",
+        "Lamine Yamal"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Francia",
+        "3": "Brasil",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 68,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Catar"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Wirtz",
+        "Pulisic"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Portugal",
+        "3": "Francia",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 69,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Egipto",
+          "Belgica"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Colombia",
+          "Portugal"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Lamine Yamal",
+        "Dembélé",
+        "Mbappé",
+        "Isak"
+      ],
+      "top4_predictions": {
+        "1": "Alemania",
+        "2": "Brasil",
+        "3": "Argentina",
+        "4": "España"
+      }
+    },
+    {
+      "participant_id": 70,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Mbappé",
+        "Cristiano Ronaldo",
+        "Oyarzabal"
+      ],
+      "top4_predictions": {
+        "1": "Inglaterra",
+        "2": "España",
+        "3": "Portugal",
+        "4": "Francia"
+      }
+    },
+    {
+      "participant_id": 71,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Haaland",
+        "Vinícius Jr.",
+        "Kane"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Argentina",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 72,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Mbappé",
+        "Oyarzabal",
+        "Cristiano Ronaldo"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Portugal",
+        "4": "Marruecos"
+      }
+    },
+    {
+      "participant_id": 73,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Iran"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Julián Álvarez",
+        "Oyarzabal",
+        "Mbappé"
+      ],
+      "top4_predictions": {
+        "1": "Portugal",
+        "2": "Inglaterra",
+        "3": "Francia",
+        "4": "España"
+      }
+    },
+    {
+      "participant_id": 74,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Julián Álvarez",
+        "Lamine Yamal",
+        "Kane",
+        "Mbappé"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Inglaterra",
+        "3": "Francia",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 75,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Dembélé",
+        "Julián Álvarez",
+        "Kane",
+        "Oyarzabal"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Argentina",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 76,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Mexico"
+        ],
+        "B": [
+          "Bosnia y Herzegovina",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Japon",
+          "Paises Bajos"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Noruega",
+          "Francia"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Cristiano Ronaldo",
+        "Vinícius Jr.",
+        "Kane",
+        "Haaland"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Portugal",
+        "3": "Francia",
+        "4": "Alemania"
+      }
+    },
+    {
+      "participant_id": 77,
+      "group_predictions": {
+        "A": [
+          "Sudafrica",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Australia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Suecia",
+          "Paises Bajos"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Croacia",
+          "Inglaterra"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Vinícius Jr.",
+        "Oyarzabal"
+      ],
+      "top4_predictions": {
+        "1": "Inglaterra",
+        "2": "Brasil",
+        "3": "España",
+        "4": "Francia"
+      }
+    },
+    {
+      "participant_id": 78,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Lamine Yamal",
+        "Vinícius Jr.",
+        "Cristiano Ronaldo"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Francia",
+        "3": "Brasil",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 79,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Sudafrica"
+        ],
+        "B": [
+          "Bosnia y Herzegovina",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Croacia",
+          "Inglaterra"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Oyarzabal",
+        "Kane",
+        "Dembélé"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Brasil",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 80,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Japon",
+          "Paises Bajos"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Croacia",
+          "Inglaterra"
+        ]
+      },
+      "scorers_predictions": [
+        "En-Nesyri",
+        "Oyarzabal",
+        "Haaland",
+        "Julián Álvarez"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Alemania",
+        "3": "Argentina",
+        "4": "Marruecos"
+      }
+    },
+    {
+      "participant_id": 81,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Oyarzabal",
+        "Kane",
+        "Havertz"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Portugal",
+        "3": "España",
+        "4": "Alemania"
+      }
+    },
+    {
+      "participant_id": 82,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Sudafrica"
+        ],
+        "B": [
+          "Canada",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Escocia"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Japon",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Messi",
+        "Mbappé",
+        "Kane",
+        "Raúl Jiménez"
+      ],
+      "top4_predictions": {
+        "1": "Alemania",
+        "2": "Japon",
+        "3": "España",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 83,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Kane",
+        "Haaland",
+        "Mbappé"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Francia",
+        "3": "Inglaterra",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 84,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "Australia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Haaland",
+        "Mbappé",
+        "Julián Álvarez",
+        "Lamine Yamal"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Inglaterra",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 85,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Sudafrica"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Suecia",
+          "Paises Bajos"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Vinícius Jr.",
+        "Julián Álvarez",
+        "Mbappé",
+        "Luis Díaz"
+      ],
+      "top4_predictions": {
+        "1": "Inglaterra",
+        "2": "Francia",
+        "3": "Brasil",
+        "4": "Belgica"
+      }
+    },
+    {
+      "participant_id": 86,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Sudafrica"
+        ],
+        "B": [
+          "Catar",
+          "Canada"
+        ],
+        "C": [
+          "Escocia",
+          "Haiti"
+        ],
+        "D": [
+          "Australia",
+          "Paraguay"
+        ],
+        "E": [
+          "Costa de Marfil",
+          "Curazao"
+        ],
+        "F": [
+          "Japon",
+          "Tunez"
+        ],
+        "G": [
+          "Iran",
+          "Nueva Zelanda"
+        ],
+        "H": [
+          "Arabia Saudi",
+          "Cabo Verde"
+        ],
+        "I": [
+          "Senegal",
+          "Irak"
+        ],
+        "J": [
+          "Argelia",
+          "Jordania"
+        ],
+        "K": [
+          "RD Congo",
+          "Uzbekistan"
+        ],
+        "L": [
+          "Ghana",
+          "Panama"
+        ]
+      },
+      "scorers_predictions": [
+        "Mendes",
+        "Al-Shehri",
+        "Bacuna",
+        "Nazon"
+      ],
+      "top4_predictions": {
+        "1": "RD Congo",
+        "2": "Nueva Zelanda",
+        "3": "Uzbekistan",
+        "4": "Curazao"
+      }
+    },
+    {
+      "participant_id": 87,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "Paraguay"
+        ],
+        "E": [
+          "Ecuador",
+          "Alemania"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Haaland",
+        "Lamine Yamal"
+      ],
+      "top4_predictions": {
+        "1": "Portugal",
+        "2": "España",
+        "3": "Francia",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 88,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Lamine Yamal",
+        "Lukaku",
+        "Kane"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Brasil",
+        "3": "España",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 89,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Mexico"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "EEUU",
+          "Paraguay"
+        ],
+        "E": [
+          "Costa de Marfil",
+          "Alemania"
+        ],
+        "F": [
+          "Japon",
+          "Paises Bajos"
+        ],
+        "G": [
+          "Egipto",
+          "Belgica"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Colombia",
+          "Portugal"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Oyarzabal",
+        "Havertz",
+        "Julián Álvarez"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Alemania",
+        "3": "Brasil",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 90,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Paraguay",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Austria",
+          "Argentina"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Dembélé",
+        "Saka",
+        "Lukaku"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Francia",
+        "3": "Brasil",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 91,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Egipto",
+          "Iran"
+        ],
+        "H": [
+          "España",
+          "Arabia Saudi"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Ghana"
+        ]
+      },
+      "scorers_predictions": [
+        "Raphinha",
+        "Havertz",
+        "Mbappé",
+        "Rafael Leão"
+      ],
+      "top4_predictions": {
+        "1": "Brasil",
+        "2": "Alemania",
+        "3": "Francia",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 92,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Oyarzabal",
+        "Mbappé",
+        "Julián Álvarez"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Inglaterra",
+        "3": "España",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 93,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Oyarzabal",
+        "Cristiano Ronaldo"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Francia",
+        "3": "Brasil",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 94,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Oyarzabal",
+        "Cristiano Ronaldo",
+        "Kane"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Argentina",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 95,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Raphinha",
+        "Oyarzabal"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Brasil",
+        "3": "España",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 96,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Cristiano Ronaldo",
+        "Mbappé",
+        "Kane"
+      ],
+      "top4_predictions": {
+        "1": "Portugal",
+        "2": "Francia",
+        "3": "España",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 97,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Australia"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Oyarzabal",
+        "Raphinha"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Argentina",
+        "3": "Francia",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 98,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Escocia"
+        ],
+        "D": [
+          "Turquia",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Suecia",
+          "Paises Bajos"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Mbappé",
+        "Lamine Yamal",
+        "Gyökeres"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Inglaterra",
+        "4": "Alemania"
+      }
+    },
+    {
+      "participant_id": 99,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Raphinha",
+        "Vinícius Jr.",
+        "Mbappé",
+        "Dembélé"
+      ],
+      "top4_predictions": {
+        "1": "Brasil",
+        "2": "Francia",
+        "3": "España",
+        "4": "Alemania"
+      }
+    },
+    {
+      "participant_id": 100,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Haaland",
+        "Lamine Yamal"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Francia",
+        "3": "Brasil",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 101,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Julián Álvarez",
+        "Oyarzabal",
+        "Mbappé",
+        "Cristiano Ronaldo"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Argentina",
+        "3": "Francia",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 102,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Messi",
+        "Cristiano Ronaldo"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Inglaterra",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 103,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Vinícius Jr.",
+        "Cristiano Ronaldo",
+        "Lamine Yamal"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Brasil",
+        "3": "Portugal",
+        "4": "España"
+      }
+    },
+    {
+      "participant_id": 104,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Sudafrica"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Lamine Yamal",
+        "Kane",
+        "Cristiano Ronaldo"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Francia",
+        "3": "Portugal",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 105,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Sudafrica"
+        ],
+        "B": [
+          "Canada",
+          "Catar"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Suecia",
+          "Paises Bajos"
+        ],
+        "G": [
+          "Belgica",
+          "Iran"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Croacia",
+          "Inglaterra"
+        ]
+      },
+      "scorers_predictions": [
+        "Lamine Yamal",
+        "Gakpo",
+        "Havertz",
+        "Kramarić"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Francia",
+        "3": "Croacia",
+        "4": "Marruecos"
+      }
+    },
+    {
+      "participant_id": 106,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Bosnia y Herzegovina",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Ghana"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Mbappé",
+        "Raphinha",
+        "Julián Álvarez"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Inglaterra",
+        "3": "España",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 107,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Julián Álvarez",
+        "Kane",
+        "Mbappé"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Portugal",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 108,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Mbappé",
+        "Kane",
+        "Julián Álvarez"
+      ],
+      "top4_predictions": {
+        "1": "Inglaterra",
+        "2": "Francia",
+        "3": "España",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 109,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Mbappé",
+        "Cristiano Ronaldo",
+        "Lamine Yamal"
+      ],
+      "top4_predictions": {
+        "1": "Portugal",
+        "2": "España",
+        "3": "Francia",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 110,
+      "group_predictions": {
+        "A": [
+          "Sudafrica",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Canada",
+          "Catar"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Paraguay",
+          "Australia"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Nueva Zelanda"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "RD Congo"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Valverde",
+        "Vinícius Jr.",
+        "Dembélé",
+        "Kane"
+      ],
+      "top4_predictions": {
+        "1": "Brasil",
+        "2": "Francia",
+        "3": "Inglaterra",
+        "4": "España"
+      }
+    },
+    {
+      "participant_id": 111,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Egipto",
+          "Belgica"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Kane",
+        "Raphinha",
+        "Haaland"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Inglaterra",
+        "3": "Francia",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 112,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Cristiano Ronaldo",
+        "Kane",
+        "Luis Díaz"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Portugal",
+        "3": "España",
+        "4": "Alemania"
+      }
+    },
+    {
+      "participant_id": 113,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Vinícius Jr.",
+        "Arda Güler"
+      ],
+      "top4_predictions": {
+        "1": "Argentina",
+        "2": "Francia",
+        "3": "España",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 114,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Iran"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Noruega",
+          "Francia"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Colombia",
+          "Portugal"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Havertz",
+        "Julián Álvarez",
+        "Mbappé"
+      ],
+      "top4_predictions": {
+        "1": "Alemania",
+        "2": "Francia",
+        "3": "España",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 115,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "Paraguay",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Iran"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Mbappé",
+        "Messi",
+        "Raphinha"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Francia",
+        "3": "Portugal",
+        "4": "Marruecos"
+      }
+    },
+    {
+      "participant_id": 116,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Oyarzabal",
+        "Julián Álvarez",
+        "Vinícius Jr."
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Portugal",
+        "3": "Argentina",
+        "4": "Francia"
+      }
+    },
+    {
+      "participant_id": 117,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Paraguay",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Japon",
+          "Paises Bajos"
+        ],
+        "G": [
+          "Egipto",
+          "Belgica"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Raphinha",
+        "Lamine Yamal",
+        "Mbappé"
+      ],
+      "top4_predictions": {
+        "1": "Inglaterra",
+        "2": "Portugal",
+        "3": "España",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 118,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Kane",
+        "Mbappé",
+        "Cristiano Ronaldo"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Francia",
+        "3": "Inglaterra",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 119,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Vinícius Jr.",
+        "Cristiano Ronaldo"
+      ],
+      "top4_predictions": {
+        "1": "Brasil",
+        "2": "Francia",
+        "3": "España",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 120,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Mbappé",
+        "Haaland",
+        "Cristiano Ronaldo"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "EEUU",
+        "4": "Alemania"
+      }
+    },
+    {
+      "participant_id": 121,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Arabia Saudi"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Messi",
+        "Kane",
+        "Mbappé"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Brasil",
+        "3": "Alemania",
+        "4": "Marruecos"
+      }
+    },
+    {
+      "participant_id": 122,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Oyarzabal",
+        "Vinícius Jr."
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Portugal",
+        "3": "Francia",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 123,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Catar"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Egipto",
+          "Belgica"
+        ],
+        "H": [
+          "Uruguay",
+          "España"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Colombia",
+          "Portugal"
+        ],
+        "L": [
+          "Croacia",
+          "Inglaterra"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Luis Díaz",
+        "Dembélé",
+        "Darwin Núñez"
+      ],
+      "top4_predictions": {
+        "1": "Uruguay",
+        "2": "España",
+        "3": "Argentina",
+        "4": "Colombia"
+      }
+    },
+    {
+      "participant_id": 124,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Oyarzabal",
+        "Kane",
+        "Messi"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Portugal",
+        "3": "Francia",
+        "4": "Paises Bajos"
+      }
+    },
+    {
+      "participant_id": 125,
+      "group_predictions": {
+        "A": [
+          "Sudafrica",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Catar",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Escocia",
+          "Haiti"
+        ],
+        "D": [
+          "Paraguay",
+          "Australia"
+        ],
+        "E": [
+          "Costa de Marfil",
+          "Curazao"
+        ],
+        "F": [
+          "Tunez",
+          "Japon"
+        ],
+        "G": [
+          "Iran",
+          "Nueva Zelanda"
+        ],
+        "H": [
+          "Cabo Verde",
+          "Arabia Saudi"
+        ],
+        "I": [
+          "Senegal",
+          "Irak"
+        ],
+        "J": [
+          "Austria",
+          "Jordania"
+        ],
+        "K": [
+          "RD Congo",
+          "Uzbekistan"
+        ],
+        "L": [
+          "Panama",
+          "Ghana"
+        ]
+      },
+      "scorers_predictions": [
+        "Blackburn",
+        "Shomurodov",
+        "Fayzullaev",
+        "Janga"
+      ],
+      "top4_predictions": {
+        "1": "Curazao",
+        "2": "Cabo Verde",
+        "3": "Uzbekistan",
+        "4": "Nueva Zelanda"
+      }
+    },
+    {
+      "participant_id": 126,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Australia"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "RD Congo"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Lamine Yamal",
+        "Kane",
+        "Messi",
+        "B. Díaz"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Marruecos",
+        "3": "Francia",
+        "4": "Belgica"
+      }
+    },
+    {
+      "participant_id": 127,
+      "group_predictions": {
+        "A": [
+          "Republica de Corea",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Lamine Yamal",
+        "Depay",
+        "Havertz"
+      ],
+      "top4_predictions": {
+        "1": "Paises Bajos",
+        "2": "Inglaterra",
+        "3": "Alemania",
+        "4": "España"
+      }
+    },
+    {
+      "participant_id": 128,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Raphinha",
+        "Kane",
+        "Julián Álvarez",
+        "Lamine Yamal"
+      ],
+      "top4_predictions": {
+        "1": "Brasil",
+        "2": "Argentina",
+        "3": "Francia",
+        "4": "España"
+      }
+    },
+    {
+      "participant_id": 129,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Colombia",
+          "Portugal"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Oyarzabal",
+        "Messi"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Paises Bajos",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 130,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Messi",
+        "Kane",
+        "Mbappé"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Inglaterra",
+        "3": "Francia",
+        "4": "Portugal"
+      }
+    },
+    {
+      "participant_id": 131,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Kane",
+        "Mbappé",
+        "Messi"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Argentina",
+        "3": "Francia",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 132,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Kane",
+        "Cristiano Ronaldo",
+        "Havertz"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Portugal",
+        "3": "España",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 133,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Julián Álvarez",
+        "Kane",
+        "Mbappé",
+        "Oyarzabal"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "Inglaterra",
+        "3": "España",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 134,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Bosnia y Herzegovina",
+          "Catar"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Vinícius Jr.",
+        "Messi",
+        "Julián Álvarez"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Alemania",
+        "3": "Argentina",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 135,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Ecuador"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Mbappé",
+        "Messi",
+        "Oyarzabal"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Portugal",
+        "3": "Francia",
+        "4": "Argentina"
+      }
+    },
+    {
+      "participant_id": 136,
+      "group_predictions": {
+        "A": [
+          "Chequia",
+          "Mexico"
+        ],
+        "B": [
+          "Suiza",
+          "Bosnia y Herzegovina"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Senegal"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Oyarzabal",
+        "Kane",
+        "Cristiano Ronaldo"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Portugal",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 137,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Sudafrica"
+        ],
+        "B": [
+          "Canada",
+          "Suiza"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Paraguay"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Belgica",
+          "Iran"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Oyarzabal",
+        "Mbappé",
+        "Kane",
+        "Messi"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Francia",
+        "3": "Argentina",
+        "4": "Brasil"
+      }
+    },
+    {
+      "participant_id": 138,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Chequia"
+        ],
+        "B": [
+          "Bosnia y Herzegovina",
+          "Suiza"
+        ],
+        "C": [
+          "Marruecos",
+          "Brasil"
+        ],
+        "D": [
+          "Turquia",
+          "EEUU"
+        ],
+        "E": [
+          "Alemania",
+          "Curazao"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Suecia"
+        ],
+        "G": [
+          "Egipto",
+          "Belgica"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Argelia"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Croacia",
+          "Inglaterra"
+        ]
+      },
+      "scorers_predictions": [
+        "Kane",
+        "Havertz",
+        "Vinícius Jr.",
+        "Lamine Yamal"
+      ],
+      "top4_predictions": {
+        "1": "España",
+        "2": "Alemania",
+        "3": "Brasil",
+        "4": "Inglaterra"
+      }
+    },
+    {
+      "participant_id": 139,
+      "group_predictions": {
+        "A": [
+          "Mexico",
+          "Republica de Corea"
+        ],
+        "B": [
+          "Suiza",
+          "Canada"
+        ],
+        "C": [
+          "Brasil",
+          "Marruecos"
+        ],
+        "D": [
+          "EEUU",
+          "Turquia"
+        ],
+        "E": [
+          "Alemania",
+          "Costa de Marfil"
+        ],
+        "F": [
+          "Paises Bajos",
+          "Japon"
+        ],
+        "G": [
+          "Belgica",
+          "Egipto"
+        ],
+        "H": [
+          "España",
+          "Uruguay"
+        ],
+        "I": [
+          "Francia",
+          "Noruega"
+        ],
+        "J": [
+          "Argentina",
+          "Austria"
+        ],
+        "K": [
+          "Portugal",
+          "Colombia"
+        ],
+        "L": [
+          "Inglaterra",
+          "Croacia"
+        ]
+      },
+      "scorers_predictions": [
+        "Mbappé",
+        "Dembélé",
+        "Julián Álvarez",
+        "Lamine Yamal"
+      ],
+      "top4_predictions": {
+        "1": "Francia",
+        "2": "España",
+        "3": "Argentina",
+        "4": "Brasil"
+      }
+    }
+  ],
+  "datos_reales": {
+    "standings": {
+      "A": [
+        "",
+        ""
+      ],
+      "B": [
+        "",
+        ""
+      ],
+      "C": [
+        "",
+        ""
+      ],
+      "D": [
+        "",
+        ""
+      ],
+      "E": [
+        "",
+        ""
+      ],
+      "F": [
+        "",
+        ""
+      ],
+      "G": [
+        "",
+        ""
+      ],
+      "H": [
+        "",
+        ""
+      ],
+      "I": [
+        "",
+        ""
+      ],
+      "J": [
+        "",
+        ""
+      ],
+      "K": [
+        "",
+        ""
+      ],
+      "L": [
+        "",
+        ""
+      ]
+    },
+    "scorers": [],
+    "top4": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": ""
+    }
+  }
+}
