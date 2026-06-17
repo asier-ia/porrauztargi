@@ -86,11 +86,11 @@ export const translations = {
       disclaimerDesc: "Esta web ha sido desarrollada de forma totalmente voluntaria y por amor al arte. El creador no ofrece ninguna garantía ni se hace responsable si los puntos fallan, el servidor se cae, la base de datos decide explotar o tu cuñado te adelanta de forma misteriosa en la clasificación. No tenemos relación laboral ni comercial con el Bar Uztargi; cualquier decisión sobre los premios físicos, consumiciones o el dinero acumulado es competencia exclusiva de la gerencia del bar. Esta web es 100% libre de cookies de rastreo y publicidad (no guardamos tus datos ni te seguimos la pista). Al usar este sitio, aceptas que si hay algún error en el sistema o el cálculo, nos echaremos unas risas, se corregirá lo antes posible y seguiremos disfrutando del torneo. ¡Buen rollo y que gane el mejor!"
     },
     popup: {
-      title: "TARJETA AMARILLA!",
+      title: "TARJETA AMARILLA",
       message: "Motivo: Pérdida de tiempo durante 3 minutos seguidos machacando el ranking. El servidor está echando humo y mis ahorros también.",
       action: "Evita la expulsión y salva tu pellejo sobornando al árbitro aquí mismo.",
-      donateBtn: "[ SOBORNAR AL ÁRBITRO ]",
-      closeBtn: "[ Seguir jugando bajo tu remordimiento ]"
+      donateBtn: "SOBORNAR",
+      closeBtn: "Seguir"
     },
     curses: {
       title: "Maldiciones y Gafes",
@@ -184,11 +184,11 @@ export const translations = {
       disclaimerDesc: "Webgune hau erabat boluntario eta zaletasun hutsagatik garatu da. Sortzaileak ez du inolako bermerik eskaintzen eta ez da arduratzen puntuek huts egiten badute, zerbitzaria erortzen bada, datu-baseak eztanda egiten badu edota zure koinatua sailkapenean aurretik badoakizu. Ez dugu harreman laboral edo komertzialik Uztargi Tabernarekin; sari fisikoen, kontsumizioen edo bildutako diruaren inguruko erabaki guztiak tabernaren ardura esklusiboa dira. Webgune honek ez du inongo jarraipen- edo publizitate-cookierik erabiltzen (ez dugu zure datu pertsonalik gordetzen). Webgune hau erabiltzean, onartzen duzu sistemaren bat-bateko akatsen bat egonez gero barre batzuk egingo ditugula, ahalik eta azkarren zuzenduko dugula eta txapelketaz gozatzen jarraituko dugula. Umore ona izan dadila nagusi eta hoberenak irabaz dezala!"
     },
     popup: {
-      title: "TXARTEL HORIA!",
+      title: "TXARTEL HORIA",
       message: "Arrazoia: 3 minutu jarraian denbora galtzen rankinga behartuz. Zerbitzaria kea jaurtitzen ari da eta nire aurrezkiak ere bai.",
       action: "Saihestu kanporaketa eta salbatu zure azala epaileari sobornoa ordainduz.",
-      donateBtn: "[ EPAILEA EROSI ]",
-      closeBtn: "[ Jokatzen jarraitu zure damuarekin ]"
+      donateBtn: "EROSI",
+      closeBtn: "Jarraitu"
     },
     curses: {
       title: "Madarikazioak eta Begizkoak",

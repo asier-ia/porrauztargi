@@ -7,11 +7,14 @@ from datetime import datetime, timedelta, timezone
 
 from .database import get_db, engine, Base
 from . import models, schemas, scoring, sync
+from .stripe_service import router as stripe_router
 
 # We make sure tables are initialized on startup (even though we seeded)
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Porra Mundial 2026 - Bar Uztargi API", version="1.0.0")
+
+app.include_router(stripe_router)
 
 # Setup CORS for frontend communication
 app.add_middleware(

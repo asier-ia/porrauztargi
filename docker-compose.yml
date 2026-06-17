@@ -10,6 +10,7 @@ services:
     environment:
       - DATABASE_URL=sqlite:///./uztargi_porra.db
       - FOOTBALL_DATA_API_KEY=${FOOTBALL_DATA_API_KEY}
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
     volumes:
       - ./backend:/app
 
@@ -21,6 +22,7 @@ services:
       - "5173:5173"
     environment:
       - CHOKIDAR_USEPOLLING=true
+      - VITE_STRIPE_PUBLISHABLE_KEY=${STRIPE_PUBLISHABLE_KEY}
     volumes:
       - ./frontend:/app
       - /app/node_modules

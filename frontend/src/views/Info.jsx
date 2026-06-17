@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Heart } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import DonationFlow from '../components/DonationFlow';
 
 // Icono de Instagram personalizado (SVG)
 function InstagramIcon({ className = "h-5 w-5" }) {
@@ -26,6 +27,7 @@ function InstagramIcon({ className = "h-5 w-5" }) {
 
 export default function Info({ highlightDonations, setHighlightDonations }) {
   const { t } = useLanguage();
+  const [donating, setDonating] = useState(null);
 
   useEffect(() => {
     if (highlightDonations) {
@@ -131,12 +133,9 @@ export default function Info({ highlightDonations, setHighlightDonations }) {
           {/* Cuadrícula 2x2 */}
           <div className="grid grid-cols-2 gap-3">
             {donations.map((item) => (
-              <a
+              <button
                 key={item.id}
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-umami-event={`Clic Donar ${item.id}`}
+                onClick={() => setDonating(item.id)}
                 className={`flex flex-col items-center justify-center text-center p-4 border rounded-2xl transition-all duration-1000 active:scale-[0.98] shadow-sm cursor-pointer ${
                   highlightDonations
                     ? 'bg-amber-50 border-amber-300 shadow-[0_0_15px_rgba(245,158,11,0.6)] scale-[1.03] animate-pulse-subtle'
@@ -154,9 +153,13 @@ export default function Info({ highlightDonations, setHighlightDonations }) {
                 <span className="text-xs font-black text-emerald-600 mt-1">
                   {item.price}
                 </span>
-              </a>
+              </button>
             ))}
           </div>
+
+          {donating && (
+            <DonationFlow productId={donating} onClose={() => setDonating(null)} />
+          )}
         </div>
 
         {/* Bloque Extra AFAGI */}
