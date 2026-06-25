@@ -256,22 +256,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
         <p className="text-sm text-gray-500 font-medium mt-0.5">{t('profile.subtitle')}</p>
       </div>
 
-      {jinxRedirectSuccess && (
-        <div className="mx-4 mb-4 bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-2xl p-4 shadow-sm text-center animate-slideUp">
-          <p className="text-sm font-bold">
-            ¡Mal de ojo aplicado con éxito!
-          </p>
-          <p className="text-xs text-emerald-700 mt-1">
-            Los cambios ya se reflejan en el perfil.
-          </p>
-          <button
-            onClick={() => setJinxRedirectSuccess(false)}
-            className="mt-2 text-[10px] font-bold text-emerald-600 underline underline-offset-2 cursor-pointer"
-          >
-            Cerrar
-          </button>
-        </div>
-      )}
+
 
       <div ref={dropdownRef} className="relative mb-8 px-4 z-30">
         <div className="relative">
@@ -337,15 +322,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                 }`}>
                 {jinx.overlay}
 
-                {/* BOTÓN DE GAFAR FLOTANTE (ESTILO APPLE) */}
-                <button
-                  onClick={handleOpenJinxModal}
-                  className={`absolute top-5 right-5 px-3.5 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase transition-all duration-200 active:scale-95 shadow-sm flex items-center gap-1.5 z-20 ${isJinxed ? jinx.btnCls : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'
-                    }`}
-                >
-                  <Sparkles size={14} strokeWidth={2.5} />
-                  <span>MAL DE OJO</span>
-                </button>
+
 
                 <div className="text-center mb-8 mt-2">
                   <h3 className={`text-2xl font-black mb-2 relative z-10 pr-16 pl-16 truncate ${isJinxed ? jinx.nameCls : 'text-gray-900'}`}>
@@ -391,40 +368,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                   </div>
                 </div>
 
-                {/* Maldiciones Activas */}
-                {currentParticipant.active_jinxes && currentParticipant.active_jinxes.length > 0 && (
-                  <div className={`mt-6 p-4 rounded-2xl border relative z-10 text-center shadow-sm ${isDarkTier
-                      ? 'bg-[#2c2c2e] border-[#3c3c3e] text-gray-200'
-                      : jinxCount >= 4
-                        ? 'bg-purple-100/90 border-purple-200 text-purple-900'
-                        : 'bg-lime-100/90 border-lime-200 text-lime-900'
-                    }`}>
-                    <h4 className="text-[10px] font-black uppercase tracking-widest mb-3 flex items-center gap-1.5 justify-center opacity-90">
-                      <Sparkles size={14} strokeWidth={2.5} />
-                      Maldiciones Activas ({jinxCount})
-                    </h4>
-                    <div className="space-y-1 max-h-32 overflow-y-auto px-1">
-                      {currentParticipant.active_jinxes.map((jx, idx) => {
-                        const formatExpiryTime = (seconds) => {
-                          if (seconds <= 0) return "Expirando...";
-                          const d = Math.floor(seconds / (3600 * 24));
-                          const h = Math.floor((seconds % (3600 * 24)) / 3600);
-                          const m = Math.floor((seconds % 3600) / 60);
-                          if (d > 0) return `${d}d ${h}h`;
-                          return `${h}h ${m}m`;
-                        };
-                        return (
-                          <div key={jx.id} className="flex justify-between items-center text-[11px] font-bold px-2 py-1.5 rounded-lg hover:bg-black/5 transition-colors">
-                            <span className="opacity-90">Mal de ojo #{idx + 1}</span>
-                            <span className="font-extrabold tabular-nums opacity-75">
-                              expira en {formatExpiryTime(jx.seconds_remaining)}
-                            </span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
+
               </div>
             );
           })()}
@@ -537,132 +481,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
         </div>
       )}
 
-      {/* JINX MODAL */}
-      {showJinxModal && currentParticipant && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fadeIn">
-          <div className="bg-white rounded-[2rem] p-6 max-w-sm w-full shadow-2xl animate-slideUp relative">
 
-            {/* Close */}
-            <button
-              onClick={() => setShowJinxModal(false)}
-              className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer"
-            >
-              <X className="h-5 w-5 text-gray-400" />
-            </button>
-
-            {/* Content */}
-            {!jinxSuccess ? (
-              <div className="space-y-6 pt-2 text-center">
-                <div className="w-16 h-16 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-2 shadow-sm border border-purple-100">
-                  <Sparkles size={28} strokeWidth={2} />
-                </div>
-
-                <h3 className="text-xl font-bold text-gray-900 leading-tight">
-                  Echar mal de ojo a <br /><span className="text-purple-600 font-black">{currentParticipant.name}</span>
-                </h3>
-
-                {paymentStep === 'form' && (
-                  <>
-                    {/* Slider + Number Input */}
-                    <div className="space-y-4 bg-gray-50 p-5 rounded-2xl border border-gray-100">
-                      <div className="flex items-center justify-between gap-3">
-                        <span className="text-sm font-semibold text-gray-700">Fuerza:</span>
-                        <input
-                          type="number"
-                          min={1}
-                          max={100}
-                          value={jinxQuantity}
-                          onChange={(e) => {
-                            let val = parseInt(e.target.value) || 1;
-                            setJinxQuantity(Math.max(1, Math.min(100, val)));
-                          }}
-                          className="w-20 text-center bg-white border border-gray-200 rounded-xl px-3 py-2 text-sm font-bold text-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400 shadow-sm"
-                        />
-                      </div>
-                      <input
-                        type="range"
-                        min={1}
-                        max={100}
-                        value={jinxQuantity}
-                        onChange={(e) => setJinxQuantity(parseInt(e.target.value))}
-                        className="w-full accent-purple-600 h-2 rounded-full appearance-none cursor-pointer bg-purple-200"
-                      />
-                      <div className="flex justify-between text-[10px] text-gray-400 font-medium px-0.5">
-                        <span>1</span>
-                        <span>25</span>
-                        <span>50</span>
-                        <span>75</span>
-                        <span>100</span>
-                      </div>
-                    </div>
-
-                    <p className="text-sm font-bold text-gray-500">
-                      Total: <span className="text-purple-700 font-black">{jinxQuantity}.00 €</span>
-                    </p>
-
-                    <button
-                      data-umami-event="Iniciar Pago Jinx"
-                      onClick={handleStartPayment}
-                      disabled={jinxLoading}
-                      className="w-full py-4 bg-gray-900 hover:bg-black disabled:bg-gray-300 text-white font-bold text-sm rounded-xl transition-all duration-200 active:scale-[0.98] cursor-pointer shadow-md flex justify-center items-center gap-2"
-                    >
-                      {jinxLoading ? 'Preparando pago...' : `Pagar ${jinxQuantity}€ con Bizum`}
-                    </button>
-                  </>
-                )}
-
-                {paymentStep === 'paying' && clientSecret && (
-                  <Elements stripe={stripePromise} options={jinxElementsOptions}>
-                    <JinxPaymentForm
-                      clientSecret={clientSecret}
-                      amount={jinxQuantity}
-                      onSuccess={handleConfirmJinx}
-                      onError={(msg) => { setPaymentError(msg); setPaymentStep('error'); }}
-                      onCancel={handleCancelPayment}
-                    />
-                  </Elements>
-                )}
-
-                {(paymentStep === 'error' || paymentError) && (
-                  <div className="space-y-4">
-                    <div className="p-3 bg-red-50 border border-red-100 rounded-xl">
-                      <p className="text-xs font-semibold text-red-700">{paymentError}</p>
-                    </div>
-                    <div className="flex gap-3">
-                      <button
-                        onClick={handleCancelPayment}
-                        className="flex-1 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-sm rounded-xl transition-all duration-200 cursor-pointer"
-                      >
-                        Volver
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div className="space-y-4 pt-4 text-center">
-                <div className="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm border border-emerald-100">
-                  <Sparkles size={32} strokeWidth={2.5} className="animate-pulse" />
-                </div>
-                <h3 className="text-xl font-black text-gray-900 tracking-tight">
-                  ¡Mal de ojo aplicado!
-                </h3>
-                <p className="text-sm text-gray-500 font-medium px-2 leading-relaxed">
-                  Has echado mal de ojo nivel <span className="font-bold text-purple-600">{jinxQuantity}</span> a <span className="font-bold text-gray-800">{currentParticipant.name}</span>.
-                </p>
-                <div className="pt-6">
-                  <button
-                    onClick={() => setShowJinxModal(false)}
-                    className="w-full py-3.5 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold text-sm rounded-xl transition-all duration-200 cursor-pointer"
-                  >
-                    Cerrar
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </div>
   );
 }

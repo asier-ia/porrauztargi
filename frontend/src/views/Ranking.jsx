@@ -100,48 +100,12 @@ export function JinxPaymentForm({ clientSecret, amount, onSuccess, onError, onCa
 }
 
 export function getJinxStyles(count) {
-  if (!count || count <= 0) {
-    return {
-      cardCls: "bg-white border-gray-100 text-gray-900 shadow-sm",
-      nameCls: "text-gray-900 font-semibold",
-      pointsCls: "text-emerald-600 font-bold",
-      btnCls: "bg-gray-50 text-gray-400 hover:bg-gray-100 hover:text-gray-600 border border-gray-200",
-      ringCls: "", // Sin anillo exterior
-      overlay: null
-    };
-  }
-
-  if (count >= 1 && count <= 3) {
-    // Nivel 1: Verde Tóxico (Ácido/Lima)
-    return {
-      cardCls: "bg-lime-50/80 border-lime-200 shadow-sm",
-      nameCls: "text-lime-900 font-semibold",
-      pointsCls: "text-lime-600 font-bold",
-      btnCls: "bg-white text-lime-600 border border-lime-200 hover:bg-lime-100 shadow-sm",
-      ringCls: "ring-2 ring-lime-400 ring-offset-2 ring-offset-white",
-      overlay: null
-    };
-  }
-
-  if (count >= 4 && count <= 10) {
-    // Nivel 2: Morado
-    return {
-      cardCls: "bg-purple-50/80 border-purple-200 shadow-sm",
-      nameCls: "text-purple-950 font-bold",
-      pointsCls: "text-purple-700 font-bold",
-      btnCls: "bg-white text-purple-700 border border-purple-300 hover:bg-purple-100 shadow-sm",
-      ringCls: "ring-2 ring-purple-500 ring-offset-2 ring-offset-white",
-      overlay: null
-    };
-  }
-
-  // Nivel > 10: Negro sombra gris (Elegante, minimalista y muy legible)
   return {
-    cardCls: "bg-[#1c1c1e] border-[#2c2c2e] shadow-md",
-    nameCls: "text-gray-100 font-bold",
-    pointsCls: "text-gray-300 font-bold",
-    btnCls: "bg-[#2c2c2e] text-gray-400 border border-[#3c3c3e] hover:bg-[#3c3c3e] shadow-sm",
-    ringCls: "ring-2 ring-[#2c2c2e] ring-offset-2 ring-offset-white",
+    cardCls: "bg-white border-gray-100 text-gray-900 shadow-sm",
+    nameCls: "text-gray-900 font-semibold",
+    pointsCls: "text-emerald-600 font-bold",
+    btnCls: "bg-gray-50 text-gray-400 hover:bg-gray-100 hover:text-gray-600 border border-gray-200",
+    ringCls: "", // Sin anillo exterior
     overlay: null
   };
 }
@@ -310,22 +274,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
         </div>
       </div>
 
-      {jinxRedirectSuccess && (
-        <div className="mx-4 mb-4 bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-2xl p-4 shadow-sm text-center animate-slideUp">
-          <p className="text-sm font-bold">
-            ¡Mal de ojo aplicado con éxito!
-          </p>
-          <p className="text-xs text-emerald-700 mt-1">
-            Los cambios ya se reflejan en la clasificación.
-          </p>
-          <button
-            onClick={() => setJinxRedirectSuccess(false)}
-            className="mt-2 text-[10px] font-bold text-emerald-600 underline underline-offset-2 cursor-pointer"
-          >
-            Cerrar
-          </button>
-        </div>
-      )}
+
 
       {/* Resumen de Premios Banner */}
       <div className="mx-4 mb-6 bg-gradient-to-r from-emerald-800 to-emerald-950 text-white rounded-2xl p-4 shadow-md relative overflow-hidden">
@@ -391,12 +340,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
                 onClick={() => onSelectParticipant(top2.id)}
                 className={`flex-1 flex flex-col items-center cursor-pointer p-3 pb-4 rounded-[1.5rem] hover:scale-[1.02] transition-transform duration-200 relative w-full h-[85%] bg-gradient-to-b from-slate-50 to-slate-200 border border-slate-300 shadow-sm ${isJinxed ? jinx.ringCls : ''}`}
               >
-                <button
-                  onClick={(e) => { e.stopPropagation(); handleOpenJinxModal(top2); }}
-                  className={`absolute top-2.5 right-2.5 p-1.5 rounded-full transition-all z-20 ${isJinxed ? jinx.btnCls : 'bg-white/60 text-slate-400 hover:bg-white hover:text-slate-600'}`}
-                >
-                  <Sparkles size={12} strokeWidth={2.5} />
-                </button>
+
 
                 <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mb-auto shadow-sm border mt-1 bg-white border-slate-200 text-slate-600">
                   2
@@ -432,12 +376,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
                   </span>
                 </div>
 
-                <button
-                  onClick={(e) => { e.stopPropagation(); handleOpenJinxModal(top1); }}
-                  className={`absolute top-3 right-3 p-1.5 rounded-full transition-all z-20 ${isJinxed ? jinx.btnCls : 'bg-white/50 text-amber-500 hover:bg-white hover:text-amber-700'}`}
-                >
-                  <Sparkles size={14} strokeWidth={2.5} />
-                </button>
+
 
                 <div className="w-10 h-10 rounded-full flex items-center justify-center text-base font-black mb-auto shadow-sm border mt-2 bg-white border-amber-200 text-amber-600">
                   1
@@ -467,12 +406,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
                 onClick={() => onSelectParticipant(top3.id)}
                 className={`flex-1 flex flex-col items-center cursor-pointer p-3 pb-3 rounded-[1.5rem] hover:scale-[1.02] transition-transform duration-200 relative w-full h-[75%] bg-gradient-to-b from-orange-50 to-orange-200 border border-orange-300 shadow-sm ${isJinxed ? jinx.ringCls : ''}`}
               >
-                <button
-                  onClick={(e) => { e.stopPropagation(); handleOpenJinxModal(top3); }}
-                  className={`absolute top-2.5 right-2.5 p-1.5 rounded-full transition-all z-20 ${isJinxed ? jinx.btnCls : 'bg-white/60 text-orange-500 hover:bg-white hover:text-orange-700'}`}
-                >
-                  <Sparkles size={12} strokeWidth={2.5} />
-                </button>
+
 
                 <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mb-auto shadow-sm border mt-1 bg-white border-orange-200 text-orange-600">
                   3
@@ -524,16 +458,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
                     </span>
                   )}
 
-                  {/* Clean Sparkles GAFAR button */}
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleOpenJinxModal(item);
-                    }}
-                    className={`text-[10px] font-bold tracking-wider px-2.5 py-1.5 rounded-full transition-all duration-200 active:scale-95 flex items-center gap-1.5 ${jinx.btnCls}`}
-                  >
-                    <Sparkles size={12} strokeWidth={2.5} />
-                  </button>
+
 
                   <div className="flex items-center gap-0.5 min-w-[32px] justify-end">
                     <span className={`text-base font-black ${jinx.pointsCls}`}>
@@ -551,132 +476,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
         )}
       </div>
 
-      {/* JINX MODAL */}
-      {showJinxModal && selectedParticipant && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fadeIn">
-          <div className="bg-white rounded-[2rem] p-6 max-w-sm w-full shadow-2xl animate-slideUp relative">
 
-            {/* Close */}
-            <button
-              onClick={() => setShowJinxModal(false)}
-              className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer"
-            >
-              <X className="h-5 w-5 text-gray-400" />
-            </button>
-
-            {/* Content */}
-            {!jinxSuccess ? (
-              <div className="space-y-6 pt-2 text-center">
-                <div className="w-16 h-16 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-2 shadow-sm border border-purple-100">
-                  <Sparkles size={28} strokeWidth={2} />
-                </div>
-
-                <h3 className="text-xl font-bold text-gray-900 leading-tight">
-                  Echar mal de ojo a <br /><span className="text-purple-600 font-black">{selectedParticipant.name}</span>
-                </h3>
-
-                {paymentStep === 'form' && (
-                  <>
-                    {/* Slider + Number Input */}
-                    <div className="space-y-4 bg-gray-50 p-5 rounded-2xl border border-gray-100">
-                      <div className="flex items-center justify-between gap-3">
-                        <span className="text-sm font-semibold text-gray-700">Fuerza:</span>
-                        <input
-                          type="number"
-                          min={1}
-                          max={100}
-                          value={jinxQuantity}
-                          onChange={(e) => {
-                            let val = parseInt(e.target.value) || 1;
-                            setJinxQuantity(Math.max(1, Math.min(100, val)));
-                          }}
-                          className="w-20 text-center bg-white border border-gray-200 rounded-xl px-3 py-2 text-sm font-bold text-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400 shadow-sm"
-                        />
-                      </div>
-                      <input
-                        type="range"
-                        min={1}
-                        max={100}
-                        value={jinxQuantity}
-                        onChange={(e) => setJinxQuantity(parseInt(e.target.value))}
-                        className="w-full accent-purple-600 h-2 rounded-full appearance-none cursor-pointer bg-purple-200"
-                      />
-                      <div className="flex justify-between text-[10px] text-gray-400 font-medium px-0.5">
-                        <span>1</span>
-                        <span>25</span>
-                        <span>50</span>
-                        <span>75</span>
-                        <span>100</span>
-                      </div>
-                    </div>
-
-                    <p className="text-sm font-bold text-gray-500">
-                      Total: <span className="text-purple-700 font-black">{jinxQuantity}.00 €</span>
-                    </p>
-
-                    <button
-                      data-umami-event="Iniciar Pago Jinx"
-                      onClick={handleStartPayment}
-                      disabled={jinxLoading}
-                      className="w-full py-4 bg-gray-900 hover:bg-black disabled:bg-gray-300 text-white font-bold text-sm rounded-xl transition-all duration-200 active:scale-[0.98] cursor-pointer shadow-md flex justify-center items-center gap-2"
-                    >
-                      {jinxLoading ? 'Preparando pago...' : `Pagar ${jinxQuantity}€ con Bizum`}
-                    </button>
-                  </>
-                )}
-
-                {paymentStep === 'paying' && clientSecret && (
-                  <Elements stripe={stripePromise} options={jinxElementsOptions}>
-                    <JinxPaymentForm
-                      clientSecret={clientSecret}
-                      amount={jinxQuantity}
-                      onSuccess={handleConfirmJinx}
-                      onError={(msg) => { setPaymentError(msg); setPaymentStep('error'); }}
-                      onCancel={handleCancelPayment}
-                    />
-                  </Elements>
-                )}
-
-                {(paymentStep === 'error' || paymentError) && (
-                  <div className="space-y-4">
-                    <div className="p-3 bg-red-50 border border-red-100 rounded-xl">
-                      <p className="text-xs font-semibold text-red-700">{paymentError}</p>
-                    </div>
-                    <div className="flex gap-3">
-                      <button
-                        onClick={handleCancelPayment}
-                        className="flex-1 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-sm rounded-xl transition-all duration-200 cursor-pointer"
-                      >
-                        Volver
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div className="space-y-4 pt-4 text-center">
-                <div className="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm border border-emerald-100">
-                  <Sparkles size={32} strokeWidth={2.5} className="animate-pulse" />
-                </div>
-                <h3 className="text-xl font-black text-gray-900 tracking-tight">
-                  ¡Mal de ojo aplicado!
-                </h3>
-                <p className="text-sm text-gray-500 font-medium px-2 leading-relaxed">
-                  Has echado mal de ojo nivel <span className="font-bold text-purple-600">{jinxQuantity}</span> a <span className="font-bold text-gray-800">{selectedParticipant.name}</span>.
-                </p>
-                <div className="pt-6">
-                  <button
-                    onClick={() => setShowJinxModal(false)}
-                    className="w-full py-3.5 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold text-sm rounded-xl transition-all duration-200 cursor-pointer"
-                  >
-                    Cerrar
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </div>
   );
 }
