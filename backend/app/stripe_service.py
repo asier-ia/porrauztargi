@@ -46,7 +46,7 @@ def create_payment_intent(req: PaymentIntentRequest):
         amount = base_amount * quantity
         description = PRICES[req.product_id]["description"]
         if req.product_id == "jinx":
-            description = f"Mal de ojo acumulativo x{quantity} para participante ID {req.target_id}"
+            description = f"Colaboracion Porra x{quantity} - ID {req.target_id}"
     elif req.product_id in ("sueno", "popup"):
         if not req.amount:
             raise HTTPException(status_code=400, detail="Importe requerido para este producto")
@@ -57,7 +57,7 @@ def create_payment_intent(req: PaymentIntentRequest):
 
     payment_method_types = ["card"]
     if req.payment_method_type == "bizum":
-        payment_method_types = ["bizum"]
+        payment_method_types = ["card", "bizum"]
 
     metadata = {
         "product_id": req.product_id,
