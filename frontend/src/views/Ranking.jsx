@@ -6,10 +6,11 @@ import { Trophy, User, Target, CalendarDays, Heart, X, Smartphone, Sparkles } fr
 const BubblesOverlay = () => {
   return (
     <div className="jinx-bubbles-container">
-      <div className="jinx-bubble" style={{ left: '15%', width: '12px', height: '12px', animationDuration: '3.2s', animationDelay: '0s' }} />
-      <div className="jinx-bubble" style={{ left: '35%', width: '8px', height: '8px', animationDuration: '4s', animationDelay: '0.8s' }} />
-      <div className="jinx-bubble" style={{ left: '60%', width: '14px', height: '14px', animationDuration: '2.8s', animationDelay: '0.4s' }} />
-      <div className="jinx-bubble" style={{ left: '80%', width: '10px', height: '10px', animationDuration: '3.5s', animationDelay: '1.2s' }} />
+      <div className="jinx-bubble" style={{ left: '10%', width: '12px', height: '12px', animationDuration: '3.1s', animationDelay: '0s' }} />
+      <div className="jinx-bubble" style={{ left: '30%', width: '7px', height: '7px', animationDuration: '3.8s', animationDelay: '0.7s' }} />
+      <div className="jinx-bubble" style={{ left: '55%', width: '13px', height: '14px', animationDuration: '2.5s', animationDelay: '0.3s' }} />
+      <div className="jinx-bubble" style={{ left: '75%', width: '9px', height: '9px', animationDuration: '3.3s', animationDelay: '1.1s' }} />
+      <div className="jinx-bubble" style={{ left: '90%', width: '11px', height: '11px', animationDuration: '2.9s', animationDelay: '0.5s' }} />
     </div>
   );
 };
@@ -24,12 +25,9 @@ const SmokeOverlay = () => {
 
 const CracksOverlay = () => {
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-1 bg-gradient-to-br from-gray-900 to-gray-950 opacity-30 jinx-cracks-pulsing">
-      <svg className="absolute inset-0 w-full h-full stroke-red-500/40" viewBox="0 0 100 100" fill="none" strokeWidth="0.7">
-        <path d="M 10 10 L 25 35 L 45 42 L 50 65 L 75 80" />
-        <path d="M 25 35 L 15 50 L 35 75 L 42 90" />
-        <path d="M 90 20 L 75 35 L 60 55 L 70 85" />
-        <path d="M 75 35 L 85 60 L 80 80" />
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-1 jinx-cracks-pulsing">
+      <svg className="absolute inset-0 w-full h-full stroke-red-500/50" viewBox="0 0 100 100" fill="none" strokeWidth="0.85">
+        <path d="M 8 10 L 22 32 L 40 40 L 48 60 L 70 78 M 22 32 L 12 45 L 32 70 L 38 85 M 88 18 L 70 32 L 55 50 L 65 80 M 70 32 L 80 55 L 75 75" />
       </svg>
     </div>
   );
@@ -47,7 +45,7 @@ export function getJinxStyles(count) {
   }
   if (count >= 1 && count <= 3) {
     return {
-      cardCls: "bg-emerald-50/70 border-emerald-300 text-emerald-950 shadow-md ring-2 ring-emerald-400/30 relative overflow-hidden",
+      cardCls: "bg-gradient-to-r from-emerald-100/90 via-green-100/70 to-emerald-100/90 border-emerald-500 text-emerald-950 shadow-[0_0_15px_rgba(16,185,129,0.35)] ring-2 ring-emerald-400/40 relative overflow-hidden",
       nameCls: "text-emerald-950 font-bold",
       pointsCls: "text-emerald-800 font-black",
       subtextCls: "text-emerald-600/80 font-bold",
@@ -56,7 +54,7 @@ export function getJinxStyles(count) {
   }
   if (count >= 4 && count <= 10) {
     return {
-      cardCls: "bg-gradient-to-r from-purple-950 to-indigo-950 text-purple-100 border-purple-600 shadow-lg ring-4 ring-purple-500/35 relative overflow-hidden",
+      cardCls: "bg-gradient-to-r from-purple-950 to-indigo-950 text-purple-100 border-purple-500 shadow-[0_0_20px_rgba(168,85,247,0.5)] ring-4 ring-purple-500/35 relative overflow-hidden",
       nameCls: "text-purple-100 font-black",
       pointsCls: "text-purple-300 font-black",
       subtextCls: "text-purple-400/80 font-bold",
@@ -65,7 +63,7 @@ export function getJinxStyles(count) {
   }
   // count > 10
   return {
-    cardCls: "bg-black text-red-500 border-red-800 shadow-xl ring-4 ring-red-950/65 relative overflow-hidden",
+    cardCls: "bg-gradient-to-r from-stone-950 via-neutral-900 to-stone-950 text-red-500 border-red-950/80 shadow-[0_0_22px_rgba(239,68,68,0.25)] ring-4 ring-red-950/65 relative overflow-hidden",
     nameCls: "text-gray-100 font-black",
     pointsCls: "text-red-500 font-black",
     subtextCls: "text-red-700/80 font-bold",
@@ -85,6 +83,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
   const [jinxLoading, setJinxLoading] = useState(false);
   const [jinxSuccess, setJinxSuccess] = useState(false);
   const [participantDetail, setParticipantDetail] = useState(null);
+  const [jinxQuantity, setJinxQuantity] = useState(1);
 
   const fetchRanking = async () => {
     setError(null);
@@ -112,6 +111,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
     setSelectedParticipant(participant);
     setJinxSuccess(false);
     setJinxLoading(false);
+    setJinxQuantity(1);
     setShowJinxModal(true);
     setParticipantDetail(null);
 
@@ -134,7 +134,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
       const response = await fetch(`${API_BASE}/participants/${selectedParticipant.id}/jinx`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ is_mock: isMock })
+        body: JSON.stringify({ quantity: jinxQuantity, is_mock: isMock })
       });
       if (response.ok) {
         setJinxSuccess(true);
@@ -271,12 +271,22 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
                 {jinx.overlay}
                 <button
                   onClick={(e) => { e.stopPropagation(); handleOpenJinxModal(top2); }}
-                  className="absolute top-2.5 right-2.5 text-[8.5px] font-black px-1.5 py-0.5 rounded-full bg-black/10 hover:bg-black/20 text-black border border-black/10 transition-all z-20 cursor-pointer flex items-center gap-0.5"
+                  className={`absolute top-2.5 right-2.5 text-[8.5px] font-black px-1.5 py-0.5 rounded-full border transition-all z-20 cursor-pointer flex items-center gap-0.5 ${
+                    top2.jinx_count > 10
+                      ? 'bg-red-950/40 text-red-400 border-red-800/60 hover:bg-red-950/60 shadow-sm'
+                      : top2.jinx_count >= 4
+                      ? 'bg-purple-900/40 text-purple-300 border-purple-500/40 hover:bg-purple-900/60 shadow-sm'
+                      : top2.jinx_count >= 1
+                      ? 'bg-emerald-100 text-emerald-850 border-emerald-300 hover:bg-emerald-200'
+                      : 'bg-black/10 hover:bg-black/20 text-black border border-black/10'
+                  }`}
                 >
                   <span>🧙‍♀️</span>
                 </button>
-                <div className={`w-8 h-8 rounded-full bg-slate-100/50 flex items-center justify-center text-sm font-black text-slate-800 mb-3 shadow-inner border border-slate-300/50 relative z-10 ${
-                  top2.jinx_count > 0 ? 'bg-black/10 border-black/10 text-inherit' : ''
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-black mb-3 shadow-inner border relative z-10 ${
+                  top2.jinx_count > 0 
+                    ? 'bg-black/10 border-black/10 text-inherit' 
+                    : 'bg-slate-100/50 text-slate-800 border-slate-300/50'
                 }`}>
                   2
                 </div>
@@ -310,7 +320,15 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
                 {jinx.overlay}
                 <button
                   onClick={(e) => { e.stopPropagation(); handleOpenJinxModal(top1); }}
-                  className="absolute top-3 right-3 text-[8.5px] font-black px-1.5 py-0.5 rounded-full bg-black/10 hover:bg-black/20 text-black border border-black/10 transition-all z-20 cursor-pointer flex items-center gap-0.5"
+                  className={`absolute top-3 right-3 text-[8.5px] font-black px-1.5 py-0.5 rounded-full border transition-all z-20 cursor-pointer flex items-center gap-0.5 ${
+                    top1.jinx_count > 10
+                      ? 'bg-red-950/40 text-red-400 border-red-800/60 hover:bg-red-950/60 shadow-sm'
+                      : top1.jinx_count >= 4
+                      ? 'bg-purple-900/40 text-purple-300 border-purple-500/40 hover:bg-purple-900/60 shadow-sm'
+                      : top1.jinx_count >= 1
+                      ? 'bg-emerald-100 text-emerald-850 border-emerald-300 hover:bg-emerald-200 shadow-sm'
+                      : 'bg-black/10 hover:bg-black/20 text-black border border-black/10'
+                  }`}
                 >
                   <span>🧙‍♀️</span>
                 </button>
@@ -321,8 +339,8 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
                       : 'bg-white text-amber-600 border-amber-100'
                   }`}>{t('ranking.leader')}</span>
                 </div>
-                <div className={`w-10 h-10 rounded-full bg-amber-200/40 flex items-center justify-center text-base font-black mb-3 shadow-inner border border-amber-300/50 mt-2 relative z-10 ${
-                  top1.jinx_count > 0 ? 'bg-black/10 border-black/10 text-inherit' : 'text-amber-950'
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center text-base font-black mb-3 shadow-inner border mt-2 relative z-10 ${
+                  top1.jinx_count > 0 ? 'bg-black/10 border-black/10 text-inherit' : 'bg-amber-200/40 text-amber-950 border-amber-300/50'
                 }`}>
                   1
                 </div>
@@ -356,12 +374,22 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
                 {jinx.overlay}
                 <button
                   onClick={(e) => { e.stopPropagation(); handleOpenJinxModal(top3); }}
-                  className="absolute top-2.5 right-2.5 text-[8.5px] font-black px-1.5 py-0.5 rounded-full bg-black/10 hover:bg-black/20 text-black border border-black/10 transition-all z-20 cursor-pointer flex items-center gap-0.5"
+                  className={`absolute top-2.5 right-2.5 text-[8.5px] font-black px-1.5 py-0.5 rounded-full border transition-all z-20 cursor-pointer flex items-center gap-0.5 ${
+                    top3.jinx_count > 10
+                      ? 'bg-red-950/40 text-red-400 border-red-800/60 hover:bg-red-950/60 shadow-sm'
+                      : top3.jinx_count >= 4
+                      ? 'bg-purple-900/40 text-purple-300 border-purple-500/40 hover:bg-purple-900/60 shadow-sm'
+                      : top3.jinx_count >= 1
+                      ? 'bg-emerald-100 text-emerald-850 border-emerald-300 hover:bg-emerald-200'
+                      : 'bg-black/10 hover:bg-black/20 text-black border border-black/10'
+                  }`}
                 >
                   <span>🧙‍♀️</span>
                 </button>
-                <div className={`w-8 h-8 rounded-full bg-orange-200/50 flex items-center justify-center text-sm font-black text-orange-900 mb-3 shadow-inner border border-orange-300/50 relative z-10 ${
-                  top3.jinx_count > 0 ? 'bg-black/10 border-black/10 text-inherit' : ''
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-black mb-3 shadow-inner border relative z-10 ${
+                  top3.jinx_count > 0 
+                    ? 'bg-black/10 border-black/10 text-inherit' 
+                    : 'bg-orange-200/50 text-orange-900 border-orange-300/50'
                 }`}>
                   3
                 </div>
@@ -418,7 +446,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
                       e.stopPropagation();
                       handleOpenJinxModal(item);
                     }}
-                    className={`text-[9px] font-black tracking-wider px-2.5 py-1 rounded-full border transition-all duration-200 active:scale-95 cursor-pointer flex items-center gap-1 ${
+                    className={`text-[9.5px] font-black tracking-wider px-2.5 py-1 rounded-full border transition-all duration-200 active:scale-95 cursor-pointer flex items-center gap-1 ${
                       item.jinx_count > 10
                         ? 'bg-red-950/40 text-red-400 border-red-800/60 hover:bg-red-950/60 shadow-sm'
                         : item.jinx_count >= 4
@@ -477,6 +505,20 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
                   ¿Sientes que <span className="font-extrabold text-gray-700">{selectedParticipant.name}</span> está teniendo demasiada suerte? ¡Lánzale un mal de ojo para teñir su marcador de poción tóxica y enfriar su racha!
                 </p>
 
+                {/* Interactive Multi-Gafe Selector */}
+                <div className="flex items-center justify-between bg-purple-50/50 p-3.5 rounded-2xl border border-purple-100/60">
+                  <span className="text-xs font-bold text-purple-950">Fuerza de la maldición:</span>
+                  <select
+                    value={jinxQuantity}
+                    onChange={(e) => setJinxQuantity(parseInt(e.target.value))}
+                    className="bg-white border border-purple-200 rounded-xl px-3 py-1.5 text-xs font-black text-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                  >
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => (
+                      <option key={n} value={n}>{n} {n === 1 ? 'Gafe' : 'Gafes'} ({n}€)</option>
+                    ))}
+                  </select>
+                </div>
+
                 {/* Active Jinxes Status */}
                 <div className="p-3 bg-purple-50 rounded-2xl border border-purple-100 space-y-1.5">
                   <div className="flex justify-between items-center text-xs">
@@ -515,7 +557,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
 
                 {/* Stripe Bizum notice */}
                 <div className="p-3 bg-amber-50 border border-amber-100 rounded-xl">
-                  <p className="text-[11px] font-bold text-amber-800 leading-relaxed text-center flex items-center gap-1.5 justify-center">
+                  <p className="text-[11.5px] font-bold text-amber-800 leading-relaxed text-center flex items-center gap-1.5 justify-center">
                     <Smartphone className="h-4 w-4" /> Cada gafe cuesta 1.00 € vía Bizum.
                   </p>
                 </div>
@@ -527,7 +569,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
                     disabled={jinxLoading}
                     className="w-full py-3.5 bg-purple-700 hover:bg-purple-800 disabled:bg-purple-300 text-white font-black text-sm uppercase tracking-wider rounded-xl transition-all duration-200 active:scale-[0.97] cursor-pointer flex items-center justify-center gap-2"
                   >
-                    {jinxLoading ? 'Conectando...' : 'Pagar 1€ con Bizum 🧙‍♀️'}
+                    {jinxLoading ? 'Conectando...' : `Pagar ${jinxQuantity}€ con Bizum 🧙‍♀️`}
                   </button>
                   
                   {/* Test Simulate Gafe */}
@@ -549,7 +591,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
                   ¡Gafe Enviado!
                 </h3>
                 <p className="text-sm text-gray-500 font-medium px-4 leading-relaxed">
-                  El mal de ojo ha sido activado de forma instantánea. La tarjeta de <span className="font-extrabold text-purple-800">{selectedParticipant.name}</span> se teñirá de inmediato. ¡Dura exactamente 3 días!
+                  El mal de ojo ha sido activado de forma instantánea con una fuerza de <span className="font-extrabold text-purple-800">{jinxQuantity} {jinxQuantity === 1 ? 'gafe' : 'gafes'}</span>. La tarjeta de <span className="font-extrabold text-purple-800">{selectedParticipant.name}</span> se teñirá de inmediato. ¡Dura exactamente 3 días!
                 </p>
                 <div className="pt-4">
                   <button

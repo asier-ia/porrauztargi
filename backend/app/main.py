@@ -328,6 +328,7 @@ def get_participant_detail(participant_id: int, db: Session = Depends(get_db)):
     return detail_res
 
 class CreateJinxRequest(BaseModel):
+    quantity: int = 1
     is_mock: bool = False
 
 @app.post("/api/participants/{participant_id}/jinx")
@@ -339,16 +340,20 @@ def create_jinx(participant_id: int, req: CreateJinxRequest, db: Session = Depen
     now = datetime.now(timezone.utc).replace(tzinfo=None)
     expires_at = now + timedelta(days=3)
     
-    new_jinx = models.Jinx(
-        target_id=participant_id,
-        created_at=now,
-        expires_at=expires_at
-    )
-    db.add(new_jinx)
+    qty = max(1, min(10, req.quantity))
+    
+    for _ in range(qty):
+        new_jinx = models.Jinx(
+            target_id=participant_id,
+            created_at=now,
+            expires_at=expires_at
+        )
+        db.add(new_jinx)
+        
     db.commit()
     
     return {
-        "message": f"¡{participant.name} ha sido gafado con éxito!",
+        "message": f"¡{participant.name} ha sido gafado con éxito x{qty}!",
         "expires_at": expires_at.isoformat()
     }
 

@@ -21,6 +21,7 @@ class PaymentIntentRequest(BaseModel):
     payment_method_type: str = "card"  # "card" | "bizum"
     phone: Optional[str] = None
     target_id: Optional[int] = None
+    quantity: Optional[int] = 1
 
 class PaymentIntentResponse(BaseModel):
     client_secret: str
@@ -31,8 +32,12 @@ def create_payment_intent(req: PaymentIntentRequest):
         raise HTTPException(status_code=500, detail="Stripe no configurado")
 
     if req.product_id in PRICES:
-        amount = PRICES[req.product_id]["amount"]
+        base_amount = PRICES[req.product_id]["amount"]
+        quantity = req.quantity or 1
+        amount = base_amount * quantity
         description = PRICES[req.product_id]["description"]
+        if req.product_id == "jinx":
+            description = f"Gafe acumulativo x{quantity} para participante ID {req.target_id}"
     elif req.product_id in ("sueno", "popup"):
         if not req.amount:
             raise HTTPException(status_code=400, detail="Importe requerido para este producto")
@@ -50,6 +55,8 @@ def create_payment_intent(req: PaymentIntentRequest):
     }
     if req.target_id is not None:
         metadata["target_id"] = str(req.target_id)
+    if req.quantity is not None:
+        metadata["quantity"] = str(req.quantity)
 
     try:
         intent = stripe.PaymentIntent.create(
