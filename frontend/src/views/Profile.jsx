@@ -238,6 +238,39 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                 <span className="text-lg font-black text-sky-700">{currentParticipant.points_top4} <span className="text-[10px] font-bold text-emerald-600/70">pts</span></span>
               </div>
             </div>
+
+            {/* Detailed Active Curses Countdowns */}
+            {currentParticipant.active_jinxes && currentParticipant.active_jinxes.length > 0 && (
+              <div className={`mt-5 p-3.5 rounded-2xl border border-dashed relative z-10 text-center ${
+                currentParticipant.jinx_count > 10
+                  ? 'bg-red-950/20 border-red-800/40 text-red-200'
+                  : currentParticipant.jinx_count >= 4
+                  ? 'bg-purple-900/20 border-purple-500/30 text-purple-200'
+                  : 'bg-emerald-100/20 border-emerald-300/40 text-emerald-950'
+              }`}>
+                <h4 className="text-[10px] font-black uppercase tracking-wider mb-2.5 flex items-center gap-1.5 justify-center">
+                  <span>🕯️</span> Maldiciones Activas ({currentParticipant.jinx_count})
+                </h4>
+                <div className="space-y-1.5 max-h-28 overflow-y-auto">
+                  {currentParticipant.active_jinxes.map((jx, idx) => {
+                    const formatExpiryTime = (seconds) => {
+                      if (seconds <= 0) return "Expirando...";
+                      const d = Math.floor(seconds / (3600 * 24));
+                      const h = Math.floor((seconds % (3600 * 24)) / 3600);
+                      const m = Math.floor((seconds % 3600) / 60);
+                      if (d > 0) return `${d}d ${h}h`;
+                      return `${h}h ${m}m`;
+                    };
+                    return (
+                      <div key={jx.id} className="flex justify-between text-[11px] font-bold opacity-90 px-1">
+                        <span>Gafe #{idx + 1}</span>
+                        <span className="font-extrabold tabular-nums">expira en {formatExpiryTime(jx.seconds_remaining)}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
               </div>
             );
           })()}
