@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 import { useState, useEffect, useRef } from 'react';
-import { Search, ChevronDown, CheckCircle2, XCircle } from 'lucide-react';
+import { Search, ChevronDown, CheckCircle2, XCircle, Sparkles, X } from 'lucide-react';
 import { getJinxStyles } from './Ranking';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -28,10 +28,8 @@ const matchScorer = (predictedName, realName) => {
   if (!pNorm || !rNorm) return false;
   if (pNorm === rNorm) return true;
 
-  // Check substring match
   if (pNorm.includes(rNorm) || rNorm.includes(pNorm)) return true;
 
-  // Check for initials matching (e.g. "B. Díaz" with "Brahim Díaz")
   const pWords = pNorm.split(" ");
   const rWords = rNorm.split(" ");
 
@@ -65,6 +63,12 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
   const [loadingList, setLoadingList] = useState(true);
   const [loadingDetail, setLoadingDetail] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+
+  // Estados para el Modal de Gafar
+  const [showJinxModal, setShowJinxModal] = useState(false);
+  const [jinxLoading, setJinxLoading] = useState(false);
+  const [jinxSuccess, setJinxSuccess] = useState(false);
+  const [jinxQuantity, setJinxQuantity] = useState(1);
 
   const dropdownRef = useRef(null);
 
@@ -108,29 +112,28 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
     fetchRealData();
   }, [API_BASE]);
 
+  const fetchDetail = async (idToFetch) => {
+    setLoadingDetail(true);
+    try {
+      const response = await fetch(`${API_BASE}/participants/${idToFetch}`);
+      if (response.ok) {
+        const data = await response.json();
+        setCurrentParticipant(data);
+        setSearchTerm(data.name);
+      }
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoadingDetail(false);
+    }
+  };
+
   useEffect(() => {
     if (!selectedId) {
       setCurrentParticipant(null);
       return;
     }
-
-    const fetchDetail = async () => {
-      setLoadingDetail(true);
-      try {
-        const response = await fetch(`${API_BASE}/participants/${selectedId}`);
-        if (response.ok) {
-          const data = await response.json();
-          setCurrentParticipant(data);
-          setSearchTerm(data.name);
-        }
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoadingDetail(false);
-      }
-    };
-
-    fetchDetail();
+    fetchDetail(selectedId);
   }, [selectedId, API_BASE]);
 
   const filteredParticipants = participants.filter(p =>
@@ -140,6 +143,42 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
   const handleSelect = (id) => {
     setSelectedId(id);
     setShowDropdown(false);
+  };
+
+  // Lógica de Gafar
+  const handleOpenJinxModal = () => {
+    setJinxSuccess(false);
+    setJinxLoading(false);
+    setJinxQuantity(1);
+    setShowJinxModal(true);
+  };
+
+  const handleApplyJinx = async (isMock = false) => {
+    if (!currentParticipant) return;
+    setJinxLoading(true);
+    try {
+      const response = await fetch(`${API_BASE}/participants/${currentParticipant.id}/jinx`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ quantity: jinxQuantity, is_mock: isMock })
+      });
+      if (response.ok) {
+        setJinxSuccess(true);
+        // Refrescamos los datos del perfil al instante para ver la maldición nueva
+        const detailRes = await fetch(`${API_BASE}/participants/${currentParticipant.id}`);
+        if (detailRes.ok) {
+          const data = await detailRes.json();
+          setCurrentParticipant(data);
+        }
+      } else {
+        alert("No se pudo aplicar el gafe.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error al conectar con el servidor.");
+    } finally {
+      setJinxLoading(false);
+    }
   };
 
   return (
@@ -195,104 +234,137 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
           <div className="w-8 h-8 border-4 border-emerald-100 border-t-emerald-600 rounded-full animate-spin" />
         </div>
       ) : currentParticipant ? (
-        <div className="animate-slideUp pb-6">
+        <div className="animate-slideUp pb-6 px-2">
 
           {(() => {
-            const jinx = getJinxStyles(currentParticipant.jinx_count);
+            const jinxCount = currentParticipant.jinx_count || 0;
+            const jinx = getJinxStyles(jinxCount);
+
+            const isDarkTier = jinxCount > 10;
+            const isJinxed = jinxCount > 0;
+
+            const summaryBoxCls = isDarkTier
+              ? "bg-[#2c2c2e] border-[#3c3c3e] text-gray-300"
+              : isJinxed
+                ? "bg-white/50 border-white/40 text-gray-800"
+                : "bg-white border-gray-100 shadow-sm";
+
             return (
-              <div className={`pt-6 pb-4 px-4 border-y border-gray-100 mb-6 relative overflow-hidden transition-all duration-300 ${
-                currentParticipant.jinx_count > 0 ? jinx.cardCls : 'bg-gradient-to-b from-emerald-50/30 to-white'
-              }`}>
+              <div className={`p-6 rounded-[2rem] border mb-8 relative overflow-hidden transition-all duration-300 ${isJinxed ? jinx.cardCls : 'bg-gradient-to-b from-emerald-50/40 to-white border-gray-200 shadow-sm'
+                }`}>
                 {jinx.overlay}
-            <div className="text-center mb-6">
-              <h3 className={`text-2xl font-black mb-1 relative z-10 ${currentParticipant.jinx_count > 0 ? jinx.nameCls : 'text-gray-900'}`}>
-                
-                {currentParticipant.name}
-              </h3>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white rounded-full border border-gray-200 shadow-sm relative z-10">
-                <span className="text-xs text-gray-500 font-medium">{t('profile.currentRank')}</span>
-                <span className="text-sm font-bold text-emerald-700">#{currentParticipant.rank || "-"}</span>
-              </div>
-            </div>
 
-            <div className="mt-4 mb-6 text-center relative z-10">
-              <p className={`text-[10px] font-bold uppercase tracking-widest mb-1 ${currentParticipant.jinx_count > 0 ? 'text-inherit opacity-75' : 'text-gray-400'}`}>{t('profile.pointsTotal')}</p>
-              <p className={`text-4xl font-black ${currentParticipant.jinx_count > 0 ? jinx.pointsCls : 'text-emerald-700'}`}>{currentParticipant.points_total}</p>
-            </div>
+                {/* BOTÓN DE GAFAR FLOTANTE (ESTILO APPLE) */}
+                <button
+                  onClick={handleOpenJinxModal}
+                  className={`absolute top-5 right-5 px-3.5 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase transition-all duration-200 active:scale-95 shadow-sm flex items-center gap-1.5 z-20 ${isJinxed ? jinx.btnCls : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'
+                    }`}
+                >
+                  <Sparkles size={14} strokeWidth={2.5} />
+                  <span>GAFAR</span>
+                </button>
 
-            <div className="space-y-2.5 relative z-10">
-              <h4 className="text-[11px] font-bold text-gray-400 uppercase tracking-wider px-1 mb-1 text-center">{t('profile.pointsSummary')}</h4>
-
-              <div className="flex items-center justify-between bg-emerald-50/80 p-3.5 rounded-xl border border-emerald-100 shadow-sm">
-                <span className="text-sm font-bold text-emerald-900">{t('profile.groupPhase')}</span>
-                <span className="text-lg font-black text-emerald-700">{currentParticipant.points_groups} <span className="text-[10px] font-bold text-emerald-600/70">pts</span></span>
-              </div>
-
-              <div className="flex items-center justify-between bg-amber-50/80 p-3.5 rounded-xl border border-amber-100 shadow-sm">
-                <span className="text-sm font-bold text-amber-900">{t('profile.pointsScorers')}</span>
-                <span className="text-lg font-black text-amber-700">{currentParticipant.points_scorers} <span className="text-[10px] font-bold text-emerald-600/70">pts</span></span>
-              </div>
-
-              <div className="flex items-center justify-between bg-sky-50/80 p-3.5 rounded-xl border border-sky-100 shadow-sm">
-                <span className="text-sm font-bold text-sky-900">{t('profile.pointsTop4')}</span>
-                <span className="text-lg font-black text-sky-700">{currentParticipant.points_top4} <span className="text-[10px] font-bold text-emerald-600/70">pts</span></span>
-              </div>
-            </div>
-
-            {/* Detailed Active Curses Countdowns */}
-            {currentParticipant.active_jinxes && currentParticipant.active_jinxes.length > 0 && (
-              <div className={`mt-5 p-3.5 rounded-2xl border border-dashed relative z-10 text-center ${
-                currentParticipant.jinx_count > 10
-                  ? 'bg-red-950/20 border-red-800/40 text-red-200'
-                  : currentParticipant.jinx_count >= 4
-                  ? 'bg-purple-900/20 border-purple-500/30 text-purple-200'
-                  : 'bg-emerald-100/20 border-emerald-300/40 text-emerald-950'
-              }`}>
-                <h4 className="text-[10px] font-black uppercase tracking-wider mb-2.5 flex items-center gap-1.5 justify-center">
-                  <span>🕯️</span> Maldiciones Activas ({currentParticipant.jinx_count})
-                </h4>
-                <div className="space-y-1.5 max-h-28 overflow-y-auto">
-                  {currentParticipant.active_jinxes.map((jx, idx) => {
-                    const formatExpiryTime = (seconds) => {
-                      if (seconds <= 0) return "Expirando...";
-                      const d = Math.floor(seconds / (3600 * 24));
-                      const h = Math.floor((seconds % (3600 * 24)) / 3600);
-                      const m = Math.floor((seconds % 3600) / 60);
-                      if (d > 0) return `${d}d ${h}h`;
-                      return `${h}h ${m}m`;
-                    };
-                    return (
-                      <div key={jx.id} className="flex justify-between text-[11px] font-bold opacity-90 px-1">
-                        <span>Gafe #{idx + 1}</span>
-                        <span className="font-extrabold tabular-nums">expira en {formatExpiryTime(jx.seconds_remaining)}</span>
-                      </div>
-                    );
-                  })}
+                <div className="text-center mb-8 mt-2">
+                  <h3 className={`text-2xl font-black mb-2 relative z-10 pr-16 pl-16 truncate ${isJinxed ? jinx.nameCls : 'text-gray-900'}`}>
+                    {currentParticipant.name}
+                  </h3>
+                  <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border shadow-sm relative z-10 ${isDarkTier ? 'bg-[#2c2c2e] border-[#3c3c3e]' : 'bg-white border-gray-200'
+                    }`}>
+                    <span className={`text-xs font-medium ${isDarkTier ? 'text-gray-400' : 'text-gray-500'}`}>{t('profile.currentRank')}</span>
+                    <span className={`text-sm font-bold ${isDarkTier ? 'text-gray-200' : 'text-emerald-700'}`}>#{currentParticipant.rank || "-"}</span>
+                  </div>
                 </div>
-              </div>
-            )}
+
+                <div className="mt-2 mb-8 text-center relative z-10">
+                  <p className={`text-[10px] font-bold uppercase tracking-widest mb-1 ${isDarkTier ? 'text-gray-400' : isJinxed ? 'text-inherit opacity-75' : 'text-gray-400'}`}>
+                    {t('profile.pointsTotal')}
+                  </p>
+                  <p className={`text-5xl font-black ${isJinxed ? jinx.pointsCls : 'text-emerald-700'}`}>
+                    {currentParticipant.points_total}
+                  </p>
+                </div>
+
+                <div className="space-y-2.5 relative z-10">
+                  <h4 className={`text-[10px] font-bold uppercase tracking-wider px-1 mb-2 text-center ${isDarkTier ? 'text-gray-500' : 'text-gray-400'}`}>
+                    {t('profile.pointsSummary')}
+                  </h4>
+
+                  <div className={`flex items-center justify-between p-4 rounded-2xl border backdrop-blur-sm ${!isJinxed ? 'bg-emerald-50/80 border-emerald-100 text-emerald-900' : summaryBoxCls
+                    }`}>
+                    <span className="text-sm font-bold">{t('profile.groupPhase')}</span>
+                    <span className="text-lg font-black">{currentParticipant.points_groups} <span className="text-[10px] font-bold opacity-60">pts</span></span>
+                  </div>
+
+                  <div className={`flex items-center justify-between p-4 rounded-2xl border backdrop-blur-sm ${!isJinxed ? 'bg-amber-50/80 border-amber-100 text-amber-900' : summaryBoxCls
+                    }`}>
+                    <span className="text-sm font-bold">{t('profile.pointsScorers')}</span>
+                    <span className="text-lg font-black">{currentParticipant.points_scorers} <span className="text-[10px] font-bold opacity-60">pts</span></span>
+                  </div>
+
+                  <div className={`flex items-center justify-between p-4 rounded-2xl border backdrop-blur-sm ${!isJinxed ? 'bg-sky-50/80 border-sky-100 text-sky-900' : summaryBoxCls
+                    }`}>
+                    <span className="text-sm font-bold">{t('profile.pointsTop4')}</span>
+                    <span className="text-lg font-black">{currentParticipant.points_top4} <span className="text-[10px] font-bold opacity-60">pts</span></span>
+                  </div>
+                </div>
+
+                {/* Maldiciones Activas */}
+                {currentParticipant.active_jinxes && currentParticipant.active_jinxes.length > 0 && (
+                  <div className={`mt-6 p-4 rounded-2xl border relative z-10 text-center shadow-sm ${isDarkTier
+                      ? 'bg-[#2c2c2e] border-[#3c3c3e] text-gray-200'
+                      : jinxCount >= 4
+                        ? 'bg-purple-100/90 border-purple-200 text-purple-900'
+                        : 'bg-lime-100/90 border-lime-200 text-lime-900'
+                    }`}>
+                    <h4 className="text-[10px] font-black uppercase tracking-widest mb-3 flex items-center gap-1.5 justify-center opacity-90">
+                      <Sparkles size={14} strokeWidth={2.5} />
+                      Maldiciones Activas ({jinxCount})
+                    </h4>
+                    <div className="space-y-1 max-h-32 overflow-y-auto px-1">
+                      {currentParticipant.active_jinxes.map((jx, idx) => {
+                        const formatExpiryTime = (seconds) => {
+                          if (seconds <= 0) return "Expirando...";
+                          const d = Math.floor(seconds / (3600 * 24));
+                          const h = Math.floor((seconds % (3600 * 24)) / 3600);
+                          const m = Math.floor((seconds % 3600) / 60);
+                          if (d > 0) return `${d}d ${h}h`;
+                          return `${h}h ${m}m`;
+                        };
+                        return (
+                          <div key={jx.id} className="flex justify-between items-center text-[11px] font-bold px-2 py-1.5 rounded-lg hover:bg-black/5 transition-colors">
+                            <span className="opacity-90">Gafe #{idx + 1}</span>
+                            <span className="font-extrabold tabular-nums opacity-75">
+                              expira en {formatExpiryTime(jx.seconds_remaining)}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
             );
           })()}
 
+          {/* Secciones de predicciones */}
           {currentParticipant.prediction && (
-            <div className="px-4 space-y-6">
+            <div className="px-2 space-y-8">
 
               <div>
-                <h4 className="text-sm font-bold text-gray-900 mb-3 px-1 flex items-center gap-2">
+                <h4 className="text-sm font-bold text-gray-900 mb-4 px-1 flex items-center gap-2">
                   <span className="w-1.5 h-4 bg-emerald-500 rounded-full"></span>
                   {t('profile.groupTitle')}
                 </h4>
                 <div className="grid grid-cols-2 gap-3">
                   {Object.entries(currentParticipant.group_matches || {}).map(([group, matches]) => {
                     return (
-                      <div key={group} className="bg-gray-50 rounded-2xl p-3 border border-gray-100">
-                        <p className="text-xs font-bold text-gray-400 mb-2.5">Grupo {group}</p>
-                        <div className="space-y-2">
+                      <div key={group} className="bg-gray-50 rounded-2xl p-4 border border-gray-100 shadow-sm">
+                        <p className="text-xs font-bold text-gray-400 mb-3">Grupo {group}</p>
+                        <div className="space-y-2.5">
                           {matches.map((match, idx) => {
                             return (
                               <div key={idx} className="flex items-center justify-between">
-                                <span className="text-xs font-semibold text-gray-700 truncate mr-2">
+                                <span className="text-[13px] font-semibold text-gray-700 truncate mr-2">
                                   {match.predicted_name}
                                 </span>
                                 {match.is_correct ? (
@@ -311,7 +383,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
               </div>
 
               <div>
-                <h4 className="text-sm font-bold text-gray-900 mb-3 px-1 flex items-center gap-2">
+                <h4 className="text-sm font-bold text-gray-900 mb-4 px-1 flex items-center gap-2">
                   <span className="w-1.5 h-4 bg-amber-400 rounded-full"></span>
                   {t('profile.scorersTitle')}
                 </h4>
@@ -319,13 +391,13 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                   <div className="space-y-3">
                     {currentParticipant.scorer_matches?.map((match, idx) => (
                       <div key={idx} className="flex items-center justify-between pb-3 border-b border-gray-50 last:border-0 last:pb-0">
-                        <span className="text-sm font-semibold text-gray-800">{match.predicted_name}</span>
+                        <span className="text-[13px] font-semibold text-gray-800">{match.predicted_name}</span>
                         {match.real_name ? (
-                          <span className="bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-1 rounded-md flex items-center gap-1">
-                            <CheckCircle2 className="h-3 w-3" /> {match.goals} goles × 2 = +{match.points} pts
+                          <span className="bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2.5 py-1 rounded-md flex items-center gap-1.5 border border-emerald-100/50">
+                            <CheckCircle2 className="h-3.5 w-3.5" /> {match.goals} goles × 2 = +{match.points} pts
                           </span>
                         ) : (
-                          <span className="text-[11px] font-medium text-gray-300">{t('profile.pending')}</span>
+                          <span className="text-[11px] font-medium text-gray-400">{t('profile.pending')}</span>
                         )}
                       </div>
                     ))}
@@ -334,7 +406,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
               </div>
 
               <div>
-                <h4 className="text-sm font-bold text-gray-900 mb-3 px-1 flex items-center gap-2">
+                <h4 className="text-sm font-bold text-gray-900 mb-4 px-1 flex items-center gap-2">
                   <span className="w-1.5 h-4 bg-gray-900 rounded-full"></span>
                   {t('profile.top4Title')}
                 </h4>
@@ -343,21 +415,25 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                     const isCorrectOrQualified = match.points > 0;
 
                     return (
-                      <div key={match.position} className="bg-white rounded-2xl p-3 border border-gray-100 shadow-sm text-center">
-                        <p className={`text-[10px] font-bold uppercase tracking-wider mb-1.5 ${match.position === "1" ? "text-amber-500" : match.position === "2" ? "text-gray-400" : "text-orange-500"
-                          }`}>
-                          {match.position === "1" ? t('profile.champion') : match.position === "2" ? t('profile.subchampion') : match.position === "3" ? t('profile.pos3') : t('profile.pos4')}
-                        </p>
-                        <p className="text-sm font-bold text-gray-800 mb-2">{match.predicted_name}</p>
-                        {isCorrectOrQualified ? (
-                          <span className="inline-block bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-md">
-                            +{match.points} pts
-                          </span>
-                        ) : (
-                          <span className="inline-block text-gray-300 text-[10px] font-medium px-2 py-0.5">
-                            {t('profile.pending')}
-                          </span>
-                        )}
+                      <div key={match.position} className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm text-center flex flex-col justify-between">
+                        <div>
+                          <p className={`text-[10px] font-bold uppercase tracking-wider mb-2 ${match.position === "1" ? "text-amber-500" : match.position === "2" ? "text-gray-400" : "text-orange-500"
+                            }`}>
+                            {match.position === "1" ? t('profile.champion') : match.position === "2" ? t('profile.subchampion') : match.position === "3" ? t('profile.pos3') : t('profile.pos4')}
+                          </p>
+                          <p className="text-[13px] font-bold text-gray-800 mb-3">{match.predicted_name}</p>
+                        </div>
+                        <div>
+                          {isCorrectOrQualified ? (
+                            <span className="inline-block bg-emerald-50 text-emerald-700 text-[11px] font-bold px-2.5 py-1 rounded-md border border-emerald-100/50">
+                              +{match.points} pts
+                            </span>
+                          ) : (
+                            <span className="inline-block text-gray-400 bg-gray-50 text-[10px] font-medium px-2.5 py-1 rounded-md">
+                              {t('profile.pending')}
+                            </span>
+                          )}
+                        </div>
                       </div>
                     );
                   })}
@@ -370,11 +446,97 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center py-20 px-4 text-center">
-          <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-4">
+          <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-4 border border-gray-100">
             <Search className="h-6 w-6 text-gray-300" />
           </div>
           <p className="text-base font-bold text-gray-700 mb-1">{t('profile.searchTitle')}</p>
           <p className="text-sm text-gray-400 font-medium">{t('profile.searchDesc')}</p>
+        </div>
+      )}
+
+      {/* JINX MODAL - PREMIUM & CLEAN (Mismo que en Ranking) */}
+      {showJinxModal && currentParticipant && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fadeIn">
+          <div className="bg-white rounded-[2rem] p-6 max-w-sm w-full shadow-2xl animate-slideUp relative select-none">
+
+            {/* Close */}
+            <button
+              onClick={() => setShowJinxModal(false)}
+              className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer"
+            >
+              <X className="h-5 w-5 text-gray-400" />
+            </button>
+
+            {/* Content */}
+            {!jinxSuccess ? (
+              <div className="space-y-6 pt-2 text-center">
+                <div className="w-16 h-16 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-2 shadow-sm border border-purple-100">
+                  <Sparkles size={28} strokeWidth={2} />
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 leading-tight">
+                  Mandar Gafe a <br /><span className="text-purple-600 font-black">{currentParticipant.name}</span>
+                </h3>
+
+                {/* Quantitative Selector */}
+                <div className="flex items-center justify-between bg-gray-50 p-4 rounded-2xl border border-gray-100 px-4">
+                  <span className="text-sm font-semibold text-gray-700">Fuerza del gafe:</span>
+                  <select
+                    value={jinxQuantity}
+                    onChange={(e) => setJinxQuantity(parseInt(e.target.value))}
+                    className="bg-white border border-gray-200 rounded-xl px-4 py-2 text-sm font-bold text-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400 cursor-pointer shadow-sm"
+                  >
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => (
+                      <option key={n} value={n}>{n} {n === 1 ? 'Nivel' : 'Niveles'} ({n}€)</option>
+                    ))}
+                  </select>
+                </div>
+
+                <p className="text-sm font-bold text-gray-500">
+                  Total a pagar: <span className="text-purple-700 font-black">{jinxQuantity}.00 €</span>
+                </p>
+
+                {/* Action buttons */}
+                <div className="space-y-3 pt-2">
+                  <button
+                    onClick={() => handleApplyJinx(false)}
+                    disabled={jinxLoading}
+                    className="w-full py-4 bg-gray-900 hover:bg-black disabled:bg-gray-300 text-white font-bold text-sm rounded-xl transition-all duration-200 active:scale-[0.98] cursor-pointer shadow-md flex justify-center items-center gap-2"
+                  >
+                    {jinxLoading ? 'Procesando...' : `Pagar ${jinxQuantity}€ con Bizum`}
+                  </button>
+
+                  <button
+                    onClick={() => handleApplyJinx(true)}
+                    disabled={jinxLoading}
+                    className="w-full py-2 hover:underline text-gray-400 hover:text-gray-600 font-medium text-xs transition-all duration-200 cursor-pointer"
+                  >
+                    Simular Gafe Gratis (Prueba)
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="space-y-4 pt-4 text-center">
+                <div className="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm border border-emerald-100">
+                  <Sparkles size={32} strokeWidth={2.5} className="animate-pulse" />
+                </div>
+                <h3 className="text-xl font-black text-gray-900 tracking-tight">
+                  ¡Gafe Aplicado!
+                </h3>
+                <p className="text-sm text-gray-500 font-medium px-2 leading-relaxed">
+                  Has enviado energía negativa nivel <span className="font-bold text-purple-600">{jinxQuantity}</span> a <span className="font-bold text-gray-800">{currentParticipant.name}</span>. Su tarjeta se actualizará en breve.
+                </p>
+                <div className="pt-6">
+                  <button
+                    onClick={() => setShowJinxModal(false)}
+                    className="w-full py-3.5 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold text-sm rounded-xl transition-all duration-200 cursor-pointer"
+                  >
+                    Cerrar
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>
