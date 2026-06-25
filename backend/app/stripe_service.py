@@ -12,6 +12,7 @@ PRICES = {
     "cafe": {"amount": 150, "name": "Café", "description": "Invítame a un café"},
     "cana": {"amount": 300, "name": "Caña", "description": "Invítame a una caña"},
     "cena": {"amount": 1500, "name": "Cena", "description": "Invítame a una cena"},
+    "jinx": {"amount": 100, "name": "Gafe", "description": "Gafar a un participante"},
 }
 
 class PaymentIntentRequest(BaseModel):
@@ -19,6 +20,7 @@ class PaymentIntentRequest(BaseModel):
     amount: Optional[int] = Field(None, ge=100, le=20000)
     payment_method_type: str = "card"  # "card" | "bizum"
     phone: Optional[str] = None
+    target_id: Optional[int] = None
 
 class PaymentIntentResponse(BaseModel):
     client_secret: str
@@ -43,15 +45,19 @@ def create_payment_intent(req: PaymentIntentRequest):
     if req.payment_method_type == "bizum":
         payment_method_types = ["bizum"]
 
+    metadata = {
+        "product_id": req.product_id,
+    }
+    if req.target_id is not None:
+        metadata["target_id"] = str(req.target_id)
+
     try:
         intent = stripe.PaymentIntent.create(
             amount=amount,
             currency="eur",
             payment_method_types=payment_method_types,
             description=description,
-            metadata={
-                "product_id": req.product_id,
-            },
+            metadata=metadata,
         )
         return PaymentIntentResponse(client_secret=intent.client_secret)
     except stripe.error.StripeError as e:

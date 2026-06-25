@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 from typing import List, Optional, Dict
 import asyncio
 from datetime import datetime, timedelta, timezone
+from pydantic import BaseModel
 
 from .database import get_db, engine, Base
 from . import models, schemas, scoring, sync
@@ -124,7 +125,18 @@ def admin_update_results(payload: dict, db: Session = Depends(get_db)):
     
     return {"message": "Results updated and rankings recalculated successfully!"}
 
-def assign_prizes(participants: List[models.Participant]) -> List[schemas.ParticipantResponse]:
+def get_active_jinx_counts(db: Session) -> dict:
+    """
+    Returns a dict of {participant_id: active_jinx_count}
+    """
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
+    active_jinxes = db.query(models.Jinx).filter(models.Jinx.expires_at > now).all()
+    counts = {}
+    for j in active_jinxes:
+        counts[j.target_id] = counts.get(j.target_id, 0) + 1
+    return counts
+
+def assign_prizes(participants: List[models.Participant], db: Session) -> List[schemas.ParticipantResponse]:
     """
     Calculate and attach the prize dynamically to each participant.
     Prizes: 1st (1668.0), 2nd (834.0), 3rd (278.0)
@@ -162,10 +174,13 @@ def assign_prizes(participants: List[models.Participant]) -> List[schemas.Partic
             
         current_index += n
         
+    jinx_counts = get_active_jinx_counts(db)
+        
     response_list = []
     for p in participants:
         res = schemas.ParticipantResponse.model_validate(p)
         res.prize = prizes_dict.get(p.id, 0.0)
+        res.jinx_count = jinx_counts.get(p.id, 0)
         response_list.append(res)
         
     # Maintain standard sorting order (by rank ascending)
@@ -178,7 +193,7 @@ def get_ranking(limit: int = Query(default=10, ge=1, le=200), db: Session = Depe
     Get participants ranking sorted by points with dynamically computed prizes.
     """
     all_participants = db.query(models.Participant).order_by(models.Participant.points_total.desc()).all()
-    ranked_responses = assign_prizes(all_participants)
+    ranked_responses = assign_prizes(all_participants, db)
     return ranked_responses[:limit]
 
 @app.get("/api/participants", response_model=List[schemas.ParticipantResponse])
@@ -189,7 +204,7 @@ def get_participants(db: Session = Depends(get_db)):
     participants = db.query(models.Participant).order_by(models.Participant.name.asc()).all()
     
     # We also attach prizes for all of them so dropdown displays prizes if they are currently winning
-    ranked_responses = assign_prizes(participants)
+    ranked_responses = assign_prizes(participants, db)
     return ranked_responses
 
 @app.get("/api/participants/{participant_id}", response_model=schemas.ParticipantDetailResponse)
@@ -203,7 +218,7 @@ def get_participant_detail(participant_id: int, db: Session = Depends(get_db)):
         
     # Calculate prizes for everyone to find this participant's share
     all_participants = db.query(models.Participant).order_by(models.Participant.points_total.desc()).all()
-    ranked_responses = assign_prizes(all_participants)
+    ranked_responses = assign_prizes(all_participants, db)
     
     # Find matching response
     matched_resp = next((r for r in ranked_responses if r.id == participant_id), None)
@@ -212,6 +227,7 @@ def get_participant_detail(participant_id: int, db: Session = Depends(get_db)):
     detail_res = schemas.ParticipantDetailResponse.model_validate(participant)
     if matched_resp:
         detail_res.prize = matched_resp.prize
+        detail_res.jinx_count = matched_resp.jinx_count
     
     # Calculate scorer matches using backend fuzzy matching
     real_scorers_data = db.query(models.RealWorldData).filter(models.RealWorldData.key == "scorers").first()
@@ -290,8 +306,51 @@ def get_participant_detail(participant_id: int, db: Session = Depends(get_db)):
                 points=points
             ))
     detail_res.top4_matches = top4_matches
+    
+    # Calculate active jinxes detail and countdowns naive utc
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
+    db_jinxes = db.query(models.Jinx).filter(
+        models.Jinx.target_id == participant_id,
+        models.Jinx.expires_at > now
+    ).order_by(models.Jinx.expires_at.asc()).all()
+    
+    active_jinxes_list = []
+    for j in db_jinxes:
+        rem_seconds = int((j.expires_at - now).total_seconds())
+        active_jinxes_list.append(schemas.JinxDetail(
+            id=j.id,
+            created_at=j.created_at.isoformat(),
+            expires_at=j.expires_at.isoformat(),
+            seconds_remaining=max(0, rem_seconds)
+        ))
+    detail_res.active_jinxes = active_jinxes_list
         
     return detail_res
+
+class CreateJinxRequest(BaseModel):
+    is_mock: bool = False
+
+@app.post("/api/participants/{participant_id}/jinx")
+def create_jinx(participant_id: int, req: CreateJinxRequest, db: Session = Depends(get_db)):
+    participant = db.query(models.Participant).filter(models.Participant.id == participant_id).first()
+    if not participant:
+        raise HTTPException(status_code=404, detail="Participant not found")
+        
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
+    expires_at = now + timedelta(days=3)
+    
+    new_jinx = models.Jinx(
+        target_id=participant_id,
+        created_at=now,
+        expires_at=expires_at
+    )
+    db.add(new_jinx)
+    db.commit()
+    
+    return {
+        "message": f"¡{participant.name} ha sido gafado con éxito!",
+        "expires_at": expires_at.isoformat()
+    }
 
 @app.get("/api/scorers")
 def get_scorers(db: Session = Depends(get_db)):
@@ -314,7 +373,6 @@ def get_matches(date: Optional[str] = Query(None), db: Session = Depends(get_db)
         matches = [m for m in matches if m.get("utcDate", "").startswith(date)]
 
     return sorted(matches, key=lambda m: m.get("utcDate", ""))
-
 
 @app.get("/api/results")
 def get_results(db: Session = Depends(get_db)):

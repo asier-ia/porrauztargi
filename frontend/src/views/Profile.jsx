@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 import { useState, useEffect, useRef } from 'react';
 import { Search, ChevronDown, CheckCircle2, XCircle } from 'lucide-react';
+import { getJinxStyles } from './Ranking';
 import { useLanguage } from '../context/LanguageContext';
 
 const normalizeString = (s) => {
@@ -196,23 +197,30 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
       ) : currentParticipant ? (
         <div className="animate-slideUp pb-6">
 
-          <div className="bg-gradient-to-b from-emerald-50/30 to-white pt-6 pb-4 px-4 border-y border-gray-100 mb-6">
+          {(() => {
+            const jinx = getJinxStyles(currentParticipant.jinx_count);
+            return (
+              <div className={`pt-6 pb-4 px-4 border-y border-gray-100 mb-6 relative overflow-hidden transition-all duration-300 ${
+                currentParticipant.jinx_count > 0 ? jinx.cardCls : 'bg-gradient-to-b from-emerald-50/30 to-white'
+              }`}>
+                {jinx.overlay}
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-black text-gray-900 mb-1">
+              <h3 className={`text-2xl font-black mb-1 relative z-10 ${currentParticipant.jinx_count > 0 ? jinx.nameCls : 'text-gray-900'}`}>
+                
                 {currentParticipant.name}
               </h3>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white rounded-full border border-gray-200 shadow-sm">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white rounded-full border border-gray-200 shadow-sm relative z-10">
                 <span className="text-xs text-gray-500 font-medium">{t('profile.currentRank')}</span>
                 <span className="text-sm font-bold text-emerald-700">#{currentParticipant.rank || "-"}</span>
               </div>
             </div>
 
-            <div className="mt-4 mb-6 text-center">
-              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">{t('profile.pointsTotal')}</p>
-              <p className="text-4xl font-black text-emerald-700">{currentParticipant.points_total}</p>
+            <div className="mt-4 mb-6 text-center relative z-10">
+              <p className={`text-[10px] font-bold uppercase tracking-widest mb-1 ${currentParticipant.jinx_count > 0 ? 'text-inherit opacity-75' : 'text-gray-400'}`}>{t('profile.pointsTotal')}</p>
+              <p className={`text-4xl font-black ${currentParticipant.jinx_count > 0 ? jinx.pointsCls : 'text-emerald-700'}`}>{currentParticipant.points_total}</p>
             </div>
 
-            <div className="space-y-2.5">
+            <div className="space-y-2.5 relative z-10">
               <h4 className="text-[11px] font-bold text-gray-400 uppercase tracking-wider px-1 mb-1 text-center">{t('profile.pointsSummary')}</h4>
 
               <div className="flex items-center justify-between bg-emerald-50/80 p-3.5 rounded-xl border border-emerald-100 shadow-sm">
@@ -230,7 +238,9 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                 <span className="text-lg font-black text-sky-700">{currentParticipant.points_top4} <span className="text-[10px] font-bold text-emerald-600/70">pts</span></span>
               </div>
             </div>
-          </div>
+              </div>
+            );
+          })()}
 
           {currentParticipant.prediction && (
             <div className="px-4 space-y-6">

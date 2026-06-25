@@ -31,6 +31,7 @@ class ParticipantResponse(ParticipantBase):
     points_top4: int
     rank: Optional[int] = None
     prize: Optional[float] = 0.0
+    jinx_count: int = 0
 
     model_config = ConfigDict(from_attributes=True)
 
@@ -52,11 +53,18 @@ class Top4MatchDetail(BaseModel):
     is_correct: bool
     points: int
 
+class JinxDetail(BaseModel):
+    id: int
+    created_at: str
+    expires_at: str
+    seconds_remaining: int
+
 class ParticipantDetailResponse(ParticipantResponse):
     prediction: Optional[PredictionResponse] = None
     scorer_matches: List[ScorerMatch] = []
     group_matches: Dict[str, List[GroupMatchDetail]] = {}
     top4_matches: List[Top4MatchDetail] = []
+    active_jinxes: List[JinxDetail] = []
 
     model_config = ConfigDict(from_attributes=True)
 

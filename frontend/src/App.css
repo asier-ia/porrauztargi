@@ -1,1 +1,85 @@
 /* Cleared for Tailwind */
+
+/* ─── Pocion Verde: Bubbles Animation ─── */
+@keyframes jinx-bubble-rise {
+  0% {
+    transform: translateY(110%) scale(0.6);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-20%) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.jinx-bubbles-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.jinx-bubble {
+  position: absolute;
+  bottom: -20px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 50%;
+  animation: jinx-bubble-rise infinite ease-in;
+  will-change: transform, opacity;
+}
+
+/* ─── Morado Toxico: Smoke Animation ─── */
+@keyframes jinx-smoke-wave {
+  0% {
+    transform: translate(0, 0) scaleY(1);
+  }
+  50% {
+    transform: translate(-10%, -5px) scaleY(0.95);
+  }
+  100% {
+    transform: translate(-20%, 0) scaleY(1);
+  }
+}
+
+.jinx-smoke-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.18;
+}
+
+.jinx-smoke-wave-element {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-image: radial-gradient(circle at 50% 100%, rgba(168, 85, 247, 0.5), transparent 70%);
+  animation: jinx-smoke-wave 8s infinite linear;
+  will-change: transform;
+}
+
+/* ─── Negro Maldito: Pulse Animation ─── */
+@keyframes jinx-cracks-glow {
+  0%, 100% {
+    opacity: 0.22;
+  }
+  50% {
+    opacity: 0.38;
+  }
+}
+
+.jinx-cracks-pulsing {
+  animation: jinx-cracks-glow 3.5s infinite ease-in-out;
+  will-change: opacity;
+}
