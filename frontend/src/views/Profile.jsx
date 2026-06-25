@@ -241,27 +241,21 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                   {t('profile.groupTitle')}
                 </h4>
                 <div className="grid grid-cols-2 gap-3">
-                  {Object.entries(currentParticipant.prediction.group_predictions).map(([group, preds]) => {
-                    const realTeams = realResults?.standings?.[group] || [];
+                  {Object.entries(currentParticipant.group_matches || {}).map(([group, matches]) => {
                     return (
                       <div key={group} className="bg-gray-50 rounded-2xl p-3 border border-gray-100">
                         <p className="text-xs font-bold text-gray-400 mb-2.5">Grupo {group}</p>
                         <div className="space-y-2">
-                          {preds.map((team, idx) => {
-                            const isCorrect = realTeams[idx] === team;
-                            const hasQualified = realTeams.includes(team);
-
+                          {matches.map((match, idx) => {
                             return (
                               <div key={idx} className="flex items-center justify-between">
                                 <span className="text-xs font-semibold text-gray-700 truncate mr-2">
-                                  {team}
+                                  {match.predicted_name}
                                 </span>
-                                {isCorrect ? (
+                                {match.is_correct ? (
                                   <CheckCircle2 className="h-4 w-4 text-emerald-500 flex-shrink-0" />
-                                ) : hasQualified ? (
-                                  <CheckCircle2 className="h-4 w-4 text-emerald-300 flex-shrink-0" />
                                 ) : (
-                                  <XCircle className="h-4 w-4 text-gray-300 flex-shrink-0" />
+                                  <XCircle className="h-4 w-4 text-red-500 flex-shrink-0" />
                                 )}
                               </div>
                             );
@@ -302,28 +296,19 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                   {t('profile.top4Title')}
                 </h4>
                 <div className="grid grid-cols-2 gap-3">
-                  {Object.entries(currentParticipant.prediction.top4_predictions).map(([pos, team]) => {
-                    const realTeamAtPos = realResults?.top4?.[pos];
-                    const inRealTop4 = Object.values(realResults?.top4 || {}).includes(team);
-                    const isExact = realTeamAtPos === team;
-
-                    let points = 0;
-                    if (isExact) {
-                      points = pos === "1" ? 14 : pos === "2" ? 8 : pos === "3" ? 6 : 4;
-                    } else if (inRealTop4) {
-                      points = 2;
-                    }
+                  {(currentParticipant.top4_matches || []).map((match) => {
+                    const isCorrectOrQualified = match.points > 0;
 
                     return (
-                      <div key={pos} className="bg-white rounded-2xl p-3 border border-gray-100 shadow-sm text-center">
-                        <p className={`text-[10px] font-bold uppercase tracking-wider mb-1.5 ${pos === "1" ? "text-amber-500" : pos === "2" ? "text-gray-400" : "text-orange-500"
+                      <div key={match.position} className="bg-white rounded-2xl p-3 border border-gray-100 shadow-sm text-center">
+                        <p className={`text-[10px] font-bold uppercase tracking-wider mb-1.5 ${match.position === "1" ? "text-amber-500" : match.position === "2" ? "text-gray-400" : "text-orange-500"
                           }`}>
-                          {pos === "1" ? t('profile.champion') : pos === "2" ? t('profile.subchampion') : pos === "3" ? t('profile.pos3') : t('profile.pos4')}
+                          {match.position === "1" ? t('profile.champion') : match.position === "2" ? t('profile.subchampion') : match.position === "3" ? t('profile.pos3') : t('profile.pos4')}
                         </p>
-                        <p className="text-sm font-bold text-gray-800 mb-2">{team}</p>
-                        {isExact || inRealTop4 ? (
+                        <p className="text-sm font-bold text-gray-800 mb-2">{match.predicted_name}</p>
+                        {isCorrectOrQualified ? (
                           <span className="inline-block bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-md">
-                            +{points} pts
+                            +{match.points} pts
                           </span>
                         ) : (
                           <span className="inline-block text-gray-300 text-[10px] font-medium px-2 py-0.5">

@@ -54,7 +54,13 @@ async def auto_update_task():
         next_update_at = datetime.now(timezone.utc) + timedelta(hours=4)
 
 @app.on_event("startup")
-def on_startup():
+async def on_startup():
+    # Run initial sync immediately
+    db = next(get_db())
+    try:
+        await sync.sync_all_data(db)
+    finally:
+        db.close()
     # Spin up background loop
     asyncio.create_task(auto_update_task())
 
@@ -219,13 +225,71 @@ def get_participant_detail(participant_id: int, db: Session = Depends(get_db)):
                 if scoring.match_scorer(p_scorer, r_scorer["name"]):
                     match = r_scorer
                     break
-            scorer_matches.append({
-                "predicted_name": p_scorer,
-                "real_name": match["name"] if match else None,
-                "goals": match["goals"] if match else 0,
-                "points": match["goals"] * 2 if match else 0
-            })
+            scorer_matches.append(schemas.ScorerMatch(
+                predicted_name=p_scorer,
+                real_name=match["name"] if match else None,
+                goals=match["goals"] if match else 0,
+                points=match["goals"] * 2 if match else 0
+            ))
     detail_res.scorer_matches = scorer_matches
+
+    # Calculate group matches using backend robust matching
+    real_standings_data = db.query(models.RealWorldData).filter(models.RealWorldData.key == "standings").first()
+    real_standings = real_standings_data.value if real_standings_data else {}
+    
+    group_matches = {}
+    if participant.prediction:
+        for group, pred_teams in participant.prediction.group_predictions.items():
+            real_teams = real_standings.get(group) or []
+            matches_for_group = []
+            for idx, pred_team in enumerate(pred_teams):
+                is_correct = False
+                real_name_at_pos = real_teams[idx] if idx < len(real_teams) else None
+                
+                if pred_team:
+                    # Check exact position match
+                    if real_name_at_pos and scoring.match_teams(pred_team, real_name_at_pos):
+                        is_correct = True
+                        
+                matches_for_group.append(schemas.GroupMatchDetail(
+                    predicted_name=pred_team,
+                    real_name=real_name_at_pos,
+                    is_correct=is_correct
+                ))
+            group_matches[group] = matches_for_group
+    detail_res.group_matches = group_matches
+
+    # Calculate top4 matches using backend robust matching
+    real_top4_data = db.query(models.RealWorldData).filter(models.RealWorldData.key == "top4").first()
+    real_top4 = real_top4_data.value if real_top4_data else {}
+    
+    top4_matches = []
+    if participant.prediction:
+        for pos, pred_team in participant.prediction.top4_predictions.items():
+            real_team_at_pos = real_top4.get(pos)
+            is_correct = False
+            in_real_top4 = False
+            
+            if pred_team:
+                if real_team_at_pos and scoring.match_teams(pred_team, real_team_at_pos):
+                    is_correct = True
+                elif any(real_t and scoring.match_teams(pred_team, real_t) for real_t in real_top4.values()):
+                    in_real_top4 = True
+                    
+            points = 0
+            if is_correct:
+                points = 14 if pos == "1" else 8 if pos == "2" else 6 if pos == "3" else 4
+            elif in_real_top4:
+                points = 2
+                
+            top4_matches.append(schemas.Top4MatchDetail(
+                position=pos,
+                predicted_name=pred_team,
+                real_name=real_team_at_pos,
+                is_correct=is_correct,
+                points=points
+            ))
+    detail_res.top4_matches = top4_matches
         
     return detail_res
 
@@ -238,6 +302,19 @@ def get_scorers(db: Session = Depends(get_db)):
     if not scorers_data:
         raise HTTPException(status_code=404, detail="Scorers data not found")
     return scorers_data.value
+
+@app.get("/api/matches")
+def get_matches(date: Optional[str] = Query(None), db: Session = Depends(get_db)):
+    matches_data = db.query(models.RealWorldData).filter(models.RealWorldData.key == "matches").first()
+    if not matches_data:
+        return []
+
+    matches = matches_data.value
+    if date:
+        matches = [m for m in matches if m.get("utcDate", "").startswith(date)]
+
+    return sorted(matches, key=lambda m: m.get("utcDate", ""))
+
 
 @app.get("/api/results")
 def get_results(db: Session = Depends(get_db)):

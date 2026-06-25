@@ -40,9 +40,23 @@ class ScorerMatch(BaseModel):
     goals: int = 0
     points: int = 0
 
+class GroupMatchDetail(BaseModel):
+    predicted_name: str
+    real_name: Optional[str] = None
+    is_correct: bool
+
+class Top4MatchDetail(BaseModel):
+    position: str
+    predicted_name: str
+    real_name: Optional[str] = None
+    is_correct: bool
+    points: int
+
 class ParticipantDetailResponse(ParticipantResponse):
     prediction: Optional[PredictionResponse] = None
     scorer_matches: List[ScorerMatch] = []
+    group_matches: Dict[str, List[GroupMatchDetail]] = {}
+    top4_matches: List[Top4MatchDetail] = []
 
     model_config = ConfigDict(from_attributes=True)
 

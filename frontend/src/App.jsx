@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Trophy, User, Target, Heart } from 'lucide-react';
+import { Trophy, User, Target, Heart, CalendarDays, GitBranch } from 'lucide-react';
 import { useLanguage } from './context/LanguageContext';
 import Ranking from './views/Ranking';
 import Profile from './views/Profile';
 import Scorers from './views/Scorers';
 import Info from './views/Info';
+import Partidos from './views/Partidos';
 import DailyCuriosity from './components/DailyCuriosity';
 import DonationFlow from './components/DonationFlow';
 
@@ -103,6 +104,8 @@ function App() {
         return <Profile selectedId={selectedId} setSelectedId={setSelectedId} API_BASE={API_BASE} />;
       case 'scorers':
         return <Scorers API_BASE={API_BASE} />;
+      case 'partidos':
+        return <Partidos API_BASE={API_BASE} />;
       case 'info':
         return <Info highlightDonations={highlightDonations} setHighlightDonations={setHighlightDonations} />;
       default:
@@ -124,6 +127,7 @@ function App() {
     { id: 'ranking', label: t('tabs.ranking'), icon: Trophy },
     { id: 'profile', label: t('tabs.profile'), icon: User },
     { id: 'scorers', label: t('tabs.scorers'), icon: Target },
+    { id: 'partidos', label: t('tabs.partidos'), icon: CalendarDays },
     { id: 'info', label: t('tabs.info'), icon: Heart },
   ];
 

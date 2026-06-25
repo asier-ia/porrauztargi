@@ -43,8 +43,9 @@ async def fetch_standings_from_api() -> dict:
         formatted_standings = {}
         for s in standings:
             # We look for total total group stage standings
-            if s.get("type") == "TOTAL" and "GROUP_" in s.get("group", ""):
-                group_name = s["group"].replace("GROUP_", "").strip() # "A", "B", etc.
+            group_str = s.get("group", "") or ""
+            if s.get("type") == "TOTAL" and "GROUP" in group_str.upper():
+                group_name = group_str.upper().replace("GROUP_", "").replace("GROUP", "").strip() # "A", "B", etc.
                 table = s.get("table", [])
                 
                 # We need top 2 teams in the group
@@ -88,8 +89,50 @@ async def fetch_scorers_from_api() -> list:
                     "team": team_name,
                     "goals": goals
                 })
-                
         return formatted_scorers
+
+
+async def fetch_matches_from_api() -> list:
+    """
+    Fetch all matches from football-data.org and format them into:
+    [{"id": 123, "utcDate": "2026-06-14T16:00:00Z", "status": "FINISHED",
+      "stage": "GROUP_STAGE", "group": "A", "homeTeam": "Spain",
+      "awayTeam": "Germany", "homeScore": 1, "awayScore": 2}, ...]
+    """
+    headers = get_api_headers()
+    if not headers:
+        return []
+
+    url = f"{API_BASE_URL}/competitions/{COMPETITION_CODE}/matches"
+    logger.info(f"Sincronización API: Consultando partidos en {url}...")
+
+    async with httpx.AsyncClient() as client:
+        response = await client.get(url, headers=headers, timeout=15)
+        if response.status_code != 200:
+            logger.error(f"Sincronización API: Error al consultar partidos ({response.status_code})")
+            return []
+
+        data = response.json()
+        matches = data.get("matches", [])
+
+        formatted = []
+        for m in matches:
+            score = m.get("score", {})
+            ft = score.get("fullTime", {})
+            formatted.append({
+                "id": m.get("id"),
+                "utcDate": m.get("utcDate", ""),
+                "status": m.get("status", ""),
+                "stage": m.get("stage", ""),
+                "group": (m.get("group") or "").replace("GROUP_", ""),
+                "homeTeam": m.get("homeTeam", {}).get("name", ""),
+                "awayTeam": m.get("awayTeam", {}).get("name", ""),
+                "homeScore": ft.get("home"),
+                "awayScore": ft.get("away"),
+            })
+
+        return formatted
+
 
 async def sync_all_data(db: Session) -> bool:
     """
@@ -99,9 +142,10 @@ async def sync_all_data(db: Session) -> bool:
     try:
         standings = await fetch_standings_from_api()
         scorers = await fetch_scorers_from_api()
+        matches = await fetch_matches_from_api()
         
         # If API returned nothing or we didn't have API keys, skip saving but recalculate
-        if not standings and not scorers:
+        if not standings and not scorers and not matches:
             logger.info("Sincronización API: No se obtuvieron datos nuevos de la API. Manteniendo datos actuales.")
             return False
             
@@ -119,6 +163,13 @@ async def sync_all_data(db: Session) -> bool:
                 db_scorers.value = scorers
             else:
                 db.add(models.RealWorldData(key="scorers", value=scorers))
+                
+        if matches:
+            db_matches = db.query(models.RealWorldData).filter(models.RealWorldData.key == "matches").first()
+            if db_matches:
+                db_matches.value = matches
+            else:
+                db.add(models.RealWorldData(key="matches", value=matches))
                 
         db.commit()
         logger.info("Sincronización API: Base de datos actualizada con datos reales de la API.")

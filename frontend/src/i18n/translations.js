@@ -9,6 +9,7 @@ export const translations = {
       ranking: "Ranking",
       profile: "Mi Perfil",
       scorers: "Goleadores",
+      partidos: "Partidos",
       info: "Info",
       curses: "Maldiciones", // Preparado para Fase 2
     },
@@ -92,6 +93,21 @@ export const translations = {
       donateBtn: "SOBORNAR",
       closeBtn: "Seguir"
     },
+    matches: {
+      title: "Partidos del día",
+      today: "Hoy",
+      noMatches: "No hay partidos este día",
+      live: "EN DIRECTO",
+      finished: "FINALIZADOS",
+      scheduled: "PRÓXIMOS",
+      final: "Final",
+      thirdPlace: "3er puesto",
+      semifinal: "Semifinal",
+      quarterFinal: "Cuartos",
+      round32: "32avos",
+      round16: "Octavos",
+      groupStage: "Grupo {group}",
+    },
     curses: {
       title: "Maldiciones y Gafes",
       desc: "Lanza un mal de ojo a tus rivales o ponles velas negras (Próxima semana).",
@@ -107,6 +123,7 @@ export const translations = {
       ranking: "Sailkapena",
       profile: "Nire Profila",
       scorers: "Goleatzaileak",
+      partidos: "Partidak",
       info: "Info",
       curses: "Madarikazioak", // Preparado para Fase 2
     },
@@ -189,6 +206,21 @@ export const translations = {
       action: "Saihestu kanporaketa eta salbatu zure azala epaileari sobornoa ordainduz.",
       donateBtn: "EROSI",
       closeBtn: "Jarraitu"
+    },
+    matches: {
+      title: "Egungo partidak",
+      today: "Gaur",
+      noMatches: "Ez dago partidurik egun honetan",
+      live: "ZUZENEAN",
+      finished: "AMAIUTAK",
+      scheduled: "HURRENGOAK",
+      final: "Finala",
+      thirdPlace: "3. postua",
+      semifinal: "Finalerdia",
+      quarterFinal: "Final laurdenak",
+      round32: "Final hamaseirenak",
+      round16: "Final zortzirenak",
+      groupStage: "{group} taldea",
     },
     curses: {
       title: "Madarikazioak eta Begizkoak",
