@@ -13,6 +13,7 @@ services:
       - DATABASE_URL=sqlite:///./uztargi_porra.db
       - FOOTBALL_DATA_API_KEY=${FOOTBALL_DATA_API_KEY}
       - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET}
     volumes:
       - ./backend:/app
 
