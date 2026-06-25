@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/set-state-in-effect, react-hooks/exhaustive-deps */
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, useStripe, useElements, PaymentElement } from '@stripe/react-stripe-js';
 import { useLanguage } from '../context/LanguageContext';
@@ -162,6 +162,8 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
   const [paymentError, setPaymentError] = useState(null);
   const [paymentStep, setPaymentStep] = useState('form');
   const [jinxRedirectSuccess, setJinxRedirectSuccess] = useState(false);
+
+  const jinxElementsOptions = useMemo(() => clientSecret ? { clientSecret } : null, [clientSecret]);
 
   const fetchRanking = async () => {
     setError(null);
@@ -624,7 +626,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
                 )}
 
                 {paymentStep === 'paying' && clientSecret && (
-                  <Elements stripe={stripePromise} options={{ clientSecret }}>
+                  <Elements stripe={stripePromise} options={jinxElementsOptions}>
                     <JinxPaymentForm
                       clientSecret={clientSecret}
                       amount={jinxQuantity}

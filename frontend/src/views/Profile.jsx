@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/set-state-in-effect */
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import { Search, ChevronDown, CheckCircle2, XCircle, Sparkles, X } from 'lucide-react';
@@ -77,6 +77,8 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
   const [paymentError, setPaymentError] = useState(null);
   const [paymentStep, setPaymentStep] = useState('form');
   const [jinxRedirectSuccess, setJinxRedirectSuccess] = useState(false);
+
+  const jinxElementsOptions = useMemo(() => clientSecret ? { clientSecret } : null, [clientSecret]);
 
   const dropdownRef = useRef(null);
 
@@ -610,7 +612,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
                 )}
 
                 {paymentStep === 'paying' && clientSecret && (
-                  <Elements stripe={stripePromise} options={{ clientSecret }}>
+                  <Elements stripe={stripePromise} options={jinxElementsOptions}>
                     <JinxPaymentForm
                       clientSecret={clientSecret}
                       amount={jinxQuantity}
