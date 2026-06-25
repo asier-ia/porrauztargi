@@ -109,7 +109,7 @@ export const translations = {
       groupStage: "Grupo {group}",
     },
     curses: {
-      title: "Maldiciones y Gafes",
+      title: "Mal de ojo",
       desc: "Lanza un mal de ojo a tus rivales o ponles velas negras (Próxima semana).",
     }
   },

@@ -1,7 +1,11 @@
 /* eslint-disable react-hooks/set-state-in-effect, react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements, useStripe, useElements, PaymentElement } from '@stripe/react-stripe-js';
 import { useLanguage } from '../context/LanguageContext';
 import { Trophy, User, Target, CalendarDays, Heart, X, Smartphone, Sparkles } from 'lucide-react';
+
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || '');
 
 const BubblesOverlay = () => {
   return (
@@ -32,6 +36,68 @@ const CracksOverlay = () => {
     </div>
   );
 };
+
+export function JinxPaymentForm({ clientSecret, amount, onSuccess, onError, onCancel }) {
+  const stripe = useStripe();
+  const elements = useElements();
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!stripe || !elements) return;
+    setLoading(true);
+    onError(null);
+
+    const { error: submitError } = await elements.submit();
+    if (submitError) {
+      onError(submitError.message);
+      setLoading(false);
+      return;
+    }
+
+    const cleanReturnUrl = `${window.location.origin}${window.location.pathname}`;
+    const { error, paymentIntent } = await stripe.confirmPayment({
+      elements,
+      clientSecret,
+      confirmParams: {
+        return_url: cleanReturnUrl,
+      },
+      redirect: 'if_required',
+    });
+
+    if (error) {
+      onError(error.message);
+      setLoading(false);
+    } else if (paymentIntent && paymentIntent.status === 'succeeded') {
+      onSuccess(paymentIntent.id);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="p-2.5 bg-amber-50 border border-amber-100 rounded-lg">
+        <p className="text-[11px] font-semibold text-amber-800 text-center leading-relaxed">
+          Introduce <u className="underline decoration-2 underline-offset-2 decoration-amber-500">tu número</u> de teléfono, no el de ejemplo.
+        </p>
+      </div>
+      <PaymentElement options={{ paymentMethodOrder: ['bizum'] }} />
+      <button
+        type="submit"
+        disabled={!stripe || !elements || loading}
+        className="w-full py-4 bg-gray-900 hover:bg-black disabled:bg-gray-300 text-white font-bold text-sm rounded-xl transition-all duration-200 active:scale-[0.98] cursor-pointer shadow-md flex justify-center items-center gap-2"
+      >
+        {loading ? 'Procesando...' : `Pagar ${amount}.00€ con Bizum`}
+      </button>
+      <button
+        type="button"
+        onClick={onCancel}
+        className="w-full py-2 text-[11px] font-bold text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
+      >
+        ← Cancelar
+      </button>
+    </form>
+  );
+}
 
 export function getJinxStyles(count) {
   if (!count || count <= 0) {
@@ -92,6 +158,10 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
   const [jinxLoading, setJinxLoading] = useState(false);
   const [jinxSuccess, setJinxSuccess] = useState(false);
   const [jinxQuantity, setJinxQuantity] = useState(1);
+  const [clientSecret, setClientSecret] = useState(null);
+  const [paymentError, setPaymentError] = useState(null);
+  const [paymentStep, setPaymentStep] = useState('form');
+  const [jinxRedirectSuccess, setJinxRedirectSuccess] = useState(false);
 
   const fetchRanking = async () => {
     setError(null);
@@ -113,35 +183,88 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
     return () => window.removeEventListener('api-auto-refreshed', fetchRanking);
   }, [API_BASE]);
 
+  // Detect Stripe redirect return after Bizum payment
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('redirect_status') === 'succeeded' &&
+        params.get('payment_intent') &&
+        params.get('payment_intent_client_secret')) {
+      setJinxRedirectSuccess(true);
+      window.history.replaceState({}, '', window.location.pathname);
+      setTimeout(fetchRanking, 1000);
+    }
+  }, []);
+
   const handleOpenJinxModal = (participant) => {
     setSelectedParticipant(participant);
     setJinxSuccess(false);
     setJinxLoading(false);
     setJinxQuantity(1);
+    setClientSecret(null);
+    setPaymentError(null);
+    setPaymentStep('form');
     setShowJinxModal(true);
   };
 
-  const handleApplyJinx = async (isMock = false) => {
+  const handleStartPayment = async () => {
     if (!selectedParticipant) return;
+    setJinxLoading(true);
+    setPaymentError(null);
+    try {
+      const res = await fetch(`${API_BASE}/create-payment-intent`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          product_id: 'jinx',
+          quantity: jinxQuantity,
+          target_id: selectedParticipant.id,
+          payment_method_type: 'bizum',
+        }),
+      });
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.detail || 'Error al preparar el pago');
+      }
+      const data = await res.json();
+      setClientSecret(data.client_secret);
+      setPaymentStep('paying');
+    } catch (err) {
+      setPaymentError(err.message);
+    } finally {
+      setJinxLoading(false);
+    }
+  };
+
+  const handleConfirmJinx = async (paymentIntentId) => {
     setJinxLoading(true);
     try {
       const response = await fetch(`${API_BASE}/participants/${selectedParticipant.id}/jinx`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ quantity: jinxQuantity, is_mock: isMock })
+        body: JSON.stringify({ quantity: jinxQuantity, payment_intent_id: paymentIntentId })
       });
       if (response.ok) {
+        window.umami?.track?.('Jinx Aplicado');
         setJinxSuccess(true);
-        fetchRanking();
+        setTimeout(fetchRanking, 2000);
       } else {
-        alert("No se pudo aplicar el gafe.");
+        const err = await response.json();
+        setPaymentError(err.detail || 'No se pudo aplicar el mal de ojo.');
+        setPaymentStep('error');
       }
     } catch (err) {
       console.error(err);
-      alert("Error al conectar con el servidor.");
+      setPaymentError('Error al conectar con el servidor.');
+      setPaymentStep('error');
     } finally {
       setJinxLoading(false);
     }
+  };
+
+  const handleCancelPayment = () => {
+    setClientSecret(null);
+    setPaymentError(null);
+    setPaymentStep('form');
   };
 
   if (loading) {
@@ -184,6 +307,23 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
           </p>
         </div>
       </div>
+
+      {jinxRedirectSuccess && (
+        <div className="mx-4 mb-4 bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-2xl p-4 shadow-sm text-center animate-slideUp">
+          <p className="text-sm font-bold">
+            ¡Mal de ojo aplicado con éxito!
+          </p>
+          <p className="text-xs text-emerald-700 mt-1">
+            Los cambios ya se reflejan en la clasificación.
+          </p>
+          <button
+            onClick={() => setJinxRedirectSuccess(false)}
+            className="mt-2 text-[10px] font-bold text-emerald-600 underline underline-offset-2 cursor-pointer"
+          >
+            Cerrar
+          </button>
+        </div>
+      )}
 
       {/* Resumen de Premios Banner */}
       <div className="mx-4 mb-6 bg-gradient-to-r from-emerald-800 to-emerald-950 text-white rounded-2xl p-4 shadow-md relative overflow-hidden">
@@ -240,7 +380,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
       {ranking.length >= 3 && (
         <div className="flex items-end justify-center gap-3 mb-10 px-4 mt-8 h-48">
 
-          {/* 2º Puesto - Plata (Siempre Gris Plata, anillo si hay gafe) */}
+          {/* 2º Puesto - Plata */}
           {top2 && (() => {
             const jinx = getJinxStyles(top2.jinx_count);
             const isJinxed = top2.jinx_count > 0;
@@ -275,7 +415,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
             );
           })()}
 
-          {/* 1º Puesto - Oro (Siempre Oro, anillo si hay gafe) */}
+          {/* 1º Puesto - Oro */}
           {top1 && (() => {
             const jinx = getJinxStyles(top1.jinx_count);
             const isJinxed = top1.jinx_count > 0;
@@ -316,7 +456,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
             );
           })()}
 
-          {/* 3º Puesto - Bronce (Siempre Bronce, anillo si hay gafe) */}
+          {/* 3º Puesto - Bronce */}
           {top3 && (() => {
             const jinx = getJinxStyles(top3.jinx_count);
             const isJinxed = top3.jinx_count > 0;
@@ -409,7 +549,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
         )}
       </div>
 
-      {/* JINX MODAL - PREMIUM & CLEAN */}
+      {/* JINX MODAL */}
       {showJinxModal && selectedParticipant && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fadeIn">
           <div className="bg-white rounded-[2rem] p-6 max-w-sm w-full shadow-2xl animate-slideUp relative select-none">
@@ -430,45 +570,86 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
                 </div>
 
                 <h3 className="text-xl font-bold text-gray-900 leading-tight">
-                  Mandar Gafe a <br /><span className="text-purple-600 font-black">{selectedParticipant.name}</span>
+                  Echar mal de ojo a <br /><span className="text-purple-600 font-black">{selectedParticipant.name}</span>
                 </h3>
 
-                {/* Quantitative Selector */}
-                <div className="flex items-center justify-between bg-gray-50 p-4 rounded-2xl border border-gray-100 px-4">
-                  <span className="text-sm font-semibold text-gray-700">Fuerza del gafe:</span>
-                  <select
-                    value={jinxQuantity}
-                    onChange={(e) => setJinxQuantity(parseInt(e.target.value))}
-                    className="bg-white border border-gray-200 rounded-xl px-4 py-2 text-sm font-bold text-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400 cursor-pointer shadow-sm"
-                  >
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => (
-                      <option key={n} value={n}>{n} {n === 1 ? 'Nivel' : 'Niveles'} ({n}€)</option>
-                    ))}
-                  </select>
-                </div>
+                {paymentStep === 'form' && (
+                  <>
+                    {/* Slider + Number Input */}
+                    <div className="space-y-4 bg-gray-50 p-5 rounded-2xl border border-gray-100">
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="text-sm font-semibold text-gray-700">Fuerza:</span>
+                        <input
+                          type="number"
+                          min={1}
+                          max={100}
+                          value={jinxQuantity}
+                          onChange={(e) => {
+                            let val = parseInt(e.target.value) || 1;
+                            setJinxQuantity(Math.max(1, Math.min(100, val)));
+                          }}
+                          className="w-20 text-center bg-white border border-gray-200 rounded-xl px-3 py-2 text-sm font-bold text-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400 shadow-sm"
+                        />
+                      </div>
+                      <input
+                        type="range"
+                        min={1}
+                        max={100}
+                        value={jinxQuantity}
+                        onChange={(e) => setJinxQuantity(parseInt(e.target.value))}
+                        className="w-full accent-purple-600 h-2 rounded-full appearance-none cursor-pointer bg-purple-200"
+                      />
+                      <div className="flex justify-between text-[10px] text-gray-400 font-medium px-0.5">
+                        <span>1</span>
+                        <span>25</span>
+                        <span>50</span>
+                        <span>75</span>
+                        <span>100</span>
+                      </div>
+                    </div>
 
-                <p className="text-sm font-bold text-gray-500">
-                  Total a pagar: <span className="text-purple-700 font-black">{jinxQuantity}.00 €</span>
-                </p>
+                    <p className="text-sm font-bold text-gray-500">
+                      Total: <span className="text-purple-700 font-black">{jinxQuantity}.00 €</span>
+                    </p>
 
-                {/* Action buttons */}
-                <div className="space-y-3 pt-2">
-                  <button
-                    onClick={() => handleApplyJinx(false)}
-                    disabled={jinxLoading}
-                    className="w-full py-4 bg-gray-900 hover:bg-black disabled:bg-gray-300 text-white font-bold text-sm rounded-xl transition-all duration-200 active:scale-[0.98] cursor-pointer shadow-md flex justify-center items-center gap-2"
-                  >
-                    {jinxLoading ? 'Procesando...' : `Pagar ${jinxQuantity}€ con Bizum`}
-                  </button>
+                    <button
+                      data-umami-event="Iniciar Pago Jinx"
+                      onClick={handleStartPayment}
+                      disabled={jinxLoading}
+                      className="w-full py-4 bg-gray-900 hover:bg-black disabled:bg-gray-300 text-white font-bold text-sm rounded-xl transition-all duration-200 active:scale-[0.98] cursor-pointer shadow-md flex justify-center items-center gap-2"
+                    >
+                      {jinxLoading ? 'Preparando pago...' : `Pagar ${jinxQuantity}€ con Bizum`}
+                    </button>
+                  </>
+                )}
 
-                  <button
-                    onClick={() => handleApplyJinx(true)}
-                    disabled={jinxLoading}
-                    className="w-full py-2 hover:underline text-gray-400 hover:text-gray-600 font-medium text-xs transition-all duration-200 cursor-pointer"
-                  >
-                    Simular Gafe Gratis (Prueba)
-                  </button>
-                </div>
+                {paymentStep === 'paying' && clientSecret && (
+                  <Elements stripe={stripePromise} options={{ clientSecret }}>
+                    <JinxPaymentForm
+                      clientSecret={clientSecret}
+                      amount={jinxQuantity}
+                      onSuccess={handleConfirmJinx}
+                      onError={(msg) => { setPaymentError(msg); setPaymentStep('error'); }}
+                      onCancel={handleCancelPayment}
+                    />
+                  </Elements>
+                )}
+
+                {(paymentStep === 'error' || paymentError) && (
+                  <div className="space-y-4">
+                    <div className="p-3 bg-red-50 border border-red-100 rounded-xl">
+                      <p className="text-xs font-semibold text-red-700">{paymentError}</p>
+                    </div>
+                    <div className="flex gap-3">
+                      <button
+                        onClick={handleCancelPayment}
+                        className="flex-1 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-sm rounded-xl transition-all duration-200 cursor-pointer"
+                      >
+                        Volver
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             ) : (
               <div className="space-y-4 pt-4 text-center">
@@ -476,10 +657,10 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
                   <Sparkles size={32} strokeWidth={2.5} className="animate-pulse" />
                 </div>
                 <h3 className="text-xl font-black text-gray-900 tracking-tight">
-                  ¡Gafe Aplicado!
+                  ¡Mal de ojo aplicado!
                 </h3>
                 <p className="text-sm text-gray-500 font-medium px-2 leading-relaxed">
-                  Has enviado energía negativa nivel <span className="font-bold text-purple-600">{jinxQuantity}</span> a <span className="font-bold text-gray-800">{selectedParticipant.name}</span>. Su tarjeta se actualizará en breve.
+                  Has echado mal de ojo nivel <span className="font-bold text-purple-600">{jinxQuantity}</span> a <span className="font-bold text-gray-800">{selectedParticipant.name}</span>.
                 </p>
                 <div className="pt-6">
                   <button

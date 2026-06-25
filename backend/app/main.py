@@ -1,4 +1,6 @@
-from fastapi import FastAPI, Depends, HTTPException, Query
+import os
+import stripe
+from fastapi import FastAPI, Depends, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from typing import List, Optional, Dict
@@ -8,7 +10,7 @@ from pydantic import BaseModel
 
 from .database import get_db, engine, Base
 from . import models, schemas, scoring, sync
-from .stripe_service import router as stripe_router
+from .stripe_service import router as stripe_router, verify_payment_intent
 
 # We make sure tables are initialized on startup (even though we seeded)
 Base.metadata.create_all(bind=engine)
@@ -327,35 +329,65 @@ def get_participant_detail(participant_id: int, db: Session = Depends(get_db)):
         
     return detail_res
 
+@app.post("/api/stripe-webhook")
+async def stripe_webhook(request: Request, db: Session = Depends(get_db)):
+    payload = await request.body()
+    sig_header = request.headers.get("stripe-signature")
+    webhook_secret = os.getenv("STRIPE_WEBHOOK_SECRET", "")
+
+    if not webhook_secret:
+        raise HTTPException(status_code=500, detail="Webhook secret not configured")
+
+    try:
+        event = stripe.Webhook.construct_event(payload, sig_header, webhook_secret)
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid payload")
+    except stripe.error.SignatureVerificationError:
+        raise HTTPException(status_code=400, detail="Invalid signature")
+
+    if event["type"] == "payment_intent.succeeded":
+        intent = event["data"]["object"]
+        metadata = intent.get("metadata", {})
+        product_id = metadata.get("product_id")
+
+        if product_id == "jinx":
+            try:
+                target_id = int(metadata.get("target_id", ""))
+                quantity = int(metadata.get("quantity", "1"))
+            except (ValueError, TypeError):
+                return {"status": "ok", "warning": "invalid metadata"}
+
+            participant = db.query(models.Participant).filter(
+                models.Participant.id == target_id
+            ).first()
+            if participant:
+                now = datetime.now(timezone.utc).replace(tzinfo=None)
+                expires_at = now + timedelta(days=3)
+                qty = max(1, min(100, quantity))
+                for _ in range(qty):
+                    db.add(models.Jinx(
+                        target_id=target_id,
+                        created_at=now,
+                        expires_at=expires_at
+                    ))
+                db.commit()
+
+    return {"status": "ok"}
+
 class CreateJinxRequest(BaseModel):
     quantity: int = 1
-    is_mock: bool = False
+    payment_intent_id: str
 
 @app.post("/api/participants/{participant_id}/jinx")
-def create_jinx(participant_id: int, req: CreateJinxRequest, db: Session = Depends(get_db)):
+def confirm_jinx_payment(participant_id: int, req: CreateJinxRequest, db: Session = Depends(get_db)):
     participant = db.query(models.Participant).filter(models.Participant.id == participant_id).first()
     if not participant:
         raise HTTPException(status_code=404, detail="Participant not found")
-        
-    now = datetime.now(timezone.utc).replace(tzinfo=None)
-    expires_at = now + timedelta(days=3)
-    
-    qty = max(1, min(10, req.quantity))
-    
-    for _ in range(qty):
-        new_jinx = models.Jinx(
-            target_id=participant_id,
-            created_at=now,
-            expires_at=expires_at
-        )
-        db.add(new_jinx)
-        
-    db.commit()
-    
-    return {
-        "message": f"¡{participant.name} ha sido gafado con éxito x{qty}!",
-        "expires_at": expires_at.isoformat()
-    }
+
+    if not verify_payment_intent(req.payment_intent_id):
+        raise HTTPException(status_code=402, detail="Pago no verificado.")
+
+    return {"message": f"Pago verificado. El mal de ojo se está aplicando a {participant.name}."}
 
 @app.get("/api/scorers")
 def get_scorers(db: Session = Depends(get_db)):

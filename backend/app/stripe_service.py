@@ -12,8 +12,17 @@ PRICES = {
     "cafe": {"amount": 150, "name": "Café", "description": "Invítame a un café"},
     "cana": {"amount": 300, "name": "Caña", "description": "Invítame a una caña"},
     "cena": {"amount": 1500, "name": "Cena", "description": "Invítame a una cena"},
-    "jinx": {"amount": 100, "name": "Gafe", "description": "Gafar a un participante"},
+    "jinx": {"amount": 100, "name": "Mal de ojo", "description": "Echar mal de ojo a un participante"},
 }
+
+def verify_payment_intent(payment_intent_id: str) -> bool:
+    if not stripe.api_key:
+        return False
+    try:
+        intent = stripe.PaymentIntent.retrieve(payment_intent_id)
+        return intent.status == "succeeded"
+    except stripe.error.StripeError:
+        return False
 
 class PaymentIntentRequest(BaseModel):
     product_id: str
@@ -37,7 +46,7 @@ def create_payment_intent(req: PaymentIntentRequest):
         amount = base_amount * quantity
         description = PRICES[req.product_id]["description"]
         if req.product_id == "jinx":
-            description = f"Gafe acumulativo x{quantity} para participante ID {req.target_id}"
+            description = f"Mal de ojo acumulativo x{quantity} para participante ID {req.target_id}"
     elif req.product_id in ("sueno", "popup"):
         if not req.amount:
             raise HTTPException(status_code=400, detail="Importe requerido para este producto")
