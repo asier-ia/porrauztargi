@@ -554,7 +554,7 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
       {/* JINX MODAL */}
       {showJinxModal && selectedParticipant && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fadeIn">
-          <div className="bg-white rounded-[2rem] p-6 max-w-sm w-full shadow-2xl animate-slideUp relative select-none">
+          <div className="bg-white rounded-[2rem] p-6 max-w-sm w-full shadow-2xl animate-slideUp relative">
 
             {/* Close */}
             <button

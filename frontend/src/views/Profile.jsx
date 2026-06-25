@@ -540,7 +540,7 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
       {/* JINX MODAL */}
       {showJinxModal && currentParticipant && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fadeIn">
-          <div className="bg-white rounded-[2rem] p-6 max-w-sm w-full shadow-2xl animate-slideUp relative select-none">
+          <div className="bg-white rounded-[2rem] p-6 max-w-sm w-full shadow-2xl animate-slideUp relative">
 
             {/* Close */}
             <button
