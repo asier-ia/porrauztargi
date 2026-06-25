@@ -1,1 +1,89 @@
 /* Cleared for Tailwind */
+
+/* ─── Pocion Verde: 3D Bubbles Animation ─── */
+@keyframes jinx-bubble-rise {
+  0% {
+    transform: translateY(115%) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  85% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-25%) scale(1.15);
+    opacity: 0;
+  }
+}
+
+.jinx-bubbles-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.jinx-bubble {
+  position: absolute;
+  bottom: -25px;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.65) 0%, rgba(16, 185, 129, 0.12) 55%, rgba(4, 120, 87, 0.22) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  border-radius: 50%;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.4), 0 0 6px rgba(16, 185, 129, 0.22);
+  animation: jinx-bubble-rise infinite ease-in;
+  will-change: transform, opacity;
+}
+
+/* ─── Morado Toxico: Wavy Smoke/Neblina Animation ─── */
+@keyframes jinx-smoke-wave {
+  0% {
+    transform: translate(0, 0) scaleY(1);
+  }
+  50% {
+    transform: translate(-12%, -8px) scaleY(0.92);
+  }
+  100% {
+    transform: translate(-25%, 0) scaleY(1);
+  }
+}
+
+.jinx-smoke-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.25;
+}
+
+.jinx-smoke-wave-element {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 200%;
+  height: 120%;
+  background-image: radial-gradient(circle at 50% 100%, rgba(168, 85, 247, 0.55), transparent 75%),
+                    radial-gradient(circle at 20% 100%, rgba(139, 92, 246, 0.4), transparent 60%);
+  animation: jinx-smoke-wave 9s infinite ease-in-out;
+  will-change: transform;
+}
+
+/* ─── Negro Maldito: Pulse Lava Cracks Animation ─── */
+@keyframes jinx-cracks-glow {
+  0%, 100% {
+    opacity: 0.25;
+    filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.3));
+  }
+  50% {
+    opacity: 0.65;
+    filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.75));
+  }
+}
+
+.jinx-cracks-pulsing {
+  animation: jinx-cracks-glow 3.5s infinite ease-in-out;
+  will-change: opacity, filter;
+}

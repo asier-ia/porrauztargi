@@ -1,13 +1,16 @@
-from fastapi import FastAPI, Depends, HTTPException, Query
+import os
+import stripe
+from fastapi import FastAPI, Depends, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from typing import List, Optional, Dict
 import asyncio
 from datetime import datetime, timedelta, timezone
+from pydantic import BaseModel
 
 from .database import get_db, engine, Base
 from . import models, schemas, scoring, sync
-from .stripe_service import router as stripe_router
+from .stripe_service import router as stripe_router, verify_payment_intent
 
 # We make sure tables are initialized on startup (even though we seeded)
 Base.metadata.create_all(bind=engine)
@@ -54,7 +57,13 @@ async def auto_update_task():
         next_update_at = datetime.now(timezone.utc) + timedelta(hours=4)
 
 @app.on_event("startup")
-def on_startup():
+async def on_startup():
+    # Run initial sync immediately
+    db = next(get_db())
+    try:
+        await sync.sync_all_data(db)
+    finally:
+        db.close()
     # Spin up background loop
     asyncio.create_task(auto_update_task())
 
@@ -118,7 +127,18 @@ def admin_update_results(payload: dict, db: Session = Depends(get_db)):
     
     return {"message": "Results updated and rankings recalculated successfully!"}
 
-def assign_prizes(participants: List[models.Participant]) -> List[schemas.ParticipantResponse]:
+def get_active_jinx_counts(db: Session) -> dict:
+    """
+    Returns a dict of {participant_id: active_jinx_count}
+    """
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
+    active_jinxes = db.query(models.Jinx).filter(models.Jinx.expires_at > now).all()
+    counts = {}
+    for j in active_jinxes:
+        counts[j.target_id] = counts.get(j.target_id, 0) + 1
+    return counts
+
+def assign_prizes(participants: List[models.Participant], db: Session) -> List[schemas.ParticipantResponse]:
     """
     Calculate and attach the prize dynamically to each participant.
     Prizes: 1st (1668.0), 2nd (834.0), 3rd (278.0)
@@ -156,10 +176,13 @@ def assign_prizes(participants: List[models.Participant]) -> List[schemas.Partic
             
         current_index += n
         
+    jinx_counts = get_active_jinx_counts(db)
+        
     response_list = []
     for p in participants:
         res = schemas.ParticipantResponse.model_validate(p)
         res.prize = prizes_dict.get(p.id, 0.0)
+        res.jinx_count = jinx_counts.get(p.id, 0)
         response_list.append(res)
         
     # Maintain standard sorting order (by rank ascending)
@@ -172,7 +195,7 @@ def get_ranking(limit: int = Query(default=10, ge=1, le=200), db: Session = Depe
     Get participants ranking sorted by points with dynamically computed prizes.
     """
     all_participants = db.query(models.Participant).order_by(models.Participant.points_total.desc()).all()
-    ranked_responses = assign_prizes(all_participants)
+    ranked_responses = assign_prizes(all_participants, db)
     return ranked_responses[:limit]
 
 @app.get("/api/participants", response_model=List[schemas.ParticipantResponse])
@@ -183,7 +206,7 @@ def get_participants(db: Session = Depends(get_db)):
     participants = db.query(models.Participant).order_by(models.Participant.name.asc()).all()
     
     # We also attach prizes for all of them so dropdown displays prizes if they are currently winning
-    ranked_responses = assign_prizes(participants)
+    ranked_responses = assign_prizes(participants, db)
     return ranked_responses
 
 @app.get("/api/participants/{participant_id}", response_model=schemas.ParticipantDetailResponse)
@@ -197,7 +220,7 @@ def get_participant_detail(participant_id: int, db: Session = Depends(get_db)):
         
     # Calculate prizes for everyone to find this participant's share
     all_participants = db.query(models.Participant).order_by(models.Participant.points_total.desc()).all()
-    ranked_responses = assign_prizes(all_participants)
+    ranked_responses = assign_prizes(all_participants, db)
     
     # Find matching response
     matched_resp = next((r for r in ranked_responses if r.id == participant_id), None)
@@ -206,6 +229,7 @@ def get_participant_detail(participant_id: int, db: Session = Depends(get_db)):
     detail_res = schemas.ParticipantDetailResponse.model_validate(participant)
     if matched_resp:
         detail_res.prize = matched_resp.prize
+        detail_res.jinx_count = matched_resp.jinx_count
     
     # Calculate scorer matches using backend fuzzy matching
     real_scorers_data = db.query(models.RealWorldData).filter(models.RealWorldData.key == "scorers").first()
@@ -219,15 +243,151 @@ def get_participant_detail(participant_id: int, db: Session = Depends(get_db)):
                 if scoring.match_scorer(p_scorer, r_scorer["name"]):
                     match = r_scorer
                     break
-            scorer_matches.append({
-                "predicted_name": p_scorer,
-                "real_name": match["name"] if match else None,
-                "goals": match["goals"] if match else 0,
-                "points": match["goals"] * 2 if match else 0
-            })
+            scorer_matches.append(schemas.ScorerMatch(
+                predicted_name=p_scorer,
+                real_name=match["name"] if match else None,
+                goals=match["goals"] if match else 0,
+                points=match["goals"] * 2 if match else 0
+            ))
     detail_res.scorer_matches = scorer_matches
+
+    # Calculate group matches using backend robust matching
+    real_standings_data = db.query(models.RealWorldData).filter(models.RealWorldData.key == "standings").first()
+    real_standings = real_standings_data.value if real_standings_data else {}
+    
+    group_matches = {}
+    if participant.prediction:
+        for group, pred_teams in participant.prediction.group_predictions.items():
+            real_teams = real_standings.get(group) or []
+            matches_for_group = []
+            for idx, pred_team in enumerate(pred_teams):
+                is_correct = False
+                real_name_at_pos = real_teams[idx] if idx < len(real_teams) else None
+                
+                if pred_team:
+                    # Check exact position match
+                    if real_name_at_pos and scoring.match_teams(pred_team, real_name_at_pos):
+                        is_correct = True
+                        
+                matches_for_group.append(schemas.GroupMatchDetail(
+                    predicted_name=pred_team,
+                    real_name=real_name_at_pos,
+                    is_correct=is_correct
+                ))
+            group_matches[group] = matches_for_group
+    detail_res.group_matches = group_matches
+
+    # Calculate top4 matches using backend robust matching
+    real_top4_data = db.query(models.RealWorldData).filter(models.RealWorldData.key == "top4").first()
+    real_top4 = real_top4_data.value if real_top4_data else {}
+    
+    top4_matches = []
+    if participant.prediction:
+        for pos, pred_team in participant.prediction.top4_predictions.items():
+            real_team_at_pos = real_top4.get(pos)
+            is_correct = False
+            in_real_top4 = False
+            
+            if pred_team:
+                if real_team_at_pos and scoring.match_teams(pred_team, real_team_at_pos):
+                    is_correct = True
+                elif any(real_t and scoring.match_teams(pred_team, real_t) for real_t in real_top4.values()):
+                    in_real_top4 = True
+                    
+            points = 0
+            if is_correct:
+                points = 14 if pos == "1" else 8 if pos == "2" else 6 if pos == "3" else 4
+            elif in_real_top4:
+                points = 2
+                
+            top4_matches.append(schemas.Top4MatchDetail(
+                position=pos,
+                predicted_name=pred_team,
+                real_name=real_team_at_pos,
+                is_correct=is_correct,
+                points=points
+            ))
+    detail_res.top4_matches = top4_matches
+    
+    # Calculate active jinxes detail and countdowns naive utc
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
+    db_jinxes = db.query(models.Jinx).filter(
+        models.Jinx.target_id == participant_id,
+        models.Jinx.expires_at > now
+    ).order_by(models.Jinx.expires_at.asc()).all()
+    
+    active_jinxes_list = []
+    for j in db_jinxes:
+        rem_seconds = int((j.expires_at - now).total_seconds())
+        active_jinxes_list.append(schemas.JinxDetail(
+            id=j.id,
+            created_at=j.created_at.isoformat(),
+            expires_at=j.expires_at.isoformat(),
+            seconds_remaining=max(0, rem_seconds)
+        ))
+    detail_res.active_jinxes = active_jinxes_list
         
     return detail_res
+
+@app.post("/api/stripe-webhook")
+async def stripe_webhook(request: Request, db: Session = Depends(get_db)):
+    payload = await request.body()
+    sig_header = request.headers.get("stripe-signature")
+    webhook_secret = os.getenv("STRIPE_WEBHOOK_SECRET", "")
+
+    if not webhook_secret:
+        raise HTTPException(status_code=500, detail="Webhook secret not configured")
+
+    try:
+        event = stripe.Webhook.construct_event(payload, sig_header, webhook_secret)
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid payload")
+    except stripe.error.SignatureVerificationError:
+        raise HTTPException(status_code=400, detail="Invalid signature")
+
+    if event["type"] == "payment_intent.succeeded":
+        intent = event["data"]["object"]
+        metadata = intent.get("metadata", {})
+        product_id = metadata.get("product_id")
+
+        if product_id == "jinx":
+            try:
+                target_id = int(metadata.get("target_id", ""))
+                quantity = int(metadata.get("quantity", "1"))
+            except (ValueError, TypeError):
+                return {"status": "ok", "warning": "invalid metadata"}
+
+            participant = db.query(models.Participant).filter(
+                models.Participant.id == target_id
+            ).first()
+            if participant:
+                now = datetime.now(timezone.utc).replace(tzinfo=None)
+                expires_at = now + timedelta(days=3)
+                qty = max(1, min(100, quantity))
+                for _ in range(qty):
+                    db.add(models.Jinx(
+                        target_id=target_id,
+                        created_at=now,
+                        expires_at=expires_at
+                    ))
+                db.commit()
+
+    return {"status": "ok"}
+
+class CreateJinxRequest(BaseModel):
+    quantity: int = 1
+    payment_intent_id: str
+
+@app.post("/api/participants/{participant_id}/jinx")
+def confirm_jinx_payment(participant_id: int, req: CreateJinxRequest, db: Session = Depends(get_db)):
+    participant = db.query(models.Participant).filter(models.Participant.id == participant_id).first()
+    if not participant:
+        raise HTTPException(status_code=404, detail="Participant not found")
+
+    if not verify_payment_intent(req.payment_intent_id):
+        raise HTTPException(status_code=402, detail="Pago no verificado.")
+
+    return {"message": f"Pago verificado. El mal de ojo se está aplicando a {participant.name}."}
 
 @app.get("/api/scorers")
 def get_scorers(db: Session = Depends(get_db)):
@@ -238,6 +398,18 @@ def get_scorers(db: Session = Depends(get_db)):
     if not scorers_data:
         raise HTTPException(status_code=404, detail="Scorers data not found")
     return scorers_data.value
+
+@app.get("/api/matches")
+def get_matches(date: Optional[str] = Query(None), db: Session = Depends(get_db)):
+    matches_data = db.query(models.RealWorldData).filter(models.RealWorldData.key == "matches").first()
+    if not matches_data:
+        return []
+
+    matches = matches_data.value
+    if date:
+        matches = [m for m in matches if m.get("utcDate", "").startswith(date)]
+
+    return sorted(matches, key=lambda m: m.get("utcDate", ""))
 
 @app.get("/api/results")
 def get_results(db: Session = Depends(get_db)):
