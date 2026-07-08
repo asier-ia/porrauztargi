@@ -146,7 +146,7 @@ export function getJinxStyles(count) {
   };
 }
 
-export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BASE }) {
+export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BASE, isStatic }) {
   const { t } = useLanguage();
   const [ranking, setRanking] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -195,7 +195,14 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
     }
   }, []);
 
+  const [staticJinxMsg, setStaticJinxMsg] = useState(null);
+
   const handleOpenJinxModal = (participant) => {
+    if (isStatic) {
+      setStaticJinxMsg('Mal de ojo disponible solo en la web real — porrauztargi.korpoweb.com');
+      setTimeout(() => setStaticJinxMsg(null), 3000);
+      return;
+    }
     setSelectedParticipant(participant);
     setJinxSuccess(false);
     setJinxLoading(false);
@@ -376,6 +383,12 @@ export default function Ranking({ onSelectParticipant, onNavigateToInfo, API_BAS
           </div>
         </div>
       </div>
+
+      {staticJinxMsg && (
+        <div className="mx-4 mb-4 bg-purple-50 border border-purple-200 text-purple-900 rounded-2xl p-4 shadow-sm text-center animate-slideUp">
+          <p className="text-xs font-bold">{staticJinxMsg}</p>
+        </div>
+      )}
 
       {ranking.length >= 3 && (
         <div className="flex items-end justify-center gap-3 mb-10 px-4 mt-8 h-48">

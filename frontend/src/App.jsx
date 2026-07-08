@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Trophy, User, Target, Heart, CalendarDays, GitBranch } from 'lucide-react';
 import { useLanguage } from './context/LanguageContext';
+import { assetUrl } from './staticMode';
 import Ranking from './views/Ranking';
 import Profile from './views/Profile';
 import Scorers from './views/Scorers';
@@ -9,10 +10,14 @@ import Partidos from './views/Partidos';
 import DailyCuriosity from './components/DailyCuriosity';
 import DonationFlow from './components/DonationFlow';
 
+const isStatic = import.meta.env.VITE_STATIC_MODE === 'true';
+
 const API_BASE = import.meta.env.VITE_API_BASE ||
-  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    ? "http://localhost:8000/api"
-    : "/api");
+  (isStatic
+    ? '/api'
+    : (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      ? "http://localhost:8000/api"
+      : "/api"));
 
 function App() {
   const { language, setLanguage, t } = useLanguage();
@@ -24,9 +29,9 @@ function App() {
   const [infoGlow, setInfoGlow] = useState(false);
   const [highlightDonations, setHighlightDonations] = useState(false);
 
-  // Timer for the humorous donation pop-up (3 minutes)
+  // Timer for the humorous donation pop-up (3 minutes) — disabled in static mode
   useEffect(() => {
-    if (showPopup) return;
+    if (showPopup || isStatic) return;
 
     const timer = setTimeout(() => {
       setShowPopup(true);
@@ -98,10 +103,11 @@ function App() {
               setHighlightDonations(true);
             }}
             API_BASE={API_BASE}
+            isStatic={isStatic}
           />
         );
       case 'profile':
-        return <Profile selectedId={selectedId} setSelectedId={setSelectedId} API_BASE={API_BASE} />;
+        return <Profile selectedId={selectedId} setSelectedId={setSelectedId} API_BASE={API_BASE} isStatic={isStatic} />;
       case 'scorers':
         return <Scorers API_BASE={API_BASE} />;
       case 'partidos':
@@ -118,6 +124,7 @@ function App() {
               setHighlightDonations(true);
             }}
             API_BASE={API_BASE}
+            isStatic={isStatic}
           />
         );
     }
@@ -243,7 +250,7 @@ function App() {
             {/* Image */}
             <div className="relative">
               <img
-                src="/arbi.png"
+                src={assetUrl('/arbi.png')}
                 alt="Arbitro"
                 className="w-full aspect-video object-cover object-[center_15%]"
               />

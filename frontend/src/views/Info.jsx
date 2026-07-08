@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Heart } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { assetUrl } from '../staticMode';
 import DonationFlow from '../components/DonationFlow';
+
+const isStatic = import.meta.env.VITE_STATIC_MODE === 'true';
 
 // Icono de Instagram personalizado (SVG)
 function InstagramIcon({ className = "h-5 w-5" }) {
@@ -57,28 +60,28 @@ export default function Info({ highlightDonations, setHighlightDonations }) {
       id: 'cafe',
       title: t('info.donateItems.cafe'),
       price: '1,50 €',
-      img: '/cafe.png',
+      img: assetUrl('/cafe.png'),
       url: 'https://buy.stripe.com/14AaEX1xX0N06HZf9Z7wA03'
     },
     {
       id: 'cana',
       title: t('info.donateItems.cana'),
       price: '3,00 €',
-      img: '/cana.png',
+      img: assetUrl('/cana.png'),
       url: 'https://buy.stripe.com/4gM4gz4K97bofev2nd7wA02'
     },
     {
       id: 'cena',
       title: t('info.donateItems.cena'),
       price: '15,00 €',
-      img: '/pizza.png',
+      img: assetUrl('/pizza.png'),
       url: 'https://buy.stripe.com/dRmcN5foNanAgiz8LB7wA01'
     },
     {
       id: 'sueno',
       title: t('info.donateItems.sueno'),
       price: t('info.donateItems.anyHelp'),
-      img: '/sueno.png',
+      img: assetUrl('/sueno.png'),
       url: 'https://buy.stripe.com/3cIfZhdgFgLY3vN6Dt7wA00'
     }
   ];
@@ -103,7 +106,7 @@ export default function Info({ highlightDonations, setHighlightDonations }) {
           <div className="flex justify-center mb-4">
             <div className="relative">
               <img 
-                src="/profile.png" 
+                src={assetUrl('/profile.png')} 
                 alt="Asier" 
                 className="w-24 h-24 rounded-full object-cover border-3 border-emerald-500 shadow-md"
               />
@@ -135,7 +138,7 @@ export default function Info({ highlightDonations, setHighlightDonations }) {
             {donations.map((item) => (
               <button
                 key={item.id}
-                onClick={() => setDonating(item.id)}
+                onClick={() => isStatic ? window.open(item.url, '_blank') : setDonating(item.id)}
                 className={`flex flex-col items-center justify-center text-center p-4 border rounded-2xl transition-all duration-1000 active:scale-[0.98] shadow-sm cursor-pointer ${
                   highlightDonations
                     ? 'bg-amber-50 border-amber-300 shadow-[0_0_15px_rgba(245,158,11,0.6)] scale-[1.03] animate-pulse-subtle'
@@ -157,7 +160,7 @@ export default function Info({ highlightDonations, setHighlightDonations }) {
             ))}
           </div>
 
-          {donating && (
+          {donating && !isStatic && (
             <DonationFlow productId={donating} onClose={() => setDonating(null)} />
           )}
         </div>

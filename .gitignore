@@ -28,6 +28,9 @@ dist/
 .env
 .env.local
 
+# --- Datos generados para GitHub Pages ---
+frontend/public/data/
+
 # --- Sistema operativo y editores ---
 .DS_Store
 .vscode/

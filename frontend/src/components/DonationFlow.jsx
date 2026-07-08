@@ -2,14 +2,15 @@ import { useState, useEffect, useMemo } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, useStripe, useElements, PaymentElement } from '@stripe/react-stripe-js';
 import { X, Smartphone } from 'lucide-react';
+import { assetUrl } from '../staticMode';
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || '');
 
 const PRODUCTS = {
-  cafe: { name: 'Café', price: 1.50, img: '/cafe.png' },
-  cana: { name: 'Caña', price: 3.00, img: '/cana.png' },
-  cena: { name: 'Cena', price: 15.00, img: '/pizza.png' },
-  sueno: { name: 'Sueño', price: null, img: '/sueno.png' },
+  cafe: { name: 'Café', price: 1.50, img: assetUrl('/cafe.png') },
+  cana: { name: 'Caña', price: 3.00, img: assetUrl('/cana.png') },
+  cena: { name: 'Cena', price: 15.00, img: assetUrl('/pizza.png') },
+  sueno: { name: 'Sueño', price: null, img: assetUrl('/sueno.png') },
   popup: { name: 'Soborno al árbitro', price: null, img: null },
 };
 

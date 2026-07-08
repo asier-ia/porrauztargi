@@ -58,7 +58,7 @@ const matchScorer = (predictedName, realName) => {
   return false;
 };
 
-export default function Profile({ selectedId, setSelectedId, API_BASE }) {
+export default function Profile({ selectedId, setSelectedId, API_BASE, isStatic }) {
   const { t } = useLanguage();
   const [participants, setParticipants] = useState([]);
   const [currentParticipant, setCurrentParticipant] = useState(null);
@@ -167,8 +167,15 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
     setShowDropdown(false);
   };
 
+  const [staticJinxMsg, setStaticJinxMsg] = useState(null);
+
   // Lógica de Mal de Ojo
   const handleOpenJinxModal = () => {
+    if (isStatic) {
+      setStaticJinxMsg('Mal de ojo disponible solo en la web real — porrauztargi.korpoweb.com');
+      setTimeout(() => setStaticJinxMsg(null), 3000);
+      return;
+    }
     setJinxSuccess(false);
     setJinxLoading(false);
     setJinxQuantity(1);
@@ -268,6 +275,12 @@ export default function Profile({ selectedId, setSelectedId, API_BASE }) {
           >
             Cerrar
           </button>
+        </div>
+      )}
+
+      {staticJinxMsg && (
+        <div className="mx-4 mb-4 bg-purple-50 border border-purple-200 text-purple-900 rounded-2xl p-4 shadow-sm text-center animate-slideUp">
+          <p className="text-xs font-bold">{staticJinxMsg}</p>
         </div>
       )}
 
