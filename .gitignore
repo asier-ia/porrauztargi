@@ -23,6 +23,7 @@ frontend/node_modules/
 node_modules/
 frontend/dist/
 dist/
+frontend/public/data/
 
 # --- Variables de entorno locales ---
 .env

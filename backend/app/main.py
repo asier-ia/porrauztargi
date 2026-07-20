@@ -56,15 +56,42 @@ async def auto_update_task():
         # Update next timestamp (4 hours from now)
         next_update_at = datetime.now(timezone.utc) + timedelta(hours=4)
 
+def fix_final_tournament_data(db: Session):
+    """
+    Set the definitive final tournament results (top4, team name fixes)
+    since the API won't provide these after the tournament ends.
+    Idempotent — safe to run multiple times.
+    """
+    top4_data = db.query(models.RealWorldData).filter(models.RealWorldData.key == "top4").first()
+    if top4_data and top4_data.value.get("1"):
+        return  # already set
+
+    top4_value = {"1": "Spain", "2": "Argentina", "3": "England", "4": "France"}
+    if top4_data:
+        top4_data.value = top4_value
+    else:
+        db.add(models.RealWorldData(key="top4", value=top4_value))
+
+    # Fix team name: "Cape Verde Islands" -> "Cape Verde" for group standings
+    standings_data = db.query(models.RealWorldData).filter(models.RealWorldData.key == "standings").first()
+    if standings_data:
+        standings = standings_data.value
+        if "H" in standings and standings["H"][1] == "Cape Verde Islands":
+            standings["H"][1] = "Cape Verde"
+            standings_data.value = standings
+
+    db.commit()
+    scoring.calculate_scores(db)
+    print("Datos finales del torneo actualizados y puntuaciones recalculadas.")
+
 @app.on_event("startup")
 async def on_startup():
-    # Run initial sync immediately
     db = next(get_db())
     try:
         await sync.sync_all_data(db)
+        fix_final_tournament_data(db)
     finally:
         db.close()
-    # Spin up background loop
     asyncio.create_task(auto_update_task())
 
 @app.get("/")
